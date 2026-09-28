@@ -1,0 +1,16 @@
+@import './theme.generated.css';
+
+/* Polaris sets these on the app root; mirrored here so components render the
+ * same in Storybook as they do in an application. */
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: var(--p-color-bg);
+  color: var(--p-color-text);
+  font-family: var(--p-font-family-sans);
+  font-size: var(--p-font-size-325);
+  line-height: var(--p-font-line-height-500);
+  -webkit-font-smoothing: antialiased;
+}
