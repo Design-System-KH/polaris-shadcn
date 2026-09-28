@@ -7,17 +7,29 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Bulleted or numbered list. FIRST PASS — see STATUS.md.',
+        component:
+          'A bulleted or numbered list. type="number" renders an ol, so the ordering reaches a screen reader rather than being purely visual.',
       },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
+  argTypes: {
+    type: { control: 'select', options: ['bullet', 'number'] },
+    gap: { control: 'select', options: ['loose', 'tight'] },
+  },
+  args: {
+    children: (
+      <>
+        <List.Item>Yellow shirt</List.Item>
+        <List.Item>Red shirt</List.Item>
+        <List.Item>Green shirt</List.Item>
+      </>
+    ),
+  },
 } satisfies Meta<typeof List>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+export const Numbered: Story = { args: { type: 'number' } };
+export const Tight: Story = { args: { gap: 'tight' } };

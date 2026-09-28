@@ -1,60 +1,50 @@
 import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
+import '../styles/polaris/exception-list.css';
 
 export interface ExceptionListItem {
-  id: string;
-  content: ReactNode;
+  icon?: ReactNode;
+  title?: ReactNode;
+  description?: ReactNode;
+  /** Raises the tone. Reserve critical for something that blocks the user. */
+  status?: 'warning' | 'critical';
+  truncate?: boolean;
 }
 
 export interface ExceptionListProps {
-  items?: ExceptionListItem[];
-  className?: string;
-  /** Distinguishes "nothing yet" from "the filter matched nothing". */
-  isFiltered?: boolean;
-  loading?: boolean;
-  emptyState?: ReactNode;
+  items: ExceptionListItem[];
 }
 
+const cap = (v: string) => v.charAt(0).toUpperCase() + v.slice(1);
+
 /**
- * ExceptionList — Short list of warnings or exceptions on a resource.
+ * ExceptionList — short warnings or exceptions attached to a resource.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * An `ul`, because it is a list and the count matters: a screen-reader user
+ * hears "3 items" and knows how much is wrong before reading any of it.
  */
-export function ExceptionList({ items = [], className, isFiltered = false, loading = false, emptyState }: ExceptionListProps) {
-  if (loading) {
-    return (
-      <div aria-busy="true" className={cn('flex flex-col gap-[var(--p-space-200)]', className)}>
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="h-10 animate-pulse"
-            style={{ background: 'var(--p-color-bg-fill-disabled)', borderRadius: 'var(--p-border-radius-200)' }}
-          />
-        ))}
-      </div>
-    );
-  }
-
-  if (items.length === 0) {
-    return (
-      <div className={cn('py-[var(--p-space-800)] text-center', className)} style={{ color: 'var(--p-color-text-secondary)' }}>
-        {emptyState ?? (isFiltered ? 'No results match these filters.' : 'Nothing here yet.')}
-      </div>
-    );
-  }
-
+export function ExceptionList({ items }: ExceptionListProps) {
   return (
-    <ul className={cn('flex flex-col', className)}>
-      {items.map((item) => (
+    <ul className="Polaris-ExceptionList">
+      {items.map(({ icon, title, description, status, truncate = false }, index) => (
         <li
-          key={item.id}
-          style={{
-            padding: 'var(--p-space-300)',
-            borderBlockEnd: 'var(--p-border-width-025) solid var(--p-color-border-secondary)',
-          }}
+          key={index}
+          className={cn('Polaris-ExceptionList__Item', status && `Polaris-ExceptionList--status${cap(status)}`)}
         >
-          {item.content}
+          {icon ? (
+            <span className="Polaris-ExceptionList__Icon">{icon}</span>
+          ) : (
+            <span className="Polaris-ExceptionList__Bullet" aria-hidden />
+          )}
+          {title ? <span className="Polaris-ExceptionList__Title">{title}</span> : null}
+          {description ? (
+            <span
+              className="Polaris-ExceptionList__Description"
+              style={truncate ? { overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' } : undefined}
+            >
+              {description}
+            </span>
+          ) : null}
         </li>
       ))}
     </ul>

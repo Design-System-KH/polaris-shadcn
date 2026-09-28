@@ -1,45 +1,64 @@
-import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '../lib/cn.js';
-
-export type ProgressBarTone = 'info' | 'success' | 'warning' | 'critical';
+import '../styles/polaris/progress-bar.css';
 
 export interface ProgressBarProps {
-  children?: ReactNode;
-  className?: string;
-  tone?: ProgressBarTone;
-  title?: string;
+  /** 0–100. Clamped, because a bar past its track reads as a rendering bug. */
+  progress?: number;
+  size?: 'small' | 'medium' | 'large';
+  tone?: 'highlight' | 'primary' | 'success' | 'critical';
+  animated?: boolean;
+  ariaLabelledBy?: string;
 }
 
-const TONES: Record<ProgressBarTone, { bg: string; text: string }> = {
-  info: { bg: 'bg-surface-info', text: 'text-info' },
-  success: { bg: 'bg-surface-success', text: 'text-success' },
-  warning: { bg: 'bg-surface-warning', text: 'text-caution' },
-  critical: { bg: 'bg-surface-critical', text: 'text-critical' },
-};
+const cap = (v: string) => v.charAt(0).toUpperCase() + v.slice(1);
 
 /**
- * ProgressBar — Determinate progress.
+ * ProgressBar — determinate progress.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * A real `progress` element, so the value is exposed to assistive technology
+ * without ARIA. A styled div would need role, valuenow, valuemin and valuemax
+ * to say the same thing, and usually ends up saying none of it.
  */
-export function ProgressBar({ children, className, tone = 'info', title }: ProgressBarProps) {
-  const t = TONES[tone];
+export function ProgressBar({
+  progress = 0,
+  size = 'medium',
+  tone = 'highlight',
+  animated = true,
+  ariaLabelledBy,
+}: ProgressBarProps) {
+  const clamped = Math.min(100, Math.max(0, progress));
+  const [appeared, setAppeared] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setAppeared(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   return (
     <div
-      // Announced politely rather than assertively: this reports state, it does
-      // not interrupt. Errors that must interrupt use role="alert".
-      role={tone === 'critical' ? 'alert' : 'status'}
-      className={cn('flex flex-col gap-[var(--p-space-100)]', className)}
-      style={{
-        background: `var(--p-color-${t.bg})`,
-        color: `var(--p-color-${t.text})`,
-        padding: 'var(--p-space-300)',
-        borderRadius: 'var(--p-border-radius-200)',
-      }}
+      className={cn(
+        'Polaris-ProgressBar',
+        `Polaris-ProgressBar--size${cap(size)}`,
+        `Polaris-ProgressBar--tone${cap(tone)}`,
+      )}
     >
-      {title ? <strong style={{ fontWeight: 'var(--p-font-weight-semibold)' }}>{title}</strong> : null}
-      {children}
+      <progress
+        className="Polaris-ProgressBar__Progress"
+        value={clamped}
+        max={100}
+        aria-labelledby={ariaLabelledBy}
+      />
+      <div
+        className={cn(
+          'Polaris-ProgressBar__Indicator',
+          animated && appeared && 'Polaris-ProgressBar__IndicatorAppearActive',
+          !animated && 'Polaris-ProgressBar__IndicatorAppearDone',
+        )}
+        style={{ width: `${clamped}%` }}
+      >
+        <span className="Polaris-ProgressBar__Label">{clamped}%</span>
+      </div>
     </div>
   );
 }

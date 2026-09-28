@@ -4,17 +4,12 @@ import { SkeletonThumbnail } from './skeleton-thumbnail.js';
 const meta = {
   title: 'components/SkeletonThumbnail',
   component: SkeletonThumbnail,
-  parameters: {
-    docs: {
-      description: {
-        component: 'Placeholder for a thumbnail. FIRST PASS — see STATUS.md.',
-      },
-    },
-  },
-  args: { lines: 3 },
+  parameters: { docs: { description: { component: 'Placeholder for a thumbnail. Size it to the real one so the row height does not change.' } } },
+  argTypes: { size: { control: 'select', options: ['extraSmall', 'small', 'medium', 'large'] } },
+  args: {},
 } satisfies Meta<typeof SkeletonThumbnail>;
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 export const Default: Story = {};
+export const Small: Story = { args: { size: 'small' } };
+export const Large: Story = { args: { size: 'large' } };

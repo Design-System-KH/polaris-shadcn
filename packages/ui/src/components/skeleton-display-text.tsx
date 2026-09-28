@@ -1,32 +1,27 @@
 import { cn } from '../lib/cn.js';
+import '../styles/polaris/skeleton-display-text.css';
+
+export type SkeletonDisplayTextSize = 'small' | 'medium' | 'large' | 'extraLarge';
 
 export interface SkeletonDisplayTextProps {
-  lines?: number;
-  className?: string;
+  size?: SkeletonDisplayTextSize;
+  maxWidth?: `${number}%`;
 }
 
-/**
- * SkeletonDisplayText — Placeholder for a heading.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function SkeletonDisplayText({ lines = 3, className }: SkeletonDisplayTextProps) {
+const SIZES: Record<SkeletonDisplayTextSize, string> = {
+  small: 'Polaris-SkeletonDisplayText--sizeSmall',
+  medium: 'Polaris-SkeletonDisplayText--sizeMedium',
+  large: 'Polaris-SkeletonDisplayText--sizeLarge',
+  extraLarge: 'Polaris-SkeletonDisplayText--sizeExtraLarge',
+};
+
+/** SkeletonDisplayText — placeholder for a heading. */
+export function SkeletonDisplayText({ size = 'medium', maxWidth }: SkeletonDisplayTextProps) {
   return (
-    // aria-hidden: a placeholder has nothing to announce, and announcing it
-    // interrupts a screen-reader user with noise while they wait.
-    <div aria-hidden className={cn('flex flex-col gap-[var(--p-space-200)]', className)}>
-      {Array.from({ length: lines }, (_, i) => (
-        <div
-          key={i}
-          className="h-3 animate-pulse"
-          style={{
-            background: 'var(--p-color-bg-fill-disabled)',
-            borderRadius: 'var(--p-border-radius-100)',
-            width: i === lines - 1 ? '60%' : '100%',
-          }}
-        />
-      ))}
-    </div>
+    <div
+      aria-hidden
+      className={cn('Polaris-SkeletonDisplayText__DisplayText', SIZES[size])}
+      style={maxWidth ? { maxWidth } : undefined}
+    />
   );
 }

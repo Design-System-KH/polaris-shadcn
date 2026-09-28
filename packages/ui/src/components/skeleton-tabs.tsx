@@ -1,31 +1,22 @@
 import { cn } from '../lib/cn.js';
+import { SkeletonDisplayText } from './skeleton-display-text.js';
+import '../styles/polaris/skeleton-tabs.css';
 
 export interface SkeletonTabsProps {
-  lines?: number;
-  className?: string;
+  count?: number;
+  fitted?: boolean;
 }
 
-/**
- * SkeletonTabs — Placeholder for a tab bar.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function SkeletonTabs({ lines = 3, className }: SkeletonTabsProps) {
+/** SkeletonTabs — placeholder for a tab bar, matching the real bar's height. */
+export function SkeletonTabs({ count = 2, fitted = false }: SkeletonTabsProps) {
   return (
-    // aria-hidden: a placeholder has nothing to announce, and announcing it
-    // interrupts a screen-reader user with noise while they wait.
-    <div aria-hidden className={cn('flex flex-col gap-[var(--p-space-200)]', className)}>
-      {Array.from({ length: lines }, (_, i) => (
-        <div
-          key={i}
-          className="h-3 animate-pulse"
-          style={{
-            background: 'var(--p-color-bg-fill-disabled)',
-            borderRadius: 'var(--p-border-radius-100)',
-            width: i === lines - 1 ? '60%' : '100%',
-          }}
-        />
+    <div className={cn('Polaris-SkeletonTabs__Tabs', fitted && 'Polaris-SkeletonTabs--fitted')} aria-hidden>
+      {Array.from({ length: count }, (_, i) => (
+        <div className="Polaris-SkeletonTabs__Tab" key={i}>
+          <span className="Polaris-SkeletonTabs__TabText">
+            <SkeletonDisplayText size="small" />
+          </span>
+        </div>
       ))}
     </div>
   );

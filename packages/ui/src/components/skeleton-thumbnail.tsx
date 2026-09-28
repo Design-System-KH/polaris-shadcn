@@ -1,32 +1,20 @@
 import { cn } from '../lib/cn.js';
+import '../styles/polaris/skeleton-thumbnail.css';
+
+export type SkeletonThumbnailSize = 'extraSmall' | 'small' | 'medium' | 'large';
 
 export interface SkeletonThumbnailProps {
-  lines?: number;
-  className?: string;
+  size?: SkeletonThumbnailSize;
 }
 
-/**
- * SkeletonThumbnail — Placeholder for a thumbnail.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function SkeletonThumbnail({ lines = 3, className }: SkeletonThumbnailProps) {
-  return (
-    // aria-hidden: a placeholder has nothing to announce, and announcing it
-    // interrupts a screen-reader user with noise while they wait.
-    <div aria-hidden className={cn('flex flex-col gap-[var(--p-space-200)]', className)}>
-      {Array.from({ length: lines }, (_, i) => (
-        <div
-          key={i}
-          className="h-3 animate-pulse"
-          style={{
-            background: 'var(--p-color-bg-fill-disabled)',
-            borderRadius: 'var(--p-border-radius-100)',
-            width: i === lines - 1 ? '60%' : '100%',
-          }}
-        />
-      ))}
-    </div>
-  );
+const SIZES: Record<SkeletonThumbnailSize, string> = {
+  extraSmall: 'Polaris-SkeletonThumbnail--sizeExtraSmall',
+  small: 'Polaris-SkeletonThumbnail--sizeSmall',
+  medium: 'Polaris-SkeletonThumbnail--sizeMedium',
+  large: 'Polaris-SkeletonThumbnail--sizeLarge',
+};
+
+/** SkeletonThumbnail — placeholder for a thumbnail, sized to match the real one. */
+export function SkeletonThumbnail({ size = 'medium' }: SkeletonThumbnailProps) {
+  return <div aria-hidden className={cn('Polaris-SkeletonThumbnail', SIZES[size])} />;
 }

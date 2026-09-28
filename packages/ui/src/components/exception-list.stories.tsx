@@ -7,17 +7,26 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Short list of warnings or exceptions on a resource. FIRST PASS — see STATUS.md.',
+        component:
+          'Short warnings attached to a resource. A ul, so the count is announced before the contents are read.',
       },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
+  args: {
+    items: [
+      { description: 'This customer is high risk' },
+      { status: 'warning', description: 'Address has not been verified' },
+    ],
+  },
 } satisfies Meta<typeof ExceptionList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+export const Critical: Story = {
+  args: { items: [{ status: 'critical', title: 'Payment failed', description: 'Retry before 3 March' }] },
+};
+export const WithTitles: Story = {
+  args: { items: [{ title: 'Note', description: 'Customer requested gift wrapping' }] },
+};

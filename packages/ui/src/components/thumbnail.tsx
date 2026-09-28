@@ -1,54 +1,29 @@
 import { cn } from '../lib/cn.js';
+import '../styles/polaris/thumbnail.css';
+
+export type ThumbnailSize = 'extraSmall' | 'small' | 'medium' | 'large';
 
 export interface ThumbnailProps {
-  source?: string;
-  /** Empty string marks it decorative; omit it and the image is unlabelled. */
+  source: string;
+  /** Required. Empty string marks it decorative; omitting it leaves it unlabelled. */
   alt: string;
-  size?: 'extraSmall' | 'small' | 'medium' | 'large';
-  className?: string;
+  size?: ThumbnailSize;
+  transparent?: boolean;
 }
 
-const SIZES: Record<NonNullable<ThumbnailProps['size']>, string> = {
-  extraSmall: '1.5rem',
-  small: '2rem',
-  medium: '2.5rem',
-  large: '5rem',
-};
+const cap = (v: string) => v.charAt(0).toUpperCase() + v.slice(1);
 
-/**
- * Thumbnail — Small product or file image.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function Thumbnail({ source, alt, size = 'medium', className }: ThumbnailProps) {
-  const dimension = SIZES[size];
-  return source ? (
-    // width and height are set so the box is reserved before the image loads.
-    <img
-      src={source}
-      alt={alt}
-      width={dimension}
-      height={dimension}
-      className={cn('object-cover', className)}
-      style={{ width: dimension, height: dimension, borderRadius: 'var(--p-border-radius-200)' }}
-    />
-  ) : (
+/** Thumbnail — a small product or file image. */
+export function Thumbnail({ source, alt, size = 'medium', transparent = false }: ThumbnailProps) {
+  return (
     <span
-      role="img"
-      aria-label={alt || undefined}
-      aria-hidden={alt ? undefined : true}
-      className={cn('inline-flex items-center justify-center', className)}
-      style={{
-        width: dimension,
-        height: dimension,
-        background: 'var(--p-color-bg-fill-secondary)',
-        borderRadius: 'var(--p-border-radius-200)',
-        color: 'var(--p-color-text-secondary)',
-        fontSize: 'var(--p-font-size-300)',
-      }}
+      className={cn(
+        'Polaris-Thumbnail',
+        `Polaris-Thumbnail--size${cap(size)}`,
+        transparent && 'Polaris-Thumbnail--transparent',
+      )}
     >
-      {alt ? alt.slice(0, 2).toUpperCase() : null}
+      <img src={source} alt={alt} />
     </span>
   );
 }

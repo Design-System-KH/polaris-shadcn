@@ -1,45 +1,31 @@
-import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
-
-export type SpinnerTone = 'info' | 'success' | 'warning' | 'critical';
+import '../styles/polaris/spinner.css';
 
 export interface SpinnerProps {
-  children?: ReactNode;
-  className?: string;
-  tone?: SpinnerTone;
-  title?: string;
+  size?: 'small' | 'large';
+  /** Announced while work is in flight. Omit only if a sibling already says it. */
+  accessibilityLabel?: string;
+  /** Set false when a parent already owns the live region. */
+  hasFocusableParent?: boolean;
 }
 
-const TONES: Record<SpinnerTone, { bg: string; text: string }> = {
-  info: { bg: 'bg-surface-info', text: 'text-info' },
-  success: { bg: 'bg-surface-success', text: 'text-success' },
-  warning: { bg: 'bg-surface-warning', text: 'text-caution' },
-  critical: { bg: 'bg-surface-critical', text: 'text-critical' },
-};
-
 /**
- * Spinner — Indeterminate progress.
+ * Spinner — indeterminate progress.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * `role="status"` announces politely rather than interrupting. A spinner with
+ * no accessible name is a silent wait for anyone not looking at the screen.
  */
-export function Spinner({ children, className, tone = 'info', title }: SpinnerProps) {
-  const t = TONES[tone];
+export function Spinner({ size = 'large', accessibilityLabel, hasFocusableParent }: SpinnerProps) {
   return (
-    <div
-      // Announced politely rather than assertively: this reports state, it does
-      // not interrupt. Errors that must interrupt use role="alert".
-      role={tone === 'critical' ? 'alert' : 'status'}
-      className={cn('flex flex-col gap-[var(--p-space-100)]', className)}
-      style={{
-        background: `var(--p-color-${t.bg})`,
-        color: `var(--p-color-${t.text})`,
-        padding: 'var(--p-space-300)',
-        borderRadius: 'var(--p-border-radius-200)',
-      }}
-    >
-      {title ? <strong style={{ fontWeight: 'var(--p-font-weight-semibold)' }}>{title}</strong> : null}
-      {children}
-    </div>
+    <span role={hasFocusableParent ? undefined : 'status'}>
+      <svg
+        className={cn('Polaris-Spinner', size === 'small' ? 'Polaris-Spinner--sizeSmall' : 'Polaris-Spinner--sizeLarge')}
+        viewBox="0 0 20 20"
+        aria-hidden
+      >
+        <path d="M7.229 1.173a9.25 9.25 0 1 0 11.655 11.412 1.25 1.25 0 1 0-2.4-.698 6.75 6.75 0 1 1-8.506-8.329 1.25 1.25 0 1 0-.75-2.385z" />
+      </svg>
+      {accessibilityLabel ? <span className="Polaris-Text--visuallyHidden">{accessibilityLabel}</span> : null}
+    </span>
   );
 }

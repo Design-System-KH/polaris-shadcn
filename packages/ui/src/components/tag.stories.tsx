@@ -7,17 +7,24 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A removable label, usually a filter or category. FIRST PASS — see STATUS.md.',
+        component:
+          'A removable label, usually a filter. Clickable, linkable and removable are mutually exclusive: two targets in a box this small gets you the wrong one.',
       },
     },
   },
-  args: { title: 'Tag', children: 'Something happened worth reporting.' },
+  argTypes: {
+    size: { control: 'select', options: ['medium', 'large'] },
+    disabled: { control: 'boolean' },
+  },
+  args: { children: 'Wholesale' },
 } satisfies Meta<typeof Tag>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Critical: Story = { args: { tone: 'critical' } };
-export const Success: Story = { args: { tone: 'success' } };
-export const Warning: Story = { args: { tone: 'warning' } };
+export const Removable: Story = { args: { onRemove: () => {} } };
+export const Clickable: Story = { args: { onClick: () => {} } };
+export const AsLink: Story = { args: { url: 'https://example.com' } };
+export const Disabled: Story = { args: { onRemove: () => {}, disabled: true } };
+export const Large: Story = { args: { size: 'large', onRemove: () => {} } };

@@ -1,62 +1,33 @@
 import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
+import '../styles/polaris/description-list.css';
 
 export interface DescriptionListItem {
-  id: string;
-  content: ReactNode;
+  term: ReactNode;
+  description: ReactNode;
 }
 
 export interface DescriptionListProps {
-  items?: DescriptionListItem[];
-  className?: string;
-  /** Distinguishes "nothing yet" from "the filter matched nothing". */
-  isFiltered?: boolean;
-  loading?: boolean;
-  emptyState?: ReactNode;
+  items: DescriptionListItem[];
+  spacing?: 'loose' | 'tight';
 }
 
 /**
- * DescriptionList — Term and description pairs.
+ * DescriptionList — term and description pairs.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * A real `dl` rather than a two-column grid of divs: the pairing is the
+ * semantics, and assistive technology reads term-and-value together only when
+ * the elements say so.
  */
-export function DescriptionList({ items = [], className, isFiltered = false, loading = false, emptyState }: DescriptionListProps) {
-  if (loading) {
-    return (
-      <div aria-busy="true" className={cn('flex flex-col gap-[var(--p-space-200)]', className)}>
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="h-10 animate-pulse"
-            style={{ background: 'var(--p-color-bg-fill-disabled)', borderRadius: 'var(--p-border-radius-200)' }}
-          />
-        ))}
-      </div>
-    );
-  }
-
-  if (items.length === 0) {
-    return (
-      <div className={cn('py-[var(--p-space-800)] text-center', className)} style={{ color: 'var(--p-color-text-secondary)' }}>
-        {emptyState ?? (isFiltered ? 'No results match these filters.' : 'Nothing here yet.')}
-      </div>
-    );
-  }
-
+export function DescriptionList({ items, spacing = 'loose' }: DescriptionListProps) {
   return (
-    <ul className={cn('flex flex-col', className)}>
-      {items.map((item) => (
-        <li
-          key={item.id}
-          style={{
-            padding: 'var(--p-space-300)',
-            borderBlockEnd: 'var(--p-border-width-025) solid var(--p-color-border-secondary)',
-          }}
-        >
-          {item.content}
-        </li>
+    <dl className={cn('Polaris-DescriptionList', spacing === 'tight' && 'Polaris-DescriptionList--spacingTight')}>
+      {items.map(({ term, description }, index) => (
+        <div key={index}>
+          <dt className="Polaris-DescriptionList__Term">{term}</dt>
+          <dd className="Polaris-DescriptionList__Description">{description}</dd>
+        </div>
       ))}
-    </ul>
+    </dl>
   );
 }

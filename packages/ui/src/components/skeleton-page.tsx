@@ -1,32 +1,64 @@
-import { cn } from '../lib/cn.js';
+import type { ReactNode } from 'react';
+import { Box } from './box.js';
+import { BlockStack } from './block-stack.js';
+import { InlineStack } from './inline-stack.js';
+import { SkeletonDisplayText } from './skeleton-display-text.js';
+import '../styles/polaris/skeleton-page.css';
 
 export interface SkeletonPageProps {
-  lines?: number;
-  className?: string;
+  children?: ReactNode;
+  /** A real title shown while the body loads; omit for a placeholder bar. */
+  title?: string;
+  narrowWidth?: boolean;
+  primaryAction?: boolean;
+  backAction?: boolean;
 }
 
 /**
- * SkeletonPage — Whole-page placeholder matching the loaded layout.
+ * SkeletonPage — a whole-page placeholder.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * It must match the layout that replaces it. A skeleton whose shape differs
+ * from the loaded page makes everything jump on arrival, which is worse than
+ * showing nothing.
  */
-export function SkeletonPage({ lines = 3, className }: SkeletonPageProps) {
+export function SkeletonPage({
+  children,
+  title = '',
+  narrowWidth = false,
+  primaryAction = false,
+  backAction = false,
+}: SkeletonPageProps) {
   return (
-    // aria-hidden: a placeholder has nothing to announce, and announcing it
-    // interrupts a screen-reader user with noise while they wait.
-    <div aria-hidden className={cn('flex flex-col gap-[var(--p-space-200)]', className)}>
-      {Array.from({ length: lines }, (_, i) => (
-        <div
-          key={i}
-          className="h-3 animate-pulse"
-          style={{
-            background: 'var(--p-color-bg-fill-disabled)',
-            borderRadius: 'var(--p-border-radius-100)',
-            width: i === lines - 1 ? '60%' : '100%',
-          }}
-        />
-      ))}
-    </div>
+    <Box
+      // role="status" plus a label, because a page-sized wait with no
+      // announcement leaves a screen-reader user with silence.
+      padding="0"
+      maxWidth={narrowWidth ? '662px' : '998px'}
+      width="100%"
+    >
+      <div role="status" aria-label="Page loading">
+        <Box paddingBlockStart="500" paddingBlockEnd="500" paddingInlineStart="400" paddingInlineEnd="400">
+          <BlockStack gap="400">
+            <InlineStack gap="400" blockAlign="center">
+              {backAction ? <SkeletonThumbnailBar /> : null}
+              {title ? (
+                <h1 className="Polaris-SkeletonPage__SkeletonTitle">{title}</h1>
+              ) : (
+                <div className="Polaris-SkeletonPage__SkeletonTitle" aria-hidden>
+                  <SkeletonDisplayText size="large" />
+                </div>
+              )}
+              {primaryAction ? <SkeletonDisplayText size="large" /> : null}
+            </InlineStack>
+            {children}
+          </BlockStack>
+        </Box>
+      </div>
+    </Box>
   );
+}
+
+/** The small square standing in for a back button. */
+function SkeletonThumbnailBar() {
+  return <SkeletonDisplayText size="small" maxWidth="10%" />;
 }

@@ -7,16 +7,19 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Small product or file image. FIRST PASS — see STATUS.md.',
+        component:
+          'A small product or file image. alt is required: pass an empty string to mark it decorative rather than omitting it.',
       },
     },
   },
-  args: { alt: 'Example' },
+  argTypes: { size: { control: 'select', options: ['extraSmall', 'small', 'medium', 'large'] } },
+  args: { source: 'https://placehold.co/120', alt: 'Black leather belt' },
 } satisfies Meta<typeof Thumbnail>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const WithImage: Story = { args: { source: 'https://placehold.co/80', alt: 'Example product' } };
+export const Small: Story = { args: { size: 'small' } };
 export const Large: Story = { args: { size: 'large' } };
+export const Transparent: Story = { args: { transparent: true } };

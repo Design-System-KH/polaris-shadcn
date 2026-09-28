@@ -7,17 +7,22 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Term and description pairs. FIRST PASS — see STATUS.md.',
+        component:
+          'Term and description pairs. A real dl, so assistive technology reads the term and its value together.',
       },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
+  argTypes: { spacing: { control: 'select', options: ['loose', 'tight'] } },
+  args: {
+    items: [
+      { term: 'Logistics', description: 'The management of products from supplier to customer.' },
+      { term: 'Fulfillment', description: 'Picking, packing and shipping an order.' },
+    ],
+  },
 } satisfies Meta<typeof DescriptionList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+export const Tight: Story = { args: { spacing: 'tight' } };

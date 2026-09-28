@@ -1,45 +1,12 @@
-import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
-
-export type IndicatorTone = 'info' | 'success' | 'warning' | 'critical';
+import '../styles/polaris/indicator.css';
 
 export interface IndicatorProps {
-  children?: ReactNode;
-  className?: string;
-  tone?: IndicatorTone;
-  title?: string;
+  /** Animates attention. Off by default; a page of pulsing dots signals nothing. */
+  pulse?: boolean;
 }
 
-const TONES: Record<IndicatorTone, { bg: string; text: string }> = {
-  info: { bg: 'bg-surface-info', text: 'text-info' },
-  success: { bg: 'bg-surface-success', text: 'text-success' },
-  warning: { bg: 'bg-surface-warning', text: 'text-caution' },
-  critical: { bg: 'bg-surface-critical', text: 'text-critical' },
-};
-
-/**
- * Indicator — Small unread or attention dot.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function Indicator({ children, className, tone = 'info', title }: IndicatorProps) {
-  const t = TONES[tone];
-  return (
-    <div
-      // Announced politely rather than assertively: this reports state, it does
-      // not interrupt. Errors that must interrupt use role="alert".
-      role={tone === 'critical' ? 'alert' : 'status'}
-      className={cn('flex flex-col gap-[var(--p-space-100)]', className)}
-      style={{
-        background: `var(--p-color-${t.bg})`,
-        color: `var(--p-color-${t.text})`,
-        padding: 'var(--p-space-300)',
-        borderRadius: 'var(--p-border-radius-200)',
-      }}
-    >
-      {title ? <strong style={{ fontWeight: 'var(--p-font-weight-semibold)' }}>{title}</strong> : null}
-      {children}
-    </div>
-  );
+/** Indicator — a small unread or attention dot. Decorative; label the thing it marks. */
+export function Indicator({ pulse = true }: IndicatorProps) {
+  return <span aria-hidden className={cn('Polaris-Indicator', pulse && 'Polaris-Indicator--pulseIndicator')} />;
 }
