@@ -1,0 +1,154 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   ActionMenu — 28 rules. */
+.Polaris-ActionMenu-SecondaryAction{
+  --pc-secondary-action-button-spacing:var(--p-space-300);
+}
+.Polaris-ActionMenu-SecondaryAction a,
+  .Polaris-ActionMenu-SecondaryAction button{
+    position: relative;
+    --pc-button-padding-block:var(--p-space-100);
+    --pc-button-padding-inline:var(--p-space-300);
+    background:var(--p-color-bg-fill-tertiary) !important;
+    box-shadow:none !important;
+    border:none;
+    border-radius:var(--p-border-radius-200) !important;
+    min-height:1.75rem;
+  }
+.Polaris-ActionMenu-SecondaryAction a::after, .Polaris-ActionMenu-SecondaryAction button::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.125rem;
+  right: -0.125rem;
+  bottom: -0.125rem;
+  left: -0.125rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.125rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-ActionMenu-SecondaryAction a:is(:hover, :focus), .Polaris-ActionMenu-SecondaryAction button:is(:hover, :focus){
+      background-color:var(--p-color-bg-fill-tertiary-hover) !important;
+    }
+.Polaris-ActionMenu-SecondaryAction a:active,
+    .Polaris-ActionMenu-SecondaryAction button:active,
+    .Polaris-ActionMenu-SecondaryAction a[aria-expanded='true'],
+    .Polaris-ActionMenu-SecondaryAction button[aria-expanded='true']{
+      background-color:var(--p-color-bg-fill-tertiary-active) !important;
+      box-shadow:var(--p-shadow-inset-200) !important;
+    }
+.Polaris-ActionMenu-SecondaryAction a:focus-visible, .Polaris-ActionMenu-SecondaryAction button:focus-visible{
+      outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+      outline-offset:var(--p-space-050);
+    }
+.Polaris-ActionMenu-SecondaryAction a:focus-visible::after, .Polaris-ActionMenu-SecondaryAction button:focus-visible::after{
+    content:none;
+  }
+.Polaris-ActionMenu-SecondaryAction a[aria-disabled='true'], .Polaris-ActionMenu-SecondaryAction button[aria-disabled='true']{
+      background-color:var(--p-color-bg-fill-disabled) !important;
+    }
+@media (min-width: 48em){
+  .Polaris-ActionMenu-SecondaryAction a,
+  .Polaris-ActionMenu-SecondaryAction button{
+      border:none !important;
+      position: relative;
+  }
+      .Polaris-ActionMenu-SecondaryAction a::after, .Polaris-ActionMenu-SecondaryAction button::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -0.0625rem;
+    right: -0.0625rem;
+    bottom: -0.0625rem;
+    left: -0.0625rem;
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+    border-radius: var(--p-border-radius-100);
+  }
+    }
+.Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical a,
+    .Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical button{
+      color:var(--p-color-text-critical) !important;
+    }
+.Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical a svg, .Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical button svg{
+        fill:var(--p-color-text-critical);
+      }
+.Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical a:is(:hover, :focus), .Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical button:is(:hover, :focus){
+        background-color:var(--p-color-bg-fill-tertiary-hover) !important;
+      }
+.Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical a:active, .Polaris-ActionMenu-SecondaryAction.Polaris-ActionMenu-SecondaryAction--critical button:active{
+        background-color:var(--p-color-bg-fill-tertiary-active) !important;
+      }
+.Polaris-ActionMenu-MenuGroup__Details{
+  margin-top:calc(var(--p-space-400)*-1);
+  padding:var(--p-space-400);
+}
+.Polaris-ActionMenu-Actions__ActionsLayoutOuter{
+  position:relative;
+  width:100%;
+}
+.Polaris-ActionMenu-Actions__ActionsLayout{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+  flex:1 1 auto;
+  gap:var(--p-space-200);
+}
+.Polaris-ActionMenu-Actions__ActionsLayout > *{
+    flex:0 0 auto;
+  }
+.Polaris-ActionMenu-Actions--actionsLayoutMeasuring{
+  visibility:hidden;
+  height:0;
+}
+.Polaris-ActionMenu-Actions__ActionsLayoutMeasurer{
+  position:absolute;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+  flex:1 1 auto;
+  gap:0;
+  padding:0;
+  visibility:hidden;
+  height:0;
+}
+.Polaris-ActionMenu-Actions__ActionsLayoutMeasurer > *{
+    flex:0 0 auto;
+  }
+.Polaris-ActionMenu-RollupActions__RollupActivator{
+  text-align:right;
+}
+.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']{
+    background:var(--p-color-bg-fill-tertiary);
+    border-radius:var(--p-border-radius-200);
+    border:none;
+    box-shadow:none;
+    margin:0;
+  }
+.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:active{
+      background:var(--p-color-bg-fill-tertiary-active);
+    }
+.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:focus:not(:active){
+      outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+      outline-offset:var(--p-space-050);
+      background:var(--p-color-bg-fill-tertiary-active);
+    }
+.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:focus:not(:active)::after{
+    content:none;
+  }
+.Polaris-ActionMenu-RollupActions__RollupActivator button[type='button']:hover{
+      background:var(--p-color-bg-fill-tertiary-hover);
+    }
+.Polaris-ActionMenu{
+  width:100%;
+  display:flex;
+  justify-content:flex-end;
+}
+@media print{
+  .Polaris-ActionMenu{
+    display:none !important;
+}
+  }

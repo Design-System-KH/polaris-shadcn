@@ -1,0 +1,134 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Listbox — 29 rules. */
+.Polaris-Listbox-Section__SectionGroup{
+  list-style-type:none;
+  padding:0;
+  margin:0;
+  border-bottom:var(--p-border-width-025) solid var(--p-color-border-secondary);
+}
+.Polaris-Listbox-Section--noDivider{
+  border-bottom:none;
+}
+.Polaris-Listbox-TextOption{
+  margin:var(--p-space-100) var(--p-space-200) 0;
+  flex:1 1;
+  border-radius:var(--p-border-radius-200);
+  padding:var(--p-space-150) var(--p-space-300);
+  cursor:pointer;
+  display:flex;
+  position: relative;
+}
+.Polaris-Listbox-TextOption::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  bottom: -0.0625rem;
+  left: -0.0625rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-Listbox-TextOption.Polaris-Listbox-TextOption--allowMultiple{
+    margin:var(--p-space-100) var(--p-space-200) 0;
+    padding:var(--p-space-100) var(--p-space-200);
+  }
+.Polaris-Listbox-TextOption.Polaris-Listbox-TextOption--isAction{
+    margin-top:var(--p-space-100);
+  }
+.Polaris-Listbox-TextOption:hover{
+    background-color:var(--p-color-bg-surface-hover);
+  }
+.Polaris-Listbox-TextOption:hover:not(.Polaris-Listbox-TextOption--disabled){
+      background-color:var(--p-color-bg-surface-secondary-hover);
+    }
+.Polaris-Listbox-TextOption:focus{
+    outline:none;
+  }
+.Polaris-Listbox-TextOption:active{
+    background-color:var(--p-color-bg-surface-active);
+  }
+.Polaris-Listbox-TextOption:active:not(.Polaris-Listbox-TextOption--disabled){
+      background-color:var(--p-color-bg-surface-secondary-active);
+    }
+.Polaris-Listbox-TextOption.Polaris-Listbox-TextOption--selected{
+    background-color:var(--p-color-bg-surface-secondary-selected);
+    font-weight:var(--p-font-weight-semibold);
+  }
+.Polaris-Listbox-TextOption.Polaris-Listbox-TextOption--selected svg{
+      fill:var(--p-color-icon-active);
+    }
+.Polaris-Listbox-TextOption.Polaris-Listbox-TextOption--selected::before{
+    content:none;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:calc(var(--p-space-100)*-1);
+    height:100%;
+    width:var(--p-border-radius-100);
+    background-color:var(--p-color-bg-fill-brand);
+    border-top-right-radius:var(--p-border-radius-100);
+    border-bottom-right-radius:var(--p-border-radius-100);
+    transform:translateX(-100%);
+  }
+.Polaris-Listbox-TextOption.Polaris-Listbox-TextOption--disabled{
+    background-color:transparent;
+    color:var(--p-color-text-disabled);
+    cursor:default;
+  }
+li:first-of-type > .Polaris-Listbox-TextOption{
+  margin-top:0;
+}
+[data-focused] .Polaris-Listbox-TextOption:not(.Polaris-Listbox-TextOption--disabled){
+  outline:none;
+  background-color:var(--p-color-bg-surface-secondary-selected);
+  transition:background-color var(--p-motion-duration-400);
+}
+.Polaris-Listbox-TextOption__Content{
+  flex:1 1 auto;
+  display:flex;
+}
+.Polaris-Listbox-TextOption__Checkbox{
+  pointer-events:none;
+}
+.Polaris-Listbox-Option{
+  display:flex;
+  margin:0;
+  padding:0;
+}
+.Polaris-Listbox-Option:focus{
+    outline:none;
+  }
+.Polaris-Listbox-Option--divider{
+  border-bottom:var(--p-border-width-025) solid var(--p-color-border-secondary);
+}
+.Polaris-Listbox-Loading__ListItem{
+  padding:0;
+  margin:0;
+}
+.Polaris-Listbox-Loading{
+  padding:var(--p-space-200) var(--p-space-400);
+  display:grid;
+  place-items:center;
+}
+.Polaris-Listbox-Action{
+  display:flex;
+  flex:1 1;
+}
+.Polaris-Listbox-Action__ActionDivider{
+  margin-bottom:var(--p-space-100);
+}
+.Polaris-Listbox-Action__Icon{
+  padding-right:var(--p-space-200);
+}
+.Polaris-Listbox{
+  padding:0;
+  margin:0;
+  list-style:none;
+  max-width:100%;
+}
+.Polaris-Listbox:focus{
+    outline:none;
+  }

@@ -1,0 +1,33 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   SkeletonThumbnail — 6 rules. */
+.Polaris-SkeletonThumbnail{
+  --pc-skeleton-thumbnail-extra-small-size:1.5rem;
+  --pc-skeleton-thumbnail-small-size:2.5rem;
+  --pc-skeleton-thumbnail-medium-size:3.75rem;
+  --pc-skeleton-thumbnail-large-size:5rem;
+  display:flex;
+  background-color:var(--p-color-bg-fill-tertiary);
+  border-radius:var(--p-border-radius-200);
+}
+@media screen and (-ms-high-contrast: active){
+
+.Polaris-SkeletonThumbnail{
+    background-color:grayText;
+}
+  }
+.Polaris-SkeletonThumbnail--sizeExtraSmall{
+  height:var(--pc-skeleton-thumbnail-extra-small-size);
+  width:var(--pc-skeleton-thumbnail-extra-small-size);
+}
+.Polaris-SkeletonThumbnail--sizeSmall{
+  height:var(--pc-skeleton-thumbnail-small-size);
+  width:var(--pc-skeleton-thumbnail-small-size);
+}
+.Polaris-SkeletonThumbnail--sizeMedium{
+  height:var(--pc-skeleton-thumbnail-medium-size);
+  width:var(--pc-skeleton-thumbnail-medium-size);
+}
+.Polaris-SkeletonThumbnail--sizeLarge{
+  height:var(--pc-skeleton-thumbnail-large-size);
+  width:var(--pc-skeleton-thumbnail-large-size);
+}

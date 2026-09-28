@@ -1,0 +1,1105 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   IndexTable — 195 rules. */
+.Polaris-IndexTable{
+  --pc-index-table-translate-offset:2.1875rem;
+  --pc-index-table-table-header-offset:var(--pg-control-height);
+  --pc-index-table-cell:1;
+  --pc-index-table-sticky-cell:29;
+  --pc-index-table-bulk-actions:31;
+  --pc-index-table-loading-panel:31;
+  --pc-index-table-checkbox-offset-left:var(--p-space-300);
+  --pc-index-table-checkbox-offset-right:var(--p-space-200);
+  position:relative;
+  border-radius:0;
+  scrollbar-color:auto;
+}
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable{
+    border-radius:inherit;
+    border-start-start-radius:0;
+    border-start-end-radius:0;
+}
+  }
+.Polaris-IndexTable__IndexTableWrapper{
+  border-radius:0;
+}
+.Polaris-IndexTable__IndexTableWrapper .Polaris-IndexTable__IndexTableWrapper--scrollBarHidden{
+    border-radius:inherit;
+  }
+.Polaris-IndexTable__IndexTableWrapperWithSelectAllActions{
+  --pc-index-table-bulk-actions-offset:2.5625rem;
+  padding-bottom:var(--pc-index-table-bulk-actions-offset);
+  border-radius:0;
+}
+.Polaris-IndexTable__LoadingPanel{
+  position:absolute;
+  z-index:var(--p-z-index-2);
+  top:0;
+  left:0;
+  display:flex;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  background:var(--p-color-bg-surface);
+  padding:var(--p-space-200) var(--p-space-400);
+  box-shadow:var(--p-shadow-300);
+  opacity:0;
+  transform:translateY(-100%);
+  transition:opacity var(--p-motion-duration-100) var(--p-motion-ease-in), transform var(--p-motion-duration-100) var(--p-motion-ease-in), visibility var(--p-motion-duration-0) linear var(--p-motion-duration-100);
+  visibility:hidden;
+}
+.Polaris-IndexTable__LoadingPanel.Polaris-IndexTable__LoadingPanelEntered{
+    visibility:visible;
+    opacity:1;
+    transform:translateY(0);
+    transition:opacity var(--p-motion-duration-100) var(--p-motion-ease-out), transform var(--p-motion-duration-100) var(--p-motion-ease-out);
+  }
+.Polaris-IndexTable__LoadingPanel .Polaris-IndexTable__LoadingPanelRow{
+    display:flex;
+    flex-wrap:nowrap;
+    width:100%;
+    background:var(--p-color-bg-surface-info);
+    padding:var(--p-space-200);
+    padding-bottom:var(--p-space-100);
+    border-radius:var(--p-border-radius-100);
+  }
+.Polaris-IndexTable__LoadingPanelText{
+  margin-left:var(--p-space-300);
+  color:var(--p-color-text);
+}
+.Polaris-IndexTable__Table{
+  width:100%;
+  min-width:100%;
+  border-collapse:collapse;
+}
+.Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableCell--first,
+  .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+  .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--first,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableHeading--first,
+  .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--second,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableHeading--second{
+    visibility:visible;
+    background-color:var(--p-color-bg-surface);
+  }
+.Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--first,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableHeading--first,
+  .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--second,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableHeading--second{
+    visibility:visible;
+    background-color:var(--p-color-bg-surface-secondary);
+  }
+.Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableCell--first,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableCell--first,
+  .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableHeading--first,
+  .Polaris-IndexTable__StickyTable--scrolling .Polaris-IndexTable__TableHeading--first{
+    filter:drop-shadow(0.0625rem 0 0 var(--p-color-border-secondary));
+  }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableHeading--second,
+    .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableHeading--second,
+    .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableHeading--second,
+    .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableHeading--second{
+        filter:drop-shadow(0.0625rem 0 0 var(--p-color-border-secondary));
+    }
+      }
+.Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--sticky.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableHeading--second,
+      .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__Table--sticky.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableHeading--second,
+      .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__StickyTable.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableHeading--second,
+      .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__StickyTable.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableHeading--second,
+      .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--sticky.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__Table--sticky.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__StickyTable.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__StickyTable.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableCell:first-child{
+        filter:drop-shadow(0.0625rem 0 0 var(--p-color-border-secondary));
+      }
+.Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableHeading--second,
+    .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableHeading--second,
+    .Polaris-IndexTable__Table--scrolling.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__StickyTable--scrolling.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableCell:first-child{
+      visibility:visible;
+    }
+.Polaris-IndexTable__TableRow{
+  background-color:var(--p-color-bg-surface);
+  cursor:pointer;
+  border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+}
+.Polaris-IndexTable__TableRow:first-child{
+    border-top:var(--p-border-width-025) solid var(--p-color-border);
+  }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--unclickable{
+    cursor:auto;
+  }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSuccess,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-success);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-success);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable--toneWarning,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-warning);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneWarning::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-warning);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable--toneCritical,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-critical);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneCritical::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-critical);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSubdued,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-secondary);
+      color:var(--p-color-text-secondary);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSubdued::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--subheader{
+    cursor:default;
+  }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--subheader,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:last-child{
+      color:var(--p-color-text-secondary);
+      font-weight:var(--p-font-weight-medium);
+      font-size:var(--p-font-size-300);
+      background-color:var(--p-color-bg-surface-secondary);
+      border-top:var(--p-border-width-025) solid var(--p-color-border);
+      border-bottom:var(--p-border-width-025) solid var(--p-color-border);
+      border-color:var(--p-color-border);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child{
+    --pc-index-table-checkbox-width:var(--p-space-500);
+    --pc-index-table-checkbox-width-sm:calc(var(--pc-index-table-checkbox-width) + var(--p-width-050));
+    --pc-index-table-checkbox-padding-left:var(--p-space-300);
+    --pc-index-table-checkbox-padding-right:var(--p-width-150);
+    --pc-index-table-checkbox-child-offset:calc(var(--pc-index-table-checkbox-width) + var(--pc-index-table-checkbox-padding-left));
+    --pc-index-table-checkbox-child-offset-sm:calc(var(--pc-index-table-checkbox-width-sm) + var(--pc-index-table-checkbox-padding-left));
+    --pc-table-shifted-checkbox-z-index:30;
+  }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first{
+      left:var(--pc-index-table-checkbox-child-offset);
+      z-index:var(--pc-table-shifted-checkbox-z-index);
+    }
+@media (max-width: 30.6225em){
+
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first{
+        left:var(--pc-index-table-checkbox-child-offset-sm);
+    }
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first::before{
+        content:'';
+        position:absolute;
+        display:block;
+        width:calc(var(--pc-index-table-checkbox-child-offset) + var(--pc-index-table-checkbox-padding-right));
+        height:100%;
+        top:0;
+        right:var(--pc-index-table-checkbox-child-offset);
+        background-color:var(--p-color-bg-surface);
+      }
+@media (max-width: 30.6225em){
+
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first::before{
+          width:calc(var(--pc-index-table-checkbox-child-offset-sm) + var(--pc-index-table-checkbox-padding-right));
+          right:var(--pc-index-table-checkbox-child-offset-sm);
+      }
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{
+      --pc-index-table-cell-padding:var(--p-space-150);
+      padding-left:calc(var(--pc-index-table-checkbox-child-offset) + var(--pc-index-table-cell-padding));
+    }
+@media (max-width: 30.6225em){
+
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{
+        padding-left:calc(var(--pc-index-table-checkbox-child-offset-sm) + var(--pc-index-table-cell-padding));
+    }
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected{
+    border-color:var(--p-color-border);
+  }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableHeading--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableHeading--second,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-selected);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-selected);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-success-active);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-success-active);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-warning-active);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneWarning::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-warning-active);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-critical-active);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneCritical::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-critical-active);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary-active);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSubdued::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-secondary-active);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled),
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-hover);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child:not(.Polaris-IndexTable__TableRow--disabled)::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-success-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled)::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-success-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-critical-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled)::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-critical-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-warning-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled)::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-warning-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled)::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-secondary-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-brand-hover);
+    }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected .Polaris-IndexTable__TableCell:last-child::before{
+        background-color:var(--p-color-bg-surface-brand-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-brand-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-success-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess::before, .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--child.Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell--first::before{
+          background-color:var(--p-color-bg-surface-success-hover);
+        }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-warning-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-critical-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary-hover);
+      }
+.Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__TableRow.Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected.Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__TableRow--disabled{
+  cursor:default;
+  color:var(--p-color-text-secondary);
+}
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface);
+    }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow:nth-child(2n) .Polaris-IndexTable__TableCell:last-child{
+      background:var(--p-color-bg-surface-secondary);
+    }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--child:nth-child(2n)::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--child:nth-child(2n) .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled):nth-child(2n) .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-hover);
+    }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-brand-selected);
+    }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--child.Polaris-IndexTable__TableRow--selected:nth-child(2n)::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--child.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1)::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--child.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--child.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-brand-selected);
+      }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n),
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__Table--scrolling .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:last-child,
+    .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-brand-hover);
+    }
+.Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n)::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1)::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n) .Polaris-IndexTable__TableCell--first::before, .Polaris-IndexTable__ZebraStriping .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--selected:nth-child(2n + 1) .Polaris-IndexTable__TableCell--first::before{
+        background-color:var(--p-color-bg-surface-brand-hover);
+      }
+.Polaris-IndexTable__TableHeading{
+  --pc-index-table-heading-padding-x:var(--p-space-150);
+  --pc-index-table-heading-padding-y:var(--p-space-200);
+  background:var(--p-color-bg-surface-secondary);
+  padding:var(--pc-index-table-heading-padding-y) var(--pc-index-table-heading-padding-x);
+  text-align:left;
+  font-weight:var(--p-font-weight-medium);
+  color:var(--p-color-text-secondary);
+  font-size:var(--p-font-size-300);
+  white-space:nowrap;
+  border:0;
+}
+.Polaris-IndexTable__TableHeading:first-child:not(.Polaris-IndexTable__TableHeading--flush){
+    padding-left:var(--p-space-300);
+  }
+.Polaris-IndexTable__TableHeading:last-child:not(.Polaris-IndexTable__TableHeading--flush){
+    padding-right:var(--p-space-300);
+    overflow-x:hidden;
+  }
+.Polaris-IndexTable--tableHeadingAlignCenter{
+  text-align:center;
+}
+.Polaris-IndexTable--tableHeadingAlignCenter [class*='TooltipContainer']{
+    justify-content:center;
+  }
+.Polaris-IndexTable--tableHeadingAlignEnd{
+  text-align:right;
+}
+.Polaris-IndexTable--tableHeadingAlignEnd [class*='TooltipContainer'],
+  .Polaris-IndexTable--tableHeadingAlignEnd [class*='SortableTableHeadingWithCustomMarkup']{
+    justify-content:end;
+  }
+.Polaris-IndexTable--tableHeadingExtraPaddingRight{
+  --pc-index-table-heading-extra-padding-right:0rem;
+  padding-right:var(--pc-index-table-heading-extra-padding-right);
+}
+.Polaris-IndexTable__TableHeading--sortable{
+  background:var(--p-color-bg-surface-secondary);
+}
+.Polaris-IndexTable__TableHeading--flush{
+  --pc-index-table-heading-padding-x:0rem;
+  padding:var(--pc-index-table-heading-padding-y) var(--pc-index-table-heading-padding-x);
+}
+.Polaris-IndexTable__TableHeading--first{
+  position:sticky;
+  left:0;
+  padding-left:var(--pc-index-table-checkbox-offset-left);
+  padding-right:var(--pc-index-table-checkbox-offset-right);
+  width:var(--p-space-500);
+  z-index:var(--pc-index-table-sticky-cell);
+}
+.Polaris-IndexTable__TableHeadingSortButton{
+  position:relative;
+  background:none;
+  padding:0;
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:var(--p-font-weight-medium);
+  color:var(--p-color-text-secondary);
+  font-size:var(--p-font-size-300);
+  line-height:var(--p-font-line-height-500);
+}
+.Polaris-IndexTable__TableHeadingSortButton:hover .Polaris-IndexTable__TableHeadingSortIcon, .Polaris-IndexTable__TableHeadingSortButton:focus .Polaris-IndexTable__TableHeadingSortIcon{
+      opacity:1;
+    }
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEnd{
+  transform:translateX(var(--p-space-500));
+  transition-delay:var(--p-motion-duration-50);
+}
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEnd:hover,
+  .Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEnd:focus{
+    transition-delay:none;
+    transform:translateX(var(--p-space-100));
+  }
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEnd:hover::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:calc(100% - var(--p-space-200));
+  height:100%;
+  width:var(--p-space-600);
+  display:block;
+  animation:none;
+  transition:none;
+}
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEndCurrentlySorted{
+  transform:translateX(var(--p-space-100));
+}
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEndCurrentlySorted .Polaris-IndexTable--tableHeadingSortIconHeadingAlignEnd{
+    animation:none;
+  }
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEndPreviouslySorted{
+  animation:Polaris-IndexTable--rightAlignedSortButtonSlideOut var(--p-motion-duration-50) var(--p-motion-ease);
+}
+.Polaris-IndexTable__TableHeadingSortIcon{
+  order:1;
+  opacity:0;
+  height:var(--p-space-500);
+  width:var(--p-space-500);
+}
+.Polaris-IndexTable__TableHeadingSortIcon:not(.Polaris-IndexTable--tableHeadingSortIconHeadingAlignEnd:hover),
+  .Polaris-IndexTable__TableHeadingSortIcon:not(.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEndPreviouslySorted){
+    transition:opacity var(--p-motion-duration-50) var(--p-motion-ease);
+  }
+.Polaris-IndexTable__TableHeadingSortButton:hover .Polaris-IndexTable--tableHeadingSortIconHeadingAlignEnd{
+    animation:Polaris-IndexTable--revealRightAlignedSortButtonIcon var(--p-motion-duration-200) var(--p-motion-ease);
+  }
+.Polaris-IndexTable--tableHeadingSortButtonHeadingAlignEndCurrentlySorted:hover .Polaris-IndexTable--tableHeadingSortIconHeadingAlignEnd{
+    animation:none;
+  }
+.Polaris-IndexTable__TableHeadingUnderline::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:calc(var(--p-border-width-050)*-1);
+  width:100%;
+  height:var(--p-border-width-050);
+  border-bottom:var(--p-border-width-050) dotted var(--p-color-border-tertiary);
+}
+.Polaris-IndexTable__TableHeadingTooltipUnderlinePlaceholder{
+  border-bottom:var(--p-border-width-050) dotted transparent;
+}
+.Polaris-IndexTable__TableHeadingSortIcon--visible{
+  opacity:1;
+}
+.Polaris-IndexTable__TableHeadingSortSvg{
+  display:block;
+  width:100%;
+  max-width:100%;
+  max-height:100%;
+}
+.Polaris-IndexTable__SortableTableHeadingWithCustomMarkup{
+  display:flex;
+  flex-wrap:nowrap;
+}
+.Polaris-IndexTable__SortableTableHeaderWrapper{
+  cursor:pointer;
+}
+.Polaris-IndexTable__ColumnHeaderCheckboxWrapper{
+  display:flex;
+}
+.Polaris-IndexTable__FirstStickyHeaderElement{
+  padding-right:0;
+}
+.Polaris-IndexTable__TableHeading--second:not(.Polaris-IndexTable__TableHeading--unselectable){
+  padding-left:0;
+}
+.Polaris-IndexTable__TableHeading--second:not(.Polaris-IndexTable__TableHeading--unselectable):not(.Polaris-IndexTable__TableHeading--flush){
+    padding-left:var(--pc-index-table-heading-padding-x);
+  }
+.Polaris-IndexTable__TableCell{
+  z-index:var(--pc-index-table-cell);
+  text-align:left;
+  padding:var(--p-space-200) var(--p-space-400);
+  white-space:nowrap;
+}
+.Polaris-IndexTable__TableCell:not(.Polaris-IndexTable__TableCell--flush){
+    padding:var(--p-space-150);
+  }
+.Polaris-IndexTable__TableCell:not(.Polaris-IndexTable__TableCell--flush):first-child{
+      padding-left:var(--p-space-300);
+    }
+.Polaris-IndexTable__Table:not(.Polaris-IndexTable__Table--unselectable) .Polaris-IndexTable__TableCell:not(.Polaris-IndexTable__TableCell--flush):first-child{
+        padding-right:var(--pc-index-table-checkbox-offset-right);
+      }
+.Polaris-IndexTable__TableCell:not(.Polaris-IndexTable__TableCell--flush):last-child{
+      padding-right:var(--p-space-300);
+    }
+.Polaris-IndexTable__TableCell--flush{
+  padding:0;
+}
+.Polaris-IndexTable__TableCell--flush:first-child{
+    padding:0;
+  }
+.Polaris-IndexTable__TableCell--first{
+  position:sticky;
+  left:0;
+  z-index:var(--pc-index-table-sticky-cell);
+  padding:var(--p-space-150) 0;
+  vertical-align:middle;
+}
+.Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{
+  left:var(--pc-checkbox-offset);
+}
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell, .Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell{
+      position:sticky;
+      z-index:var(--pc-index-table-sticky-cell);
+  }
+    }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableHeading--second:not(.Polaris-IndexTable__TableHeading--unselectable), .Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableHeading--second:not(.Polaris-IndexTable__TableHeading--unselectable){
+        position:sticky;
+        left:0;
+        z-index:var(--pc-index-table-sticky-cell);
+    }
+      }
+.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableHeading--second.Polaris-IndexTable__TableHeading--unselectable, .Polaris-IndexTable__StickyTable .Polaris-IndexTable__TableHeading--second.Polaris-IndexTable__TableHeading--unselectable{
+      position:sticky;
+      left:0;
+      z-index:var(--pc-index-table-sticky-cell);
+    }
+.Polaris-IndexTable__Table--unselectable{
+  --pc-index-table-checkbox-width:var(--p-space-500);
+  --pc-index-table-checkbox-width-sm:calc(var(--pc-index-table-checkbox-width) + var(--p-width-050));
+  --pc-index-table-checkbox-padding-left:var(--p-space-300);
+  --pc-index-table-checkbox-child-offset:calc(var(--pc-index-table-checkbox-width) + var(--pc-index-table-checkbox-padding-left));
+  --pc-index-table-checkbox-child-offset-sm:calc(var(--pc-index-table-checkbox-width-sm) + var(--pc-index-table-checkbox-padding-left));
+}
+.Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableCell:first-child{
+      left:0;
+      background-color:var(--p-color-bg-surface);
+      z-index:var(--pc-index-table-sticky-cell);
+      position:sticky;
+    }
+.Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableRow--subheader .Polaris-IndexTable__TableCell:first-child{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell:first-child{
+    padding-left:var(--pc-index-table-checkbox-child-offset);
+  }
+@media (max-width: 30.6225em){
+
+.Polaris-IndexTable__Table--unselectable.Polaris-IndexTable__Table--sticky .Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell:first-child{
+      padding-left:var(--pc-index-table-checkbox-child-offset-sm);
+  }
+    }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--child .Polaris-IndexTable__TableCell:not(.Polaris-IndexTable__TableCell--flush):first-child{
+        padding-left:var(--pc-index-table-checkbox-child-offset);
+      }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled),
+    .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+    .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+    .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+    .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+      background-color:var(--p-color-bg-surface-hover);
+    }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSuccess:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-success-hover);
+      }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneWarning:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-warning-hover);
+      }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneCritical:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-critical-hover);
+      }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable--toneSubdued:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary-hover);
+      }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled),
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:first-child,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell--first + .Polaris-IndexTable__TableCell,
+      .Polaris-IndexTable__Table--unselectable .Polaris-IndexTable__TableRow--hovered.Polaris-IndexTable__TableRow--subheader:not(.Polaris-IndexTable__TableRow--disabled) .Polaris-IndexTable__TableCell:last-child{
+        background-color:var(--p-color-bg-surface-secondary);
+      }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable--toneSuccess .Polaris-IndexTable__TableCell:first-child{
+      background-color:var(--p-color-bg-surface-success);
+    }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable--toneWarning .Polaris-IndexTable__TableCell:first-child{
+      background-color:var(--p-color-bg-surface-warning);
+    }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable--toneCritical .Polaris-IndexTable__TableCell:first-child{
+      background-color:var(--p-color-bg-surface-critical);
+    }
+.Polaris-IndexTable__Table--unselectable .Polaris-IndexTable--toneSubdued .Polaris-IndexTable__TableCell:first-child{
+      background-color:var(--p-color-bg-surface-secondary);
+      color:var(--p-color-text-secondary);
+    }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable--tableStickyScrolling .Polaris-IndexTable__TableCell:last-child,
+  .Polaris-IndexTable--stickyTableHeaderStickyScrolling .Polaris-IndexTable__TableCell:last-child,
+  .Polaris-IndexTable--tableStickyScrolling .Polaris-IndexTable__TableHeading--last,
+  .Polaris-IndexTable--stickyTableHeaderStickyScrolling .Polaris-IndexTable__TableHeading--last{
+      filter:drop-shadow(-0.0625rem 0 0 var(--p-color-border));
+  }
+    }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable--tableStickyLast .Polaris-IndexTable__TableCell:last-child, .Polaris-IndexTable--stickyTableHeaderStickyLast .Polaris-IndexTable__TableCell:last-child{
+      position:sticky;
+      right:0;
+      background-color:var(--p-color-bg-surface);
+      z-index:var(--pc-index-table-sticky-cell);
+  }
+    }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable--tableStickyLast .Polaris-IndexTable__TableHeading--last, .Polaris-IndexTable--stickyTableHeaderStickyLast .Polaris-IndexTable__TableHeading--last{
+      position:sticky;
+      right:0;
+      background-color:var(--p-color-bg-surface-secondary);
+      z-index:auto;
+  }
+    }
+.Polaris-IndexTable__Table--sortable .Polaris-IndexTable__TableHeading{
+    background-color:var(--p-color-bg-surface-secondary);
+  }
+.Polaris-IndexTable__StickyTable{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  visibility:hidden;
+  z-index:var(--pc-index-table-loading-panel);
+}
+.Polaris-IndexTable__StickyTableHeader{
+  position:absolute;
+  display:flex;
+  width:100%;
+}
+.Polaris-IndexTable__StickyTableHeader:not(.Polaris-IndexTable__StickyTableHeader--isSticky){
+    top:-62.5rem;
+    left:-62.5rem;
+  }
+.Polaris-IndexTable__StickyTableHeadings{
+  overflow:hidden;
+  flex:1 1 auto;
+  display:flex;
+}
+.Polaris-IndexTable__StickyTableHeading--second{
+  padding-left:0;
+}
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__StickyTableHeading--second{
+    display:none;
+}
+  }
+.Polaris-IndexTable__StickyTableHeading--second.Polaris-IndexTable--unselectable{
+    display:none;
+  }
+.Polaris-IndexTable--stickyTableHeadingSecondScrolling{
+  padding:0 var(--p-space-025) 0 calc(var(--pc-index-table-checkbox-offset-right) + var(--pc-index-table-heading-padding-x));
+  display:none;
+}
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable--stickyTableHeadingSecondScrolling{
+    display:block;
+}
+  }
+.Polaris-IndexTable__StickyTableHeader--isSticky{
+  visibility:visible;
+  box-shadow:var(--p-shadow-100);
+  background-color:var(--p-color-bg-surface-secondary);
+}
+.Polaris-IndexTable:hover .Polaris-IndexTable__ScrollLeft{
+    display:block;
+  }
+.Polaris-IndexTable:hover .Polaris-IndexTable__ScrollRight{
+    display:block;
+  }
+.Polaris-IndexTable .Polaris-IndexTable__ScrollRight--onboarding{
+  display:block;
+}
+.Polaris-IndexTable__SelectAllActionsWrapper{
+  visibility:visible;
+  position:absolute;
+  z-index:var(--pc-index-table-bulk-actions);
+  left:0;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+.Polaris-IndexTable__SelectAllActionsWrapperWithPagination{
+  width:100%;
+}
+@media (min-width: 48em){
+
+.Polaris-IndexTable__SelectAllActionsWrapperWithPagination{
+    width:calc(100% - 3.5rem - var(--p-space-200));
+}
+  }
+.Polaris-IndexTable__SelectAllActionsWrapperSticky{
+  position:fixed;
+  top:auto;
+  bottom:0;
+}
+.Polaris-IndexTable__SelectAllActionsWrapperAtEnd{
+  opacity:0;
+  transition:opacity var(--p-motion-duration-100) var(--p-motion-ease);
+}
+.Polaris-IndexTable__SelectAllActionsWrapperAtEndAppear{
+  opacity:1;
+}
+.Polaris-IndexTable__BulkActionsWrapper{
+  visibility:hidden;
+  opacity:0;
+  position:relative;
+  z-index:var(--pc-index-table-bulk-actions);
+  padding:var(--p-space-150) var(--p-space-200) var(--p-space-150) var(--p-space-300);
+  line-height:var(--p-font-line-height-500);
+  background-color:var(--p-color-bg-surface);
+  transition:opacity var(--p-motion-duration-100) var(--p-motion-ease), visibility var(--p-motion-duration-100) var(--p-motion-ease);
+}
+.Polaris-IndexTable__BulkActionsWrapper.Polaris-IndexTable__BulkActionsWrapperVisible{
+    visibility:visible;
+    opacity:1;
+  }
+.Polaris-IndexTable__PaginationWrapper{
+  --pc-pagination-index:30;
+  z-index:var(--pc-pagination-index);
+}
+@media (min-width: 48em){
+
+.Polaris-IndexTable__PaginationWrapper{
+    position:sticky;
+    bottom:0;
+}
+  }
+@media (min-width: 48em){
+
+.Polaris-IndexTable__PaginationWrapperScrolledPastTop{
+    position:absolute;
+    bottom:auto;
+    top:var(--pc-index-table-pagination-top-offset);
+    width:100%;
+}
+  }
+.Polaris-IndexTable__ScrollBarContainer{
+  --pc-index-table-scroll-bar:30;
+  --pc-index-table-scroll-bar-height-offset:2.5625rem;
+  position:sticky;
+  z-index:var(--pc-index-table-scroll-bar);
+  bottom:0;
+  padding:var(--p-space-050);
+  background-color:var(--p-color-bg-surface);
+  transition:bottom var(--p-motion-duration-100) var(--p-motion-ease);
+}
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__ScrollBarContainer{
+    border-bottom-right-radius:var(--p-border-radius-200);
+    border-bottom-left-radius:var(--p-border-radius-200);
+    padding:var(--p-space-050) var(--p-space-200);
+}
+  }
+@media (min-width: 48em){
+
+.Polaris-IndexTable__ScrollBarContainerWithPagination{
+    bottom:var(--pc-index-table-scroll-bar-height-offset);
+}
+
+    .Polaris-IndexTable__ScrollBarContainerWithPagination.Polaris-IndexTable__ScrollBarContainerScrolledPastTop{
+      position:absolute;
+      top:var(--pc-index-table-scroll-bar-top-offset);
+      bottom:auto;
+      width:100%;
+    }
+  }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__ScrollBarContainerWithPagination{
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:0;
+}
+  }
+.Polaris-IndexTable__ScrollBarContainerWithPagination.Polaris-IndexTable__ScrollBarContainerWithSelectAllActions{
+    bottom:var(--pc-index-table-scroll-bar-height-offset);
+  }
+.Polaris-IndexTable__ScrollBarContainerWithSelectAllActions.Polaris-IndexTable__ScrollBarContainerScrolledPastTop{
+    position:absolute;
+    top:var(--pc-index-table-scroll-bar-top-offset);
+    bottom:auto;
+    width:100%;
+  }
+@media (min-width: 30.625em){
+
+.Polaris-IndexTable__ScrollBarContainerWithSelectAllActions{
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:0;
+}
+  }
+.Polaris-IndexTable__ScrollBarContainerSelectAllActionsSticky{
+  bottom:var(--pc-index-table-scroll-bar-height-offset);
+}
+.Polaris-IndexTable--scrollBarContainerCondensed{
+  visibility:hidden;
+  pointer-events:none;
+}
+.Polaris-IndexTable--scrollBarContainerHidden{
+  height:0;
+  padding:0;
+}
+.Polaris-IndexTable__ScrollBar{
+  overflow-x:scroll;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+.Polaris-IndexTable__ScrollBar::-webkit-scrollbar-track{
+  border-radius:var(--p-border-radius-100);
+  background-color:transparent;
+}
+.Polaris-IndexTable__ScrollBar::-webkit-scrollbar{
+  -webkit-appearance:none;
+          appearance:none;
+  height:var(--p-space-200);
+  width:var(--p-space-200);
+  background-color:transparent;
+}
+.Polaris-IndexTable__ScrollBar::-webkit-scrollbar-thumb{
+  border-radius:var(--p-border-radius-100);
+  background-color:var(--p-color-border-tertiary);
+  -webkit-transition:background-color var(--p-motion-duration-100) var(--p-motion-ease-out);
+  transition:background-color var(--p-motion-duration-100) var(--p-motion-ease-out);
+}
+.Polaris-IndexTable__ScrollBar:hover::-webkit-scrollbar-thumb{
+  background-color:var(--p-color-border-inverse);
+}
+.Polaris-IndexTable--disableTextSelection{
+  -webkit-user-select:none;
+          user-select:none;
+}
+.Polaris-IndexTable__EmptySearchResultWrapper{
+  padding:var(--p-space-400);
+}
+.Polaris-IndexTable--condensedRow{
+  width:calc(100% + var(--pc-index-table-translate-offset));
+  transform:translateX(calc(var(--pc-index-table-translate-offset)*-1));
+  transition:transform var(--p-motion-ease) var(--p-motion-duration-200);
+  display:flex;
+  border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+  filter:none;
+  align-items:center;
+}
+[data-selectmode='true'] .Polaris-IndexTable--condensedRow{
+    transform:none;
+  }
+.Polaris-IndexTable__CondensedList{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  border-top:0;
+}
+.Polaris-IndexTable__CondensedList .Polaris-IndexTable__TableRow:first-child{
+    border-top:0;
+  }
+.Polaris-IndexTable__HeaderWrapper{
+  position:relative;
+  display:flex;
+  align-items:center;
+  width:100%;
+  min-height:3.5rem;
+  padding:var(--p-space-200) var(--p-space-400);
+  background-color:var(--p-color-bg-surface);
+}
+.Polaris-IndexTable__HeaderWrapper.Polaris-IndexTable--unselectable{
+    min-height:auto;
+    padding:0;
+  }
+.Polaris-IndexTable__StickyTable--condensed{
+  visibility:visible;
+}
+.Polaris-IndexTable__StickyTableHeader--condensed{
+  padding:var(--p-space-400) var(--p-space-400) var(--p-space-200);
+}
+.Polaris-IndexTable__ScrollBarContent{
+  height:0.0625rem;
+  width:var(--pc-index-table-scroll-bar-content-width);
+}
+.Polaris-IndexTable-Checkbox__Wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.Polaris-IndexTable-ScrollContainer{
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+  border-radius:inherit;
+}
+.Polaris-IndexTable-ScrollContainer::-webkit-scrollbar{
+  display:none;
+}

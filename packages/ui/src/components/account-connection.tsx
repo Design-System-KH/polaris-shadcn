@@ -1,46 +1,116 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import { Card } from './card.js';
+import { InlineStack } from './inline-stack.js';
+import { BlockStack } from './block-stack.js';
+import { Box } from './box.js';
+import { Text } from './text.js';
+import { Button } from './button.js';
+import { Avatar } from './avatar.js';
+import '../styles/polaris/setting-action.css';
+
+export interface AccountConnectionAction {
+  content: string;
+  onAction?: () => void;
+  url?: string;
+  disabled?: boolean;
+  loading?: boolean;
+}
 
 export interface AccountConnectionProps {
-  children?: ReactNode;
-  className?: string;
-  title?: string;
-  /** Rendered after the body. Keep to one primary action. */
-  actions?: ReactNode;
+  /** Drives both the avatar and the action's emphasis. */
+  connected?: boolean;
+  action?: AccountConnectionAction;
+  avatarUrl?: string;
+  accountName?: string;
+  /** Defaults to `accountName` when omitted, as in Polaris. */
+  title?: ReactNode;
+  details?: ReactNode;
+  /** Rendered below the card body, separated by a block-start pad. */
+  termsOfService?: ReactNode;
 }
 
 /**
- * AccountConnection — Third-party account connect and disconnect.
+ * AccountConnection — connect or disconnect a third-party account.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * Pure composition: Polaris ships no CSS of its own for this component, only
+ * for the SettingAction row it uses, whose negative margins produce the
+ * wrap-and-align behaviour when the action drops below the text on narrow
+ * viewports. That stylesheet is imported here rather than reimplemented.
+ *
+ * The action is primary when disconnected and secondary when connected — the
+ * emphasis follows what you want the reader to do next, which is connect.
  */
-export function AccountConnection({ children, className, title, actions }: AccountConnectionProps) {
+export function AccountConnection({
+  connected = false,
+  action,
+  avatarUrl,
+  accountName = '',
+  title,
+  details,
+  termsOfService,
+}: AccountConnectionProps) {
+  const initials = accountName
+    ? accountName
+        .split(/\s+/)
+        .map((name) => name[0])
+        .join('')
+    : undefined;
+
+  const actionElement = action ? (
+    action.url ? (
+      <Button
+        asChild
+        variant={connected ? undefined : 'primary'}
+        disabled={action.disabled}
+        loading={action.loading}
+      >
+        <a href={action.url}>{action.content}</a>
+      </Button>
+    ) : (
+      <Button
+        variant={connected ? undefined : 'primary'}
+        disabled={action.disabled}
+        loading={action.loading}
+        onClick={action.onAction}
+      >
+        {action.content}
+      </Button>
+    )
+  ) : null;
+
   return (
-    <section
-      className={cn('flex flex-col gap-[var(--p-space-400)] overflow-hidden', className)}
-      style={{
-        background: 'var(--p-color-bg-surface)',
-        padding: 'var(--p-space-400)',
-        borderRadius: 'var(--p-border-radius-300)',
-        boxShadow: 'var(--p-shadow-100)',
-        outline: 'var(--p-border-width-025) solid var(--p-color-border)',
-        outlineOffset: 'calc(var(--p-border-width-025) * -1)',
-      }}
-    >
-      {title ? (
-        <h2
-          style={{
-            fontSize: 'var(--p-font-size-350)',
-            fontWeight: 'var(--p-font-weight-semibold)',
-            lineHeight: 'var(--p-font-line-height-500)',
-          }}
-        >
-          {title}
-        </h2>
+    <Card>
+      <div className="Polaris-SettingAction">
+        <div className="Polaris-SettingAction__Setting">
+          <InlineStack gap="400">
+            {connected ? (
+              <span>
+                {/* Empty label: the account name is already beside it, so
+                    announcing the avatar would just repeat it. */}
+                <Avatar accessibilityLabel="" name={accountName} initials={initials} source={avatarUrl} />
+              </span>
+            ) : null}
+            <BlockStack gap="100">
+              <Text as="h2" variant="headingSm">
+                {title ?? accountName}
+              </Text>
+              {details ? (
+                <Text as="span" variant="bodyMd" tone="subdued">
+                  {details}
+                </Text>
+              ) : null}
+            </BlockStack>
+          </InlineStack>
+        </div>
+        <div className="Polaris-SettingAction__Action">{actionElement}</div>
+      </div>
+      {termsOfService ? (
+        <Box paddingBlockStart="400">
+          <Text as="span" variant="bodyMd">
+            {termsOfService}
+          </Text>
+        </Box>
       ) : null}
-      {children}
-      {actions ? <div className="flex gap-[var(--p-space-200)]">{actions}</div> : null}
-    </section>
+    </Card>
   );
 }

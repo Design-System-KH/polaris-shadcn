@@ -1,0 +1,60 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   DescriptionList — 9 rules. */
+.Polaris-DescriptionList{
+  margin:0;
+  padding:0;
+  word-break:break-word;
+}
+@media (min-width: 30.625em){
+
+.Polaris-DescriptionList{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+}
+  }
+.Polaris-DescriptionList__Term{
+  font-weight:var(--p-font-weight-semibold);
+  padding:var(--p-space-400) 0 var(--p-space-200);
+}
+.Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Term{
+    padding:var(--p-space-200) 0 var(--p-space-100);
+  }
+@media (min-width: 30.625em){
+
+.Polaris-DescriptionList__Term{
+    flex:0 1 25%;
+    padding:var(--p-space-400) var(--p-space-400) var(--p-space-400) 0;
+}
+
+    .Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Term{
+      padding:var(--p-space-200) var(--p-space-200) var(--p-space-200) 0;
+    }
+    .Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term + .Polaris-DescriptionList__Description{
+      border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+    }
+  }
+.Polaris-DescriptionList__Description{
+  margin-left:0;
+  padding:0 0 var(--p-space-400);
+}
+.Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Description{
+    padding:0 0 var(--p-space-200);
+  }
+.Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term{
+    border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+  }
+@media (min-width: 30.625em){
+
+.Polaris-DescriptionList__Description{
+    flex:1 1 51%;
+    padding:var(--p-space-400) 0;
+}
+
+    .Polaris-DescriptionList--spacingTight .Polaris-DescriptionList__Description{
+      padding:var(--p-space-200) 0;
+    }
+    .Polaris-DescriptionList__Description + .Polaris-DescriptionList__Term + .Polaris-DescriptionList__Description{
+      border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+    }
+  }

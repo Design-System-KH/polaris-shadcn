@@ -1,0 +1,162 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   ActionList — 28 rules. */
+.Polaris-ActionList__Item{
+  -webkit-appearance:none;
+          appearance:none;
+  margin:0;
+  padding:0;
+  background:none;
+  border:none;
+  font-size:inherit;
+  line-height:inherit;
+  color:inherit;
+  cursor:pointer;
+  position: relative;
+  --pc-action-list-item-min-height:var(--p-space-800);
+  --pc-action-list-indented-item-margin:calc(var(--p-space-500) + var(--p-space-050));
+  --pc-action-list-indented-item-width:calc(100% - var(--pc-action-list-indented-item-margin));
+  --pc-action-list-item-vertical-padding:calc((var(--pc-action-list-item-min-height) - var(--p-font-line-height-500))/2);
+  display:flex;
+  align-items:center;
+  width:100%;
+  min-height:var(--pc-action-list-item-min-height);
+  text-align:left;
+  text-decoration:none;
+  cursor:pointer;
+  padding:var(--p-space-100) var(--p-space-150);
+  border-radius:var(--p-border-radius-200);
+  border-top:var(--p-border-width-025) solid transparent;
+  color:inherit;
+}
+.Polaris-ActionList__Item:focus{
+    outline:none;
+  }
+.Polaris-ActionList__Item::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  bottom: -0.0625rem;
+  left: -0.0625rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-200);
+}
+.Polaris-ActionList__Item.Polaris-ActionList--default{
+    --pc-action-list-image-size:1.25rem;
+  }
+@media (forced-colors: active){
+
+.Polaris-ActionList__Item{
+    border:var(--p-border-width-025) solid transparent;
+}
+  }
+.Polaris-ActionList__Item:hover{
+    background-color:var(--p-color-bg-surface-secondary-hover);
+    text-decoration:none;
+    outline:var(--p-border-width-050) solid transparent;
+  }
+.Polaris-ActionList__Item:active{
+    background-color:var(--p-color-bg-surface-secondary-active);
+  }
+.Polaris-ActionList__Item:active svg{
+      fill:var(--p-color-icon);
+    }
+.Polaris-ActionList__Item:focus-visible:not(:active){
+    background-color:var(--p-color-bg-surface);
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+  }
+.Polaris-ActionList__Item:focus-visible:not(:active)::after{
+    content:none;
+  }
+.Polaris-ActionList__Item:visited{
+    color:inherit;
+  }
+.Polaris-ActionList__Item.Polaris-ActionList--active{
+    background-color:var(--p-color-bg-surface-secondary-selected);
+    font-weight:var(--p-font-weight-semibold);
+  }
+.Polaris-ActionList__Item.Polaris-ActionList--active svg{
+      fill:var(--p-color-icon-active);
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--active::before{
+      content:'';
+      background-color:var(--p-color-bg-fill-brand);
+      position:absolute;
+      top:0;
+      left:calc(var(--p-space-200)*-1);
+      height:100%;
+      display:block;
+      width:var(--p-border-width-050);
+      border-top-right-radius:var(--p-border-radius-100);
+      border-bottom-right-radius:var(--p-border-radius-100);
+      display:none;
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--destructive{
+    color:var(--p-color-text-critical);
+  }
+.Polaris-ActionList__Item.Polaris-ActionList--destructive svg{
+      fill:var(--p-color-text-critical);
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--destructive:hover{
+      background-color:var(--p-color-bg-surface-critical-hover);
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--destructive:active,
+    .Polaris-ActionList__Item.Polaris-ActionList--destructive.Polaris-ActionList--active{
+      background-color:var(--p-color-bg-surface-critical-active);
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--disabled{
+    background-image:none;
+    color:var(--p-color-text-disabled);
+    cursor:default;
+  }
+.Polaris-ActionList__Item.Polaris-ActionList--disabled:hover{
+      background-color:unset;
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--disabled .Polaris-ActionList__Prefix svg,
+    .Polaris-ActionList__Item.Polaris-ActionList--disabled .Polaris-ActionList__Suffix svg{
+      fill:var(--p-color-icon-disabled);
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--indented{
+    --pc-action-list-image-size:1.5rem;
+    position:relative;
+    margin-left:var(--pc-action-list-indented-item-margin);
+    max-width:var(--pc-action-list-indented-item-width);
+  }
+.Polaris-ActionList__Item.Polaris-ActionList--indented::before{
+      content:'';
+      position:absolute;
+      top:calc(var(--p-space-300)*-1);
+      bottom:0;
+      left:0;
+      border-left:var(--p-border-width-025) solid var(--p-color-border);
+      margin-left:calc(var(--p-space-150)*-1);
+    }
+.Polaris-ActionList__Item.Polaris-ActionList--menu{
+    --pc-action-list-image-size:1.5rem;
+  }
+.Polaris-ActionList__Prefix{
+  display:flex;
+  flex:0 0 auto;
+  justify-content:center;
+  align-items:center;
+  height:var(--pc-action-list-image-size);
+  width:var(--pc-action-list-image-size);
+  border-radius:var(--p-border-radius-100);
+  margin:calc(var(--pc-action-list-image-size)*-0.5) 0 calc(var(--pc-action-list-image-size)*-0.5) 0;
+  background-size:cover;
+  background-position:center center;
+}
+.Polaris-ActionList__Prefix svg{
+    fill:var(--p-color-icon);
+  }
+.Polaris-ActionList__Suffix svg{
+  fill:var(--p-color-icon);
+}
+.Polaris-ActionList__Text{
+  min-width:0;
+  max-width:100%;
+  flex:1 1 auto;
+}

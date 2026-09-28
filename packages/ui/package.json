@@ -16,7 +16,9 @@
     "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:styles": "node scripts/build-styles.mjs",
+    "build:theme": "node scripts/build-theme.mjs"
   },
   "peerDependencies": {
     "react": "catalog:",
@@ -62,6 +64,7 @@
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^3.0.2"
+    "tailwind-merge": "^3.0.2",
+    "@shopify/polaris": "13.9.5"
   }
 }

@@ -1,0 +1,5 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   ChoiceList — 1 rules. */
+.Polaris-ChoiceList__ChoiceChildren{
+  padding-left:calc(var(--p-space-200) + 1.25rem);
+}

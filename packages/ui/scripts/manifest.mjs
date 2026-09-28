@@ -61,7 +61,7 @@ export const COMPONENTS = [
 
   // ---- actions --------------------------------------------------------------
   { name: 'ButtonGroup', group: 'primitives', archetype: 'container', summary: 'Related buttons, optionally segmented.' },
-  { name: 'ActionList', group: 'components', archetype: 'list', summary: 'List of actions, usually inside a Popover.' },
+  { name: 'ActionList', group: 'components', archetype: 'list', depth: 'full', summary: 'List of actions, usually inside a Popover.' },
   { name: 'ActionMenu', group: 'components', archetype: 'nav', summary: 'Page-level action menu with rollup behaviour.' },
   { name: 'UnstyledButton', group: 'primitives', archetype: 'action', summary: 'A button with no visual styling but full button semantics.' },
   { name: 'UnstyledLink', group: 'primitives', archetype: 'action', summary: 'A link with no visual styling.' },
@@ -101,8 +101,8 @@ export const COMPONENTS = [
   { name: 'ProgressBar', group: 'components', archetype: 'status', summary: 'Determinate progress.' },
   { name: 'Loading', group: 'components', archetype: 'status', summary: 'Page-level loading indicator.' },
   { name: 'Indicator', group: 'components', archetype: 'status', summary: 'Small unread or attention dot.' },
-  { name: 'EmptyState', group: 'patterns', archetype: 'surface', summary: 'First-run empty state with one clear action.' },
-  { name: 'EmptySearchResult', group: 'patterns', archetype: 'surface', summary: 'Filtered-empty state. Different words from first-run.' },
+  { name: 'EmptyState', group: 'patterns', archetype: 'surface', depth: 'full', summary: 'First-run empty state with one clear action.' },
+  { name: 'EmptySearchResult', group: 'patterns', archetype: 'surface', depth: 'full', summary: 'Filtered-empty state. Different words from first-run.' },
   { name: 'SkeletonBodyText', group: 'components', archetype: 'skeleton', summary: 'Placeholder lines while body text loads.' },
   { name: 'SkeletonDisplayText', group: 'components', archetype: 'skeleton', summary: 'Placeholder for a heading.' },
   { name: 'SkeletonThumbnail', group: 'components', archetype: 'skeleton', summary: 'Placeholder for a thumbnail.' },
@@ -114,7 +114,7 @@ export const COMPONENTS = [
   { name: 'IndexTable', group: 'components', archetype: 'list', summary: 'Resource index with selection and bulk actions.' },
   { name: 'ResourceList', group: 'components', archetype: 'list', summary: 'Rich object list, as distinct from a column table.' },
   { name: 'ResourceItem', group: 'components', archetype: 'container', summary: 'A single row within a ResourceList.' },
-  { name: 'Avatar', group: 'components', archetype: 'media', summary: 'Person or entity, with initials fallback.' },
+  { name: 'Avatar', group: 'components', archetype: 'media', depth: 'full', summary: 'Person or entity, with initials fallback.' },
   { name: 'Thumbnail', group: 'components', archetype: 'media', summary: 'Small product or file image.' },
   { name: 'VideoThumbnail', group: 'components', archetype: 'media', summary: 'Video poster with a play affordance and duration.' },
   { name: 'Image', group: 'components', archetype: 'media', summary: 'Image with dimensions reserved to prevent layout shift.' },
@@ -122,7 +122,7 @@ export const COMPONENTS = [
   { name: 'Tag', group: 'components', archetype: 'status', summary: 'A removable label, usually a filter or category.' },
   { name: 'MediaCard', group: 'components', archetype: 'surface', summary: 'Card pairing media with text and actions.' },
   { name: 'CalloutCard', group: 'components', archetype: 'surface', summary: 'Card promoting one action, with illustration.' },
-  { name: 'AccountConnection', group: 'patterns', archetype: 'surface', summary: 'Third-party account connect and disconnect.' },
+  { name: 'AccountConnection', group: 'patterns', archetype: 'surface', depth: 'full', summary: 'Third-party account connect and disconnect.' },
   { name: 'LegacyCard', group: 'components', archetype: 'surface', summary: 'Previous-generation card with sections.' },
   { name: 'LegacyStack', group: 'primitives', archetype: 'container', summary: 'Previous-generation flex stack.' },
 

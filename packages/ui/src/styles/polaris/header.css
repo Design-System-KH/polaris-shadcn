@@ -1,0 +1,28 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Header — 7 rules. */
+.Polaris-Header-Title.Polaris-Header-Title__TitleWithSubtitle{
+    margin-top:0;
+  }
+.Polaris-Header-Title__TitleWrapper{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  row-gap:var(--p-space-200);
+  padding-block:var(--p-space-050);
+}
+.Polaris-Header-Title__TitleWrapper .Polaris-Header-Title{
+    display:inline;
+    margin-right:var(--p-space-200);
+  }
+.Polaris-Header-Title__TitleWrapper .Polaris-Header-Title > *{
+      display:inline;
+    }
+.Polaris-Header-Title__SubTitle{
+  margin-top:var(--p-space-050);
+}
+.Polaris-Header-Title__SubTitle.Polaris-Header-Title__SubtitleCompact{
+    margin-top:var(--p-space-050);
+  }
+.Polaris-Header-Title__SubTitle.Polaris-Header-Title__SubtitleMaxWidth{
+    max-width:45ch;
+  }

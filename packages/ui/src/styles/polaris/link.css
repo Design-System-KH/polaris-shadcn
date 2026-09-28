@@ -1,0 +1,52 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Link — 9 rules. */
+.Polaris-Link{
+  -webkit-appearance:none;
+          appearance:none;
+  display:inline;
+  text-align:inherit;
+  padding:0;
+  background:none;
+  border:0;
+  font-size:inherit;
+  font-weight:inherit;
+  color:var(--p-color-text-link);
+  text-decoration:underline;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.Polaris-Link:hover{
+    color:var(--p-color-text-link-hover);
+    text-decoration:underline;
+  }
+.Polaris-Link:focus,
+  .Polaris-Link:focus-visible{
+    outline:var(--p-color-border-focus) auto var(--p-border-width-050);
+    outline-offset:var(--p-space-050);
+    border-radius:var(--p-border-radius-150);
+  }
+.Polaris-Link:active{
+    position:relative;
+    color:var(--p-color-text-link-active);
+  }
+@media print{
+
+.Polaris-Link{
+    -webkit-text-decoration-color:var(--p-color-border-tertiary);
+            text-decoration-color:var(--p-color-border-tertiary);
+}
+  }
+.Polaris-Link--monochrome{
+  color:inherit;
+}
+.Polaris-Link--monochrome:hover,
+  .Polaris-Link--monochrome:focus,
+  .Polaris-Link--monochrome:active{
+    color:inherit;
+  }
+.Polaris-Link--removeUnderline{
+  text-decoration:none;
+}
+.Polaris-Link--removeUnderline:hover{
+    text-decoration:underline;
+  }

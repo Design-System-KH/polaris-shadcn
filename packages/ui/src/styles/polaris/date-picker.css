@@ -1,0 +1,181 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   DatePicker — 32 rules. */
+.Polaris-DatePicker{
+  --pc-date-picker-range-end-border-radius:var(--p-border-radius-200);
+  position:relative;
+}
+.Polaris-DatePicker__MonthLayout{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:calc(var(--p-space-400)*-1);
+  margin-left:calc(var(--p-space-400)*-1);
+}
+.Polaris-DatePicker__MonthContainer{
+  flex:1 1 14.375rem;
+  margin-top:var(--p-space-400);
+  margin-left:var(--p-space-400);
+  max-width:calc(100% - var(--p-space-400));
+  min-width:14.375rem;
+}
+.Polaris-DatePicker__Month{
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  border:none;
+  border-spacing:0;
+}
+.Polaris-DatePicker__DayCell{
+  width:14.28571%;
+  background:transparent;
+  margin:0;
+  padding:0;
+  border-radius:var(--p-border-radius-100);
+}
+.Polaris-DatePicker__DayCell--inRange{
+  border-radius:0;
+}
+.Polaris-DatePicker__Day{
+  display:block;
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:var(--p-space-200);
+  background:transparent;
+  border:none;
+  border-radius:var(--p-border-radius-200);
+  outline:none;
+  color:var(--p-color-text);
+  cursor:pointer;
+}
+.Polaris-DatePicker__Day:hover{
+    background:var(--p-color-bg-fill-brand-hover);
+    color:var(--p-color-text-brand-on-bg-fill);
+    outline:var(--p-border-width-025) solid transparent;
+  }
+.Polaris-DatePicker__Day{
+  position: relative;
+}
+.Polaris-DatePicker__Day::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  bottom: -0.0625rem;
+  left: -0.0625rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-DatePicker__Day:focus-visible:not(:active)::after {
+  box-shadow: 0 0 0 0.125rem var(--p-color-border-focus);
+  outline: var(--p-border-width-025) solid transparent;
+}
+.Polaris-DatePicker__Day--inRange{
+  background:var(--p-color-bg-surface-brand-selected);
+  border-radius:0;
+}
+@media (-ms-high-contrast: active){
+
+.Polaris-DatePicker__Day--inRange{
+    -ms-high-contrast-adjust:none;
+    background-color:Highlight;
+    color:HighlightText;
+}
+
+    .Polaris-DatePicker__Day--inRange:hover{
+      background-color:HighlightText;
+      color:Highlight;
+      outline:var(--p-border-width-050) solid Highlight;
+    }
+  }
+.Polaris-DatePicker__Day--selected{
+  background:var(--p-color-bg-fill-brand-selected);
+  color:var(--p-color-text-brand-on-bg-fill);
+}
+@media (-ms-high-contrast: active){
+
+.Polaris-DatePicker__Day--selected{
+    -ms-high-contrast-adjust:none;
+    background-color:Highlight;
+    color:HighlightText;
+}
+
+    .Polaris-DatePicker__Day--selected:hover{
+      background-color:HighlightText;
+      color:Highlight;
+      outline:var(--p-border-width-050) solid Highlight;
+    }
+  }
+.Polaris-DatePicker__Day--disabled{
+  background-color:transparent;
+  color:var(--p-color-text-disabled);
+}
+.Polaris-DatePicker__Day--disabled:hover{
+    background-color:transparent;
+    color:var(--p-color-text-disabled);
+  }
+@media (-ms-high-contrast){
+
+.Polaris-DatePicker__Day--disabled{
+    -ms-high-contrast-adjust:none;
+    color:grayText;
+}
+
+    .Polaris-DatePicker__Day--disabled:hover{
+      color:grayText;
+      outline:none;
+    }
+  }
+.Polaris-DatePicker__Day--disabled:focus::after{
+    content:none;
+  }
+.Polaris-DatePicker__EmptyDayCell{
+  width:14.28571%;
+  margin:0;
+  padding:0;
+}
+.Polaris-DatePicker__Weekday{
+  padding:var(--p-space-200);
+  background:transparent;
+}
+.Polaris-DatePicker__Header{
+  position:absolute;
+  top:var(--p-space-400);
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+}
+.Polaris-DatePicker__Title{
+  flex:1 1 auto;
+  padding-bottom:var(--p-space-100);
+}
+.Polaris-DatePicker__Day--firstInRange{
+  border-radius:var(--p-border-radius-200);
+}
+.Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hasRange,
+  .Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hoverRight{
+    border-radius:var(--pc-date-picker-range-end-border-radius) 0 0 var(--pc-date-picker-range-end-border-radius);
+  }
+.Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hasRange::after, .Polaris-DatePicker__Day--firstInRange.Polaris-DatePicker__Day--hoverRight::after{
+      border-radius:var(--pc-date-picker-range-end-border-radius) 0 0 var(--pc-date-picker-range-end-border-radius);
+    }
+.Polaris-DatePicker__Day--lastInRange{
+  border-radius:0 var(--pc-date-picker-range-end-border-radius) var(--pc-date-picker-range-end-border-radius) 0;
+}
+.Polaris-DatePicker__Day--lastInRange::after{
+    border-radius:0 var(--pc-date-picker-range-end-border-radius) var(--pc-date-picker-range-end-border-radius) 0;
+  }
+.Polaris-DatePicker__Week{
+  margin-bottom:var(--p-space-050);
+}
+.Polaris-DatePicker__Week > .Polaris-DatePicker__Day--inRange:first-child:not(.Polaris-DatePicker__Day--firstInRange):not(.Polaris-DatePicker__Day--lastInRange){
+    border-radius:var(--p-border-radius-100) 0 0 var(--p-border-radius-100);
+  }
+.Polaris-DatePicker__Week > .Polaris-DatePicker__Day--inRange:last-child:not(.Polaris-DatePicker__Day--firstInRange):not(.Polaris-DatePicker__Day--lastInRange){
+    border-radius:0 var(--p-border-radius-100) var(--p-border-radius-100) 0;
+  }
+.Polaris-DatePicker__Day--inRange::after, .Polaris-DatePicker__Day--inRange:not(:hover) + .Polaris-DatePicker__Day::after{
+    border-radius:0 var(--pc-date-picker-range-end-border-radius) var(--pc-date-picker-range-end-border-radius) 0;
+  }

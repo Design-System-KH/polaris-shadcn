@@ -1,0 +1,8 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   SkeletonPage — 1 rules. */
+@media screen and (-ms-high-contrast: active){
+
+.Polaris-SkeletonPage__SkeletonTitle{
+    background-color:grayText;
+}
+  }

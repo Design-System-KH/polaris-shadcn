@@ -1,0 +1,150 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   OptionList — 28 rules. */
+.Polaris-OptionList-Option{
+  -webkit-appearance:none;
+          appearance:none;
+  margin:0;
+  padding:0;
+  background:none;
+  border:none;
+  font-size:inherit;
+  line-height:inherit;
+  color:inherit;
+  cursor:pointer;
+  width:100%;
+  min-height:var(--pg-control-height);
+  text-align:left;
+  text-decoration:none;
+  border-radius:var(--p-border-radius-100);
+  margin-top:var(--p-space-100);
+  color:inherit;
+}
+.Polaris-OptionList-Option:focus{
+    outline:none;
+  }
+.Polaris-OptionList-Option:visited{
+    color:inherit;
+  }
+.Polaris-OptionList-Option:first-child{
+    margin-top:0;
+  }
+.Polaris-OptionList-Option__SingleSelectOption{
+  -webkit-appearance:none;
+          appearance:none;
+  margin:0;
+  padding:0;
+  background:none;
+  border:none;
+  font-size:inherit;
+  line-height:inherit;
+  color:inherit;
+  cursor:pointer;
+  text-align:left;
+
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+}
+.Polaris-OptionList-Option__SingleSelectOption:focus{
+    outline:none;
+  }
+.Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--focused:focus-visible:not(:active){
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-025);
+    background-color:var(--p-color-bg-surface-secondary-hover);
+  }
+.Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--active{
+    background:var(--p-color-bg-surface-secondary-selected);
+  }
+.Polaris-OptionList-Option__SingleSelectOption:not(.Polaris-OptionList-Option--disabled){
+    color:inherit;
+  }
+.Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select,
+  .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--active{
+    font-weight:var(--p-font-weight-semibold);
+    background:var(--p-color-bg-surface-secondary-active);
+  }
+.Polaris-OptionList-Option__SingleSelectOption .Polaris-OptionList-Option__Media{
+    padding:0 var(--p-space-200) 0 0;
+  }
+.Polaris-OptionList-Option__Label,
+.Polaris-OptionList-Option__SingleSelectOption,
+.Polaris-OptionList-Option__MultiSelectOption{
+  display:flex;
+  align-items:flex-start;
+  width:100%;
+  cursor:pointer;
+  border-radius:var(--p-border-radius-200);
+  padding:var(--p-space-150);
+  word-wrap:break-word;
+  word-break:break-word;
+  overflow-wrap:break-word;
+}
+.Polaris-OptionList-Option__Label:hover:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__SingleSelectOption:hover:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__MultiSelectOption:hover:not(.Polaris-OptionList-Option--disabled){
+    background-color:var(--p-color-bg-surface-secondary-hover);
+  }
+.Polaris-OptionList-Option__Label:active:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__SingleSelectOption:active:not(.Polaris-OptionList-Option--disabled), .Polaris-OptionList-Option__MultiSelectOption:active:not(.Polaris-OptionList-Option--disabled){
+    background:var(--p-color-bg-surface-secondary-active);
+  }
+.Polaris-OptionList-Option__Label:hover:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__SingleSelectOption:hover:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__MultiSelectOption:hover:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__Label:active:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__SingleSelectOption:active:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__MultiSelectOption:active:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__Label.Polaris-OptionList-Option--select,
+  .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select,
+  .Polaris-OptionList-Option__MultiSelectOption.Polaris-OptionList-Option--select,
+  .Polaris-OptionList-Option__Label.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled),
+  .Polaris-OptionList-Option__MultiSelectOption.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled){
+    outline:var(--p-border-width-025) solid transparent;
+  }
+.Polaris-OptionList-Option__Label .Polaris-OptionList-Option__Media, .Polaris-OptionList-Option__SingleSelectOption .Polaris-OptionList-Option__Media, .Polaris-OptionList-Option__MultiSelectOption .Polaris-OptionList-Option__Media{
+    padding:0 var(--p-space-200) 0 0;
+  }
+.Polaris-OptionList-Option__Label.Polaris-OptionList-Option--disabled, .Polaris-OptionList-Option__SingleSelectOption.Polaris-OptionList-Option--disabled, .Polaris-OptionList-Option__MultiSelectOption.Polaris-OptionList-Option--disabled{
+    background:transparent;
+    cursor:default;
+    color:var(--p-color-text-disabled);
+  }
+.Polaris-OptionList-Option__MultiSelectOption.Polaris-OptionList-Option--select.Polaris-OptionList-Option__CheckboxLabel{
+      background-color:transparent;
+    }
+.Polaris-OptionList-Option__MultiSelectOption.Polaris-OptionList-Option--select svg{
+      fill:var(--p-color-icon-active);
+    }
+.Polaris-OptionList-Option__MultiSelectOption.Polaris-OptionList-Option--select:hover:not(.Polaris-OptionList-Option--disabled){
+    background-color:var(--p-color-bg-surface-secondary-hover);
+  }
+.Polaris-OptionList-Option--disabled .Polaris-OptionList-Option__Media svg{
+  fill:var(--p-color-icon-disabled);
+}
+.Polaris-OptionList-Option__Media svg{
+  fill:var(--p-color-icon);
+}
+.Polaris-OptionList-Option--verticalAlignTop{
+  align-items:flex-start;
+}
+.Polaris-OptionList-Option--verticalAlignCenter{
+  align-items:center;
+}
+.Polaris-OptionList-Option--verticalAlignBottom{
+  align-items:flex-end;
+}
+.Polaris-OptionList-Option__Icon{
+  margin-left:var(--p-space-200);
+}
+.Polaris-OptionList-Option__Icon svg{
+    fill:var(--p-color-icon-brand);
+  }
+.Polaris-OptionList-Option__Checkbox{
+  box-sizing:border-box;
+  display:flex;
+  flex-shrink:0;
+  width:1.25rem;
+  height:1.25rem;
+  margin-right:var(--p-space-200);
+  align-items:center;
+}

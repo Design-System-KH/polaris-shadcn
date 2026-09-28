@@ -1,0 +1,14 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   TextContainer — 4 rules. */
+.Polaris-TextContainer{
+  --pc-text-container-spacing:var(--p-space-400);
+}
+.Polaris-TextContainer > *:not(:first-child){
+    margin-top:var(--pc-text-container-spacing);
+  }
+.Polaris-TextContainer--spacingTight{
+  --pc-text-container-spacing:var(--p-space-200);
+}
+.Polaris-TextContainer--spacingLoose{
+  --pc-text-container-spacing:var(--p-space-500);
+}

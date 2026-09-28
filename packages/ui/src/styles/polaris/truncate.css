@@ -1,0 +1,8 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Truncate — 1 rules. */
+.Polaris-Truncate{
+  display:block;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}

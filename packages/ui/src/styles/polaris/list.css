@@ -1,0 +1,21 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   List — 5 rules. */
+.Polaris-List{
+  padding-left:var(--p-space-500);
+  margin-top:0;
+  margin-bottom:0;
+  list-style:disc outside none;
+}
+.Polaris-List + .Polaris-List{
+    margin-top:var(--p-space-400);
+  }
+.Polaris-List--typeNumber{
+  padding-left:var(--p-space-800);
+  list-style:decimal outside none;
+}
+.Polaris-List__Item .Polaris-List:first-child{
+    margin-top:var(--p-space-200);
+  }
+.Polaris-List--spacingLoose .Polaris-List__Item{
+    margin-bottom:var(--p-space-100);
+  }

@@ -1,0 +1,18 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   MessageIndicator — 2 rules. */
+.Polaris-MessageIndicator__MessageIndicatorWrapper{
+  position:relative;
+}
+.Polaris-MessageIndicator{
+  --pc-message-indicator-size:0.75rem;
+  --pc-message-indicator-position:-0.1875rem;
+  position:absolute;
+  z-index:1;
+  top:var(--pc-message-indicator-position);
+  right:var(--pc-message-indicator-position);
+  width:var(--pc-message-indicator-size);
+  height:var(--pc-message-indicator-size);
+  border-radius:var(--p-border-radius-full);
+  background-color:var(--p-color-icon-info);
+  border:solid var(--p-border-width-050) var(--p-color-bg);
+}

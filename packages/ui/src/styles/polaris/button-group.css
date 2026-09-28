@@ -1,0 +1,73 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   ButtonGroup — 17 rules. */
+.Polaris-ButtonGroup{
+  --pc-button-group-item:10;
+  --pc-button-group-focused:20;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:calc(var(--p-space-200)*-1);
+  margin-left:calc(var(--p-space-200)*-1);
+}
+.Polaris-ButtonGroup__Item{
+  margin-top:var(--p-space-200);
+  margin-left:var(--p-space-200);
+}
+.Polaris-ButtonGroup__Item--plain:not(:first-child){
+    margin-left:var(--p-space-200);
+  }
+.Polaris-ButtonGroup__Item--plain:not(:last-child){
+    margin-right:var(--p-space-200);
+  }
+.Polaris-ButtonGroup--variantSegmented{
+  display:flex;
+  flex-wrap:nowrap;
+  margin-top:0;
+  margin-left:0;
+}
+.Polaris-ButtonGroup--variantSegmented .Polaris-ButtonGroup__Item{
+    position:relative;
+    margin-top:0;
+    margin-left:0;
+    line-height:1;
+  }
+.Polaris-ButtonGroup--variantSegmented .Polaris-ButtonGroup__Item:not(:first-child){
+      margin-left:calc(var(--p-space-025)*-1);
+    }
+.Polaris-ButtonGroup--variantSegmented [aria-pressed='true']{
+    z-index:var(--pc-button-group-item);
+  }
+.Polaris-ButtonGroup--variantSegmented .Polaris-ButtonGroup__Item--focused{
+    z-index:var(--pc-button-group-focused);
+  }
+.Polaris-ButtonGroup--fullWidth .Polaris-ButtonGroup__Item{
+    flex:1 1 auto;
+  }
+.Polaris-ButtonGroup--extraTight{
+  margin-top:calc(var(--p-space-100)*-1);
+  margin-left:calc(var(--p-space-100)*-1);
+}
+.Polaris-ButtonGroup--extraTight .Polaris-ButtonGroup__Item{
+    margin-top:var(--p-space-100);
+    margin-left:var(--p-space-100);
+  }
+.Polaris-ButtonGroup--tight{
+  margin-top:calc(var(--p-space-200)*-1);
+  margin-left:calc(var(--p-space-200)*-1);
+}
+.Polaris-ButtonGroup--tight .Polaris-ButtonGroup__Item{
+    margin-top:var(--p-space-200);
+    margin-left:var(--p-space-200);
+  }
+.Polaris-ButtonGroup--loose{
+  margin-top:calc(var(--p-space-500)*-1);
+  margin-left:calc(var(--p-space-500)*-1);
+}
+.Polaris-ButtonGroup--loose .Polaris-ButtonGroup__Item{
+    margin-top:var(--p-space-500);
+    margin-left:var(--p-space-500);
+  }
+.Polaris-ButtonGroup--noWrap{
+  display:flex;
+  flex-wrap:nowrap;
+}

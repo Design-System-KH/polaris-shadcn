@@ -1,0 +1,148 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   ResourceItem — 27 rules. */
+.Polaris-ResourceItem{
+  --pc-resource-item-min-height:2.75rem;
+  --pc-resource-item-disclosure-width:3rem;
+  --pc-resource-item-offset:2.375rem;
+  --pc-resource-item-clickable-stacking-order:1;
+  --pc-resource-item-content-stacking-order:2;
+  --pc-resource-item-action-unhide-clip:auto;
+  --pc-resource-item-action-hide-clip:rect(0, 0, 0, 0);
+  --pc-resource-item-action-unhide-overflow:visible;
+  --pc-resource-item-action-hide-overflow:hidden;
+  outline:none;
+  cursor:pointer;
+}
+.Polaris-ResourceItem:hover{
+    background-color:var(--p-color-bg-surface-secondary-hover);
+  }
+.Polaris-ResourceItem:hover .Polaris-ResourceItem__Actions > *{
+        clip:var(--pc-resource-item-action-unhide-clip);
+        overflow:var(--pc-resource-item-action-unhide-overflow);
+      }
+.Polaris-ResourceItem:active{
+    background-color:var(--p-color-bg-surface-active);
+  }
+.Polaris-ResourceItem__ItemWrapper{
+  overflow:hidden;
+  max-width:100%;
+}
+.Polaris-ResourceItem__CheckboxWrapper{
+  z-index:var(--pc-resource-item-content-stacking-order);
+  display:flex;
+  align-items:inherit;
+  height:100%;
+}
+.Polaris-ResourceItem--focusedInner,
+.Polaris-ResourceItem--focusedInner.Polaris-ResourceItem--focused,
+.Polaris-ResourceItem--focusedInner.Polaris-ResourceItem--focused.Polaris-ResourceItem--selected{
+  box-shadow:none;
+}
+.Polaris-ResourceItem__Link,
+.Polaris-ResourceItem__Button{
+  position:absolute;
+  z-index:var(--pc-resource-item-clickable-stacking-order);
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  opacity:0;
+}
+.Polaris-ResourceItem__Button{
+  padding:0;
+  border:none;
+}
+.Polaris-ResourceItem--selectable{
+  width:100%;
+  margin-right:0;
+}
+.Polaris-ResourceItem--disabled{
+  cursor:default;
+  color:var(--p-color-text-secondary);
+}
+.Polaris-ResourceItem--disabled:hover{
+    background-color:transparent;
+  }
+.Polaris-ResourceItem__Actions > *{
+    clip:var(--pc-resource-item-action-hide-clip);
+    overflow:var(--pc-resource-item-action-hide-overflow);
+  }
+.Polaris-ResourceItem--focused .Polaris-ResourceItem__Actions > *{
+      clip:var(--pc-resource-item-action-unhide-clip);
+      overflow:var(--pc-resource-item-action-unhide-overflow);
+    }
+.Polaris-ResourceItem--selected{
+  background-color:var(--p-color-bg-surface-brand-selected);
+}
+.Polaris-ResourceItem--selected:hover{
+    background-color:var(--p-color-bg-surface-brand-hover);
+  }
+.Polaris-ResourceItem--selected:active{
+    background-color:var(--p-color-bg-surface-brand-active);
+  }
+.Polaris-ResourceItem__ListItem{
+  position: relative;
+}
+.Polaris-ResourceItem__ListItem::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 0rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-ResourceItem__ListItem + .Polaris-ResourceItem__ListItem{
+    border-top:var(--pc-resource-list-separator-border);
+  }
+.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused{
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:calc(var(--p-space-050)*-1);
+    z-index:var(--pc-resource-item-clickable-stacking-order);
+    border-radius:var(--p-border-radius-0);
+  }
+.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused::after{
+    content:none;
+  }
+@media (min-width: 30.625em){
+
+.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused{
+      border-radius:var(--p-border-radius-300);
+  }
+
+      .Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused:first-of-type{
+        border-bottom-left-radius:var(--p-border-radius-0);
+        border-bottom-right-radius:var(--p-border-radius-0);
+      }
+
+      .Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused:last-of-type{
+        border-top-left-radius:var(--p-border-radius-0);
+        border-top-right-radius:var(--p-border-radius-0);
+      }
+    }
+.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused:only-child{
+      border-radius:var(--p-border-radius-0);
+    }
+@media (min-width: 30.625em){
+
+.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused:only-child{
+        border-radius:var(--p-border-radius-300);
+    }
+      }
+.Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused.Polaris-ResourceItem--selectable{
+      border-radius:var(--p-border-radius-0);
+    }
+@media (min-width: 30.625em){
+        .Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused.Polaris-ResourceItem--selectable:last-child{
+          border-bottom-left-radius:var(--p-border-radius-300);
+          border-bottom-right-radius:var(--p-border-radius-300);
+        }
+            .Polaris-ResourceItem__ListItem.Polaris-ResourceItem--focused.Polaris-ResourceItem--selectable.Polaris-ResourceItem--hasBulkActions.Polaris-ResourceItem--selected:last-child{
+              border-bottom-left-radius:var(--p-border-radius-0);
+              border-bottom-right-radius:var(--p-border-radius-0);
+            }
+      }

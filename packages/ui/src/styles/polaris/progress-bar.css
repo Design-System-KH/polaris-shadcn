@@ -1,0 +1,75 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   ProgressBar — 13 rules. */
+.Polaris-ProgressBar{
+  --pc-progress-bar-height-base:1rem;
+  --pc-progress-bar-height-small:calc(var(--pc-progress-bar-height-base)*0.5);
+  --pc-progress-bar-height-large:calc(var(--pc-progress-bar-height-base)*2);
+
+  --pc-progress-bar-duration: initial;
+  --pc-progress-bar-percent: initial;
+  overflow:hidden;
+  width:100%;
+  background-color:var(--pc-progress-bar-background);
+  border-radius:var(--p-border-radius-100);
+}
+@media (forced-colors: active){
+
+.Polaris-ProgressBar{
+    border:var(--p-border-width-025) solid transparent;
+}
+  }
+.Polaris-ProgressBar--sizeSmall{
+  height:var(--pc-progress-bar-height-small);
+}
+.Polaris-ProgressBar--sizeMedium{
+  height:var(--pc-progress-bar-height-base);
+}
+.Polaris-ProgressBar--sizeLarge{
+  height:var(--pc-progress-bar-height-large);
+}
+.Polaris-ProgressBar--toneHighlight{
+  --pc-progress-bar-background:var(--p-color-bg-fill-tertiary);
+  --pc-progress-bar-indicator:var(--p-color-bg-fill-info);
+}
+.Polaris-ProgressBar--tonePrimary{
+  --pc-progress-bar-background:var(--p-color-bg-fill-tertiary);
+  --pc-progress-bar-indicator:var(--p-color-bg-fill-brand);
+}
+.Polaris-ProgressBar--toneSuccess{
+  --pc-progress-bar-background:var(--p-color-bg-fill-tertiary);
+  --pc-progress-bar-indicator:var(--p-color-bg-fill-success);
+}
+.Polaris-ProgressBar--toneCritical{
+  --pc-progress-bar-background:var(--p-color-bg-fill-tertiary);
+  --pc-progress-bar-indicator:var(--p-color-bg-fill-critical);
+}
+.Polaris-ProgressBar__Indicator{
+  height:inherit;
+  background-color:var(--pc-progress-bar-indicator);
+  transition:transform var(--pc-progress-bar-duration) var(--p-motion-ease);
+  transform:scaleX(0);
+  transform-origin:0 50%;
+}
+@media screen and (-ms-high-contrast: active){
+
+.Polaris-ProgressBar__Indicator{
+    border:var(--pc-progress-bar-height-base) solid highlight;
+}
+  }
+.Polaris-ProgressBar__IndicatorAppearActive,
+.Polaris-ProgressBar__IndicatorAppearDone{
+  transform:scaleX(var(--pc-progress-bar-percent));
+}
+.Polaris-ProgressBar__Progress,
+.Polaris-ProgressBar__Label{
+  position: absolute !important;
+  top: 0;
+  width: 0.0625rem !important;
+  height: 0.0625rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}

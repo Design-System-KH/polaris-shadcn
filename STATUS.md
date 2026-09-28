@@ -34,14 +34,15 @@ token package.
 Every component Polaris 13 exports has a file, a typed prop surface and at
 least one story. They are not equally finished.
 
-### Full depth — 10
+### Full depth — 15
 
 Hand-written. Real behaviour, considered states, safe to build on.
 
 `Box` · `BlockStack` · `InlineStack` · `InlineGrid` · `Bleed` · `Divider` ·
-`Text` · `Button` · `Card` · `Badge`
+`Text` · `Button` · `Card` · `Badge` · `ActionList` · `Avatar` ·
+`EmptyState` · `EmptySearchResult` · `AccountConnection`
 
-### First pass — 100
+### First pass — 95
 
 Generated from `scripts/manifest.mjs`, one emitter per archetype.
 

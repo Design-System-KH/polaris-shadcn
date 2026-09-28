@@ -1,0 +1,100 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Banner — 19 rules. */
+.Polaris-Banner{
+  background-color:var(--p-color-bg-surface);
+  position:relative;
+  display:flex;
+}
+.Polaris-Banner:focus{
+    outline:none;
+  }
+.Polaris-Banner.Polaris-Banner--keyFocused{
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+  }
+.Polaris-Banner--withinContentContainer{
+  border-radius:var(--p-border-radius-200);
+}
+.Polaris-Banner--withinContentContainer + .Polaris-Banner{
+    margin-top:var(--p-space-200);
+  }
+.Polaris-Banner--withinPage{
+  position: relative;
+  box-shadow: var(--p-shadow-200);
+  border-radius: var(--p-border-radius-0);
+}
+.Polaris-Banner--withinPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  box-shadow: var(--p-shadow-bevel-100);
+  border-radius: var(--p-border-radius-0);
+  pointer-events: none;
+  mix-blend-mode: luminosity;
+}
+@media (min-width: 30.625em){
+
+.Polaris-Banner--withinPage{
+    position: relative;
+    box-shadow: var(--p-shadow-200);
+    border-radius: var(--p-border-radius-300);
+}
+    .Polaris-Banner--withinPage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    box-shadow: var(--p-shadow-bevel-100);
+    border-radius: var(--p-border-radius-300);
+    pointer-events: none;
+    mix-blend-mode: luminosity;
+  }
+  }
+.Polaris-Banner--withinPage + .Polaris-Banner{
+    margin-top:var(--p-space-400);
+  }
+.Polaris-Banner__DismissIcon{
+  display:flex;
+}
+.Polaris-Banner--textSuccessOnBgFill.Polaris-Banner--textSuccessOnBgFill.Polaris-Banner--textSuccessOnBgFill svg,
+  .Polaris-Banner--textSuccessOnBgFill.Polaris-Banner--textSuccessOnBgFill.Polaris-Banner--textSuccessOnBgFill path{
+    fill:var(--p-color-text-success-on-bg-fill);
+  }
+.Polaris-Banner__text--success.Polaris-Banner__text--success.Polaris-Banner__text--success svg,
+  .Polaris-Banner__text--success.Polaris-Banner__text--success.Polaris-Banner__text--success path{
+    fill:var(--p-color-text-success);
+  }
+.Polaris-Banner--textWarningOnBgFill.Polaris-Banner--textWarningOnBgFill.Polaris-Banner--textWarningOnBgFill svg,
+  .Polaris-Banner--textWarningOnBgFill.Polaris-Banner--textWarningOnBgFill.Polaris-Banner--textWarningOnBgFill path{
+    fill:var(--p-color-text-warning-on-bg-fill);
+  }
+.Polaris-Banner__text--warning.Polaris-Banner__text--warning.Polaris-Banner__text--warning svg,
+  .Polaris-Banner__text--warning.Polaris-Banner__text--warning.Polaris-Banner__text--warning path{
+    fill:var(--p-color-text-warning);
+  }
+.Polaris-Banner--textCriticalOnBgFill.Polaris-Banner--textCriticalOnBgFill.Polaris-Banner--textCriticalOnBgFill svg,
+  .Polaris-Banner--textCriticalOnBgFill.Polaris-Banner--textCriticalOnBgFill.Polaris-Banner--textCriticalOnBgFill path{
+    fill:var(--p-color-text-critical-on-bg-fill);
+  }
+.Polaris-Banner__text--critical.Polaris-Banner__text--critical.Polaris-Banner__text--critical svg,
+  .Polaris-Banner__text--critical.Polaris-Banner__text--critical.Polaris-Banner__text--critical path{
+    fill:var(--p-color-text-critical);
+  }
+.Polaris-Banner--textInfoOnBgFill.Polaris-Banner--textInfoOnBgFill.Polaris-Banner--textInfoOnBgFill svg,
+  .Polaris-Banner--textInfoOnBgFill.Polaris-Banner--textInfoOnBgFill.Polaris-Banner--textInfoOnBgFill path{
+    fill:var(--p-color-text-info-on-bg-fill);
+  }
+.Polaris-Banner__text--info.Polaris-Banner__text--info.Polaris-Banner__text--info svg,
+  .Polaris-Banner__text--info.Polaris-Banner__text--info.Polaris-Banner__text--info path{
+    fill:var(--p-color-text-info);
+  }
+.Polaris-Banner__icon--secondary.Polaris-Banner__icon--secondary.Polaris-Banner__icon--secondary svg,
+  .Polaris-Banner__icon--secondary.Polaris-Banner__icon--secondary.Polaris-Banner__icon--secondary path{
+    fill:var(--p-color-icon-secondary);
+  }

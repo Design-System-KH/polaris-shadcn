@@ -1,0 +1,66 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Scrollable — 14 rules. */
+.Polaris-Scrollable{
+  --pc-scrollable-shadow-size:var(--p-space-500);
+  --pc-scrollable-shadow-color:rgba(0, 0, 0, 0.15);
+  --pc-scrollable-shadow-bottom:0 var(--pc-scrollable-shadow-size) var(--pc-scrollable-shadow-size) var(--pc-scrollable-shadow-size) var(--pc-scrollable-shadow-color);
+  --pc-scrollable-shadow-top:0 calc(var(--pc-scrollable-shadow-size)*-1) var(--pc-scrollable-shadow-size) var(--pc-scrollable-shadow-size) var(--pc-scrollable-shadow-color);
+  --pc-scrollable-max-height:none;
+  -webkit-overflow-scrolling:touch;
+  position:relative;
+  max-height:var(--pc-scrollable-max-height);
+  overflow-x:hidden;
+  overflow-y:hidden;
+  isolation:isolate;
+}
+.Polaris-Scrollable:focus{
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-050);
+  }
+.Polaris-Scrollable.Polaris-Scrollable--hasTopShadow::before,
+    .Polaris-Scrollable.Polaris-Scrollable--hasBottomShadow::before,
+    .Polaris-Scrollable.Polaris-Scrollable--hasTopShadow::after,
+    .Polaris-Scrollable.Polaris-Scrollable--hasBottomShadow::after{
+      content:'';
+      position:sticky;
+
+      left:0;
+      display:block;
+      pointer-events:none;
+      height:var(--p-space-0);
+      width:100%;
+      z-index:32;
+    }
+.Polaris-Scrollable.Polaris-Scrollable--hasTopShadow::before, .Polaris-Scrollable.Polaris-Scrollable--hasBottomShadow::before{
+      top:0;
+    }
+.Polaris-Scrollable.Polaris-Scrollable--hasTopShadow::after, .Polaris-Scrollable.Polaris-Scrollable--hasBottomShadow::after{
+      bottom:0;
+    }
+.Polaris-Scrollable.Polaris-Scrollable--hasTopShadow::before{
+    box-shadow:var(--pc-scrollable-shadow-top);
+  }
+.Polaris-Scrollable.Polaris-Scrollable--hasBottomShadow::after{
+    box-shadow:var(--pc-scrollable-shadow-bottom);
+  }
+.Polaris-Scrollable--horizontal{
+  overflow-x:auto;
+}
+.Polaris-Scrollable--vertical{
+  overflow-y:auto;
+}
+.Polaris-Scrollable--scrollbarWidthThin{
+  scrollbar-width:thin;
+}
+.Polaris-Scrollable--scrollbarWidthNone{
+  scrollbar-width:none;
+}
+.Polaris-Scrollable--scrollbarWidthAuto{
+  scrollbar-width:auto;
+}
+.Polaris-Scrollable--scrollbarGutterStable{
+  scrollbar-gutter:stable;
+}
+.Polaris-Scrollable__scrollbarGutterStableboth--edges{
+  scrollbar-gutter:stable both-edges;
+}

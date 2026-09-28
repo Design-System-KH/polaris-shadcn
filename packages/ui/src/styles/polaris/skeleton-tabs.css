@@ -1,0 +1,61 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   SkeletonTabs — 11 rules. */
+.Polaris-SkeletonTabs__Tabs{
+  display:flex;
+  width:100%;
+  overflow:auto;
+}
+@media (min-width: 48em){
+
+.Polaris-SkeletonTabs__Tabs{
+    overflow:visible;
+}
+  }
+.Polaris-SkeletonTabs__Tab{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:calc(var(--p-height-800) + var(--p-height-400));
+  padding:var(--p-space-200) var(--p-space-300);
+  margin-right:var(--p-space-100);
+}
+.Polaris-SkeletonTabs__Tab:last-child{
+    margin-right:0;
+  }
+@media (min-width: 48em){
+
+.Polaris-SkeletonTabs__Tab{
+    height:calc(var(--p-height-700) + var(--p-height-400));
+}
+  }
+.Polaris-SkeletonTabs__TabText{
+  width:var(--p-width-1600);
+  height:var(--p-space-300);
+  background-color:var(--p-color-bg-fill-tertiary);
+  border-radius:var(--p-border-radius-100);
+}
+@media screen and (-ms-high-contrast: active){
+
+.Polaris-SkeletonTabs__TabText{
+    background-color:grayText;
+}
+  }
+.Polaris-SkeletonTabs--fitted{
+  flex-wrap:nowrap;
+}
+.Polaris-SkeletonTabs--fitted .Polaris-SkeletonTabs__Tab{
+    justify-content:flex-start;
+  }
+@media (min-width: 48em){
+
+.Polaris-SkeletonTabs--fitted .Polaris-SkeletonTabs__Tab{
+      flex:1 1 100%;
+      justify-content:center;
+  }
+    }
+@media (min-width: 48em){
+
+.Polaris-SkeletonTabs--fitted .Polaris-SkeletonTabs__TabText{
+      width:100%;
+  }
+    }

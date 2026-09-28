@@ -1,0 +1,45 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Labelled — 8 rules. */
+.Polaris-Labelled--hidden > .Polaris-Labelled__LabelWrapper{
+  position: absolute !important;
+  top: 0;
+  width: 0.0625rem !important;
+  height: 0.0625rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+.Polaris-Labelled--disabled > .Polaris-Labelled__LabelWrapper{
+  color:var(--p-color-text-disabled);
+}
+.Polaris-Labelled--disabled > .Polaris-Labelled__HelpText > span{
+  color:var(--p-color-text-disabled);
+}
+.Polaris-Labelled--readOnly > .Polaris-Labelled__LabelWrapper{
+  color:var(--p-color-text-secondary);
+}
+.Polaris-Labelled__LabelWrapper{
+  word-wrap:break-word;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:var(--p-space-100);
+}
+.Polaris-Labelled__HelpText{
+  margin-top:var(--p-space-100);
+}
+.Polaris-Labelled__Error{
+  word-wrap:break-word;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  margin-top:var(--p-space-100);
+}
+.Polaris-Labelled__Action{
+  flex:0 0 auto;
+}

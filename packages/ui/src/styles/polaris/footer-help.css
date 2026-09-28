@@ -1,0 +1,8 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   FooterHelp — 1 rules. */
+.Polaris-FooterHelp{
+  display:flex;
+  justify-content:var(--pc-footer-help-align);
+  margin:var(--p-space-500);
+  width:auto;
+}

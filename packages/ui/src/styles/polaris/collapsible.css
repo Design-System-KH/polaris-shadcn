@@ -1,0 +1,30 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Collapsible — 5 rules. */
+.Polaris-Collapsible{
+  padding-top:0;
+  padding-bottom:0;
+  max-height:0;
+  overflow:hidden;
+  transition-property:max-height;
+  transition-duration:var(--p-motion-duration-100);
+  transition-timing-function:var(--p-motion-ease-out);
+}
+.Polaris-Collapsible--isFullyClosed{
+  display:none;
+}
+@media print{
+
+.Polaris-Collapsible--expandOnPrint{
+    max-height:none !important;
+    max-width:none !important;
+    overflow:visible;
+    display:block;
+}
+  }
+.Polaris-Collapsible--inline{
+  max-height:none;
+  transition-property:max-width;
+}
+.Polaris-Collapsible--inline.Polaris-Collapsible--animateIn{
+    max-width:0;
+  }

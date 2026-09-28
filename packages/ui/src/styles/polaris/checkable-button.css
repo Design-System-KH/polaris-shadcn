@@ -1,0 +1,43 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   CheckableButton — 6 rules. */
+.Polaris-CheckableButton{
+  color:var(--p-color-text);
+  display:flex;
+  align-items:center;
+  gap:calc(var(--p-space-300) + var(--p-space-025));
+  margin:0;
+  cursor:pointer;
+  -webkit-user-select:none;
+          user-select:none;
+  text-decoration:none;
+  text-align:left;
+  border-radius:var(--p-border-radius-100);
+  width:auto;
+  min-height:auto;
+  min-width:auto;
+  height:100%;
+}
+.Polaris-CheckableButton svg{
+    fill:var(--p-color-text-brand-on-bg-fill);
+  }
+.Polaris-CheckableButton:hover,
+  .Polaris-CheckableButton:active{
+    background:transparent;
+  }
+.Polaris-CheckableButton:focus{
+    outline:none;
+  }
+.Polaris-CheckableButton__Checkbox{
+  pointer-events:none;
+  display:flex;
+}
+.Polaris-CheckableButton__Label{
+  display:flex;
+  align-items:center;
+  flex:1 1;
+  white-space:nowrap;
+  overflow:hidden;
+  max-width:100%;
+  text-overflow:ellipsis;
+  padding:var(--p-space-025) 0;
+}

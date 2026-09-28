@@ -1,0 +1,62 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   MediaCard — 14 rules. */
+.Polaris-MediaCard{
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-flow:row wrap;
+}
+.Polaris-MediaCard.Polaris-MediaCard--portrait{
+    flex-flow:column nowrap;
+  }
+@media (max-width: 47.9975em){
+
+.Polaris-MediaCard{
+    flex-flow:column nowrap;
+}
+  }
+.Polaris-MediaCard__MediaContainer{
+  overflow:hidden;
+}
+.Polaris-MediaCard__MediaContainer:not(.Polaris-MediaCard--portrait){
+    flex-basis:40%;
+  }
+@media (min-width: 48em){
+
+.Polaris-MediaCard__MediaContainer:not(.Polaris-MediaCard--portrait){
+      border-top-right-radius:0;
+      border-top-left-radius:var(--p-border-radius-200);
+      border-bottom-left-radius:var(--p-border-radius-200);
+  }
+    }
+.Polaris-MediaCard__MediaContainer.Polaris-MediaCard--sizeSmall:not(.Polaris-MediaCard--portrait){
+      flex-basis:33%;
+    }
+@media (min-width: 30.625em){
+
+.Polaris-MediaCard__MediaContainer{
+    border-top-left-radius:var(--p-border-radius-200);
+    border-top-right-radius:var(--p-border-radius-200);
+}
+  }
+.Polaris-MediaCard__InfoContainer{
+  position:relative;
+}
+.Polaris-MediaCard__InfoContainer:not(.Polaris-MediaCard--portrait){
+    flex-basis:60%;
+  }
+.Polaris-MediaCard__InfoContainer.Polaris-MediaCard--sizeSmall:not(.Polaris-MediaCard--portrait){
+      flex-basis:67%;
+    }
+.Polaris-MediaCard__ActionContainer{
+  padding-top:var(--p-space-200);
+}
+.Polaris-MediaCard__ActionContainer.Polaris-MediaCard--portrait{
+    padding-top:var(--p-space-200);
+  }
+@media (max-width: 47.9975em){
+
+.Polaris-MediaCard__ActionContainer{
+    padding-top:var(--p-space-200);
+}
+  }

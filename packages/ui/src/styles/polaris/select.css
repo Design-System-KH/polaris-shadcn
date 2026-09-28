@@ -1,0 +1,204 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Select — 31 rules. */
+.Polaris-Select{
+  --pc-select-backdrop:10;
+  --pc-select-content:20;
+  --pc-select-input:30;
+  position:relative;
+}
+.Polaris-Select select::-ms-expand{
+    display:none;
+  }
+.Polaris-Select:not(.Polaris-Select--disabled):not(.Polaris-Select--error):hover .Polaris-Select__Backdrop{
+      border-color:var(--p-color-input-border-hover);
+      background-color:var(--p-color-input-bg-surface-hover);
+    }
+.Polaris-Select:not(.Polaris-Select--disabled):not(.Polaris-Select--error) .Polaris-Select__Input:active ~ .Polaris-Select__Backdrop{
+      border:none;
+      box-shadow:var(--p-shadow-inset-200);
+      background-color:var(--p-color-input-bg-surface-active);
+    }
+.Polaris-Select--disabled .Polaris-Select__Content{
+    color:var(--p-color-text-disabled);
+  }
+.Polaris-Select--disabled .Polaris-Select__InlineLabel{
+    color:inherit;
+  }
+.Polaris-Select--disabled .Polaris-Select__Icon svg{
+    fill:var(--p-color-icon-disabled);
+  }
+.Polaris-Select--disabled .Polaris-Select__Backdrop{
+    border-color:var(--p-color-border-disabled);
+    background-color:var(--p-color-bg-surface-disabled);
+  }
+.Polaris-Select--disabled .Polaris-Select__Backdrop::before{
+      background-color:var(--p-color-input-bg-surface);
+    }
+.Polaris-Select--disabled .Polaris-Select__Backdrop:hover{
+      cursor:default;
+    }
+.Polaris-Select__Content{
+  font-size:var(--p-font-size-325);
+  font-weight:var(--p-font-weight-regular);
+  line-height:var(--p-font-line-height-500);
+  border:none;
+  letter-spacing:initial;
+  position:relative;
+  z-index:var(--pc-select-content);
+  display:flex;
+  align-items:center;
+  width:100%;
+  min-height:var(--pg-control-height);
+  padding:var(--p-space-150) var(--p-space-200) var(--p-space-150) var(--p-space-300);
+
+  font-size:var(--p-font-size-400);
+  line-height:var(--p-font-line-height-600);
+}
+@media (min-width: 48em){
+
+.Polaris-Select__Content{
+    line-height:var(--p-font-line-height-500);
+    font-size:var(--p-font-size-325);
+}
+  }
+@media (max-width: 47.9975em){
+    .Polaris-Select__Content div > span{
+      font-size:var(--p-font-size-400);
+      line-height:var(--p-font-line-height-500);
+    }
+  }
+.Polaris-Select__SelectedOption{
+  flex:1 1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.Polaris-Select__Prefix{
+  padding-right:var(--p-space-100);
+}
+.Polaris-Select__Icon svg{
+  fill:var(--p-color-icon-secondary);
+}
+.Polaris-Select__Input{
+  font-size:var(--p-font-size-400);
+  font-weight:var(--p-font-weight-regular);
+  line-height:var(--p-font-line-height-600);
+  font-family:var(--p-font-family-sans);
+  letter-spacing:initial;
+  position:absolute;
+  text-rendering:auto;
+  top:0;
+  left:0;
+  z-index:var(--pc-select-input);
+  width:100%;
+  height:100%;
+  margin:0;
+  opacity:0;
+  -webkit-appearance:none;
+          appearance:none;
+  border:none;
+  padding:var(--p-space-150) var(--p-space-200) var(--p-space-150) var(--p-space-300);
+}
+@media (min-width: 48em){
+
+.Polaris-Select__Input{
+    font-size:var(--p-font-size-325);
+    line-height:var(--p-font-line-height-500);
+}
+  }
+.Polaris-Select__Backdrop{
+  z-index:var(--pc-select-backdrop);
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  border:var(--p-border-width-0165) solid var(--p-color-input-border);
+  border-radius:var(--p-border-radius-200);
+  background-color:var(--p-color-input-bg-surface);
+  position:absolute;
+}
+.Polaris-Select--error .Polaris-Select__Backdrop{
+    border-color:var(--p-color-border-critical-secondary);
+    background-color:var(--p-color-bg-surface-critical);
+  }
+.Polaris-Select--error .Polaris-Select__Backdrop.Polaris-Select--hover,
+    .Polaris-Select--error .Polaris-Select__Backdrop:hover{
+      border-color:var(--p-color-border-critical);
+    }
+.Polaris-Select--error .Polaris-Select__Input:focus-visible ~ .Polaris-Select__Backdrop{
+    border-color:var(--p-color-border-critical-secondary);
+    border-width:var(--p-border-width-025);
+    background-color:var(--p-color-bg-surface-critical);
+  }
+.Polaris-Select__Input:focus-visible ~ .Polaris-Select__Backdrop{
+    border-color:var(--p-color-input-border-active);
+    border-width:var(--p-border-width-025);
+    background-color:var(--p-color-input-bg-surface-active);
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-025);
+  }
+.Polaris-Select--toneMagic .Polaris-Select__Content{
+    color:var(--p-color-text-magic);
+  }
+.Polaris-Select--toneMagic .Polaris-Select__InlineLabel{
+    color:inherit;
+  }
+.Polaris-Select--toneMagic .Polaris-Select__Backdrop{
+    border-color:var(--p-color-border-magic-secondary);
+    background-color:var(--p-color-bg-surface-magic);
+  }
+.Polaris-Select--toneMagic .Polaris-Select__Icon svg{
+    fill:var(--p-color-icon-magic);
+  }
+.Polaris-Select--toneMagic:not(.Polaris-Select--disabled):not(.Polaris-Select--error):not(:focus-within):hover .Polaris-Select__Backdrop{
+        border-color:var(--p-color-border-magic-secondary-hover);
+        background-color:var(--p-color-bg-surface-magic-hover);
+      }
+.Polaris-Select--toneMagic:not(.Polaris-Select--disabled):not(.Polaris-Select--error) .Polaris-Select__Input:focus-visible ~ .Polaris-Select__Content{
+        color:var(--p-color-text);
+      }
+.Polaris-Select--toneMagic:not(.Polaris-Select--disabled):not(.Polaris-Select--error) .Polaris-Select__Input:focus-visible ~ .Polaris-Select__Content .Polaris-Select__Icon svg{
+          fill:var(--p-color-icon-secondary);
+        }
+@media (-ms-high-contrast: active){
+  .Polaris-Select__Content{
+    color:windowText;
+    -ms-high-contrast-adjust:none;
+  }
+
+  .Polaris-Select__InlineLabel{
+    color:inherit;
+  }
+
+    .Polaris-Select__InlineLabel::after{
+      content:':';
+    }
+
+  .Polaris-Select__SelectedOption{
+    color:inherit;
+  }
+
+  .Polaris-Select__Icon svg{
+    fill:buttonText;
+  }
+    .Polaris-Select__Backdrop::after{
+      display:none;
+    }
+    .Polaris-Select__Input:focus ~ .Polaris-Select__Content{
+      color:highlightText;
+    }
+
+    .Polaris-Select__Input:focus ~ .Polaris-Select__Backdrop{
+      background-color:highlight;
+    }
+    .Polaris-Select--disabled .Polaris-Select__Content{
+      color:grayText;
+    }
+
+    .Polaris-Select--disabled .Polaris-Select__Icon{
+      opacity:1;
+    }
+      .Polaris-Select--disabled .Polaris-Select__Icon svg{
+        fill:grayText;
+      }
+}

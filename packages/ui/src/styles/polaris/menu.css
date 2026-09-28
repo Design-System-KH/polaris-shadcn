@@ -1,0 +1,8 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Menu — 1 rules. */
+.Polaris-Menu-Message__Section{
+  max-width:20.3125rem;
+  margin-top:var(--p-space-200);
+  padding-top:var(--p-space-200);
+  border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+}

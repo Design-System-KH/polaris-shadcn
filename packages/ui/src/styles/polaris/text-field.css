@@ -1,0 +1,487 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   TextField — 88 rules. */
+.Polaris-TextField{
+  --pc-text-field-contents:20;
+  --pc-text-field-backdrop:10;
+  font-size:var(--p-font-size-325);
+  font-weight:var(--p-font-weight-regular);
+  line-height:var(--p-font-line-height-500);
+  border:none;
+  letter-spacing:initial;
+  position:relative;
+  display:flex;
+  align-items:center;
+  color:var(--p-color-text);
+  cursor:text;
+}
+.Polaris-TextField svg{
+    fill:var(--p-color-icon-secondary);
+  }
+.Polaris-TextField:focus-within .Polaris-TextField__ClearButton{
+      visibility:visible;
+      opacity:1;
+    }
+.Polaris-TextField:focus-within .Polaris-TextField__Loading:has(+ .Polaris-TextField__ClearButton){
+      margin-right:0;
+    }
+.Polaris-TextField:not(:focus-within) .Polaris-TextField__ClearButton{
+      visibility:hidden;
+      opacity:0;
+      position:absolute;
+      right:0;
+    }
+.Polaris-TextField:not(.Polaris-TextField--disabled):not(.Polaris-TextField--error):not(.Polaris-TextField--readOnly)
+    > .Polaris-TextField__Input:hover:not(:focus-visible) ~ .Polaris-TextField__Backdrop{
+      border-color:var(--p-color-input-border-hover);
+      background-color:var(--p-color-input-bg-surface-hover);
+    }
+.Polaris-TextField--multiline{
+  padding:0;
+  flex-wrap:wrap;
+}
+.Polaris-TextField--multiline > .Polaris-TextField__Input{
+    overflow:auto;
+    padding-left:var(--p-space-300);
+    padding-right:var(--p-space-300);
+    resize:none;
+  }
+.Polaris-TextField--hasValue{
+  color:var(--p-color-text);
+}
+.Polaris-TextField--focus > .Polaris-TextField__Input,
+.Polaris-TextField--focus > .Polaris-TextField__VerticalContent,
+.Polaris-TextField--focus > .Polaris-TextField__InputAndSuffixWrapper,
+.Polaris-TextField:focus-within > .Polaris-TextField__Input,
+.Polaris-TextField__Input:focus-visible{
+  outline:none;
+}
+.Polaris-TextField--focus > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop, .Polaris-TextField--focus > .Polaris-TextField__VerticalContent ~ .Polaris-TextField__Backdrop, .Polaris-TextField--focus > .Polaris-TextField__InputAndSuffixWrapper ~ .Polaris-TextField__Backdrop, .Polaris-TextField:focus-within > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop, .Polaris-TextField__Input:focus-visible ~ .Polaris-TextField__Backdrop{
+    border-color:var(--p-color-input-border-active);
+    border-width:var(--p-border-width-025);
+    background-color:var(--p-color-input-bg-surface-active);
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-025);
+  }
+.Polaris-TextField--focus > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop::after, .Polaris-TextField--focus > .Polaris-TextField__VerticalContent ~ .Polaris-TextField__Backdrop::after, .Polaris-TextField--focus > .Polaris-TextField__InputAndSuffixWrapper ~ .Polaris-TextField__Backdrop::after, .Polaris-TextField:focus-within > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop::after, .Polaris-TextField__Input:focus-visible ~ .Polaris-TextField__Backdrop::after{
+    content:none;
+  }
+.Polaris-TextField--error .Polaris-TextField__Input:hover ~ .Polaris-TextField__Backdrop,
+  .Polaris-TextField--error .Polaris-TextField__Input:focus-visible ~ .Polaris-TextField__Backdrop{
+    border-color:var(--p-color-border-critical-secondary);
+    background-color:var(--p-color-bg-surface-critical);
+  }
+.Polaris-TextField--error .Polaris-TextField__Input:active ~ .Polaris-TextField__Backdrop,
+  .Polaris-TextField--error .Polaris-TextField__Input:focus-visible ~ .Polaris-TextField__Backdrop{
+    border-width:var(--p-border-width-025);
+  }
+.Polaris-TextField--error > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop,
+  .Polaris-TextField--error > .Polaris-TextField__InputAndSuffixWrapper ~ .Polaris-TextField__Backdrop{
+    background-color:var(--p-color-bg-surface-critical);
+    border-color:var(--p-color-border-critical-secondary);
+  }
+.Polaris-TextField--error > .Polaris-TextField__Input ~ .Polaris-TextField__Backdrop::after, .Polaris-TextField--error > .Polaris-TextField__InputAndSuffixWrapper ~ .Polaris-TextField__Backdrop::after{
+      border-color:var(--p-color-border-focus);
+    }
+.Polaris-TextField--readOnly.Polaris-TextField--readOnly > .Polaris-TextField__Input{
+    color:var(--p-color-text-secondary);
+  }
+.Polaris-TextField--readOnly.Polaris-TextField--readOnly > .Polaris-TextField__Backdrop{
+    background-color:var(--p-color-bg-surface-disabled);
+    border-color:transparent;
+  }
+.Polaris-TextField--readOnly.Polaris-TextField--readOnly.Polaris-TextField--focus > .Polaris-TextField__Backdrop{
+      background-color:var(--p-color-bg-surface-disabled);
+      border-color:transparent;
+    }
+.Polaris-TextField--toneMagic .Polaris-TextField__Prefix,
+  .Polaris-TextField--toneMagic .Polaris-TextField__Suffix{
+    color:var(--p-color-text-magic-secondary);
+  }
+.Polaris-TextField--toneMagic > .Polaris-TextField__Input{
+    color:var(--p-color-text-magic);
+  }
+.Polaris-TextField--toneMagic > .Polaris-TextField__Backdrop{
+    background-color:var(--p-color-bg-surface-magic);
+    border-color:var(--p-color-border-magic-secondary);
+  }
+.Polaris-TextField--toneMagic svg{
+    fill:var(--p-color-icon-magic);
+  }
+.Polaris-TextField--toneMagic:not(.Polaris-TextField--disabled):not(.Polaris-TextField--error):not(.Polaris-TextField--readOnly)
+    > .Polaris-TextField__Input:hover:not(:focus-visible) ~ .Polaris-TextField__Backdrop{
+      background-color:var(--p-color-bg-surface-magic-hover);
+      border-color:var(--p-color-border-magic-secondary-hover);
+    }
+.Polaris-TextField--toneMagic.Polaris-TextField--focus > .Polaris-TextField__Input,
+  .Polaris-TextField--toneMagic.Polaris-TextField--focus > .Polaris-TextField__VerticalContent,
+  .Polaris-TextField--toneMagic.Polaris-TextField:focus-within > .Polaris-TextField__Input,
+  .Polaris-TextField--toneMagic.Polaris-TextField__Input:focus-visible{
+    color:var(--p-color-text);
+  }
+.Polaris-TextField--toneMagic.Polaris-TextField--focus .Polaris-TextField__Prefix,
+    .Polaris-TextField--toneMagic.Polaris-TextField--focus .Polaris-TextField__Suffix{
+      color:var(--p-color-text-secondary);
+    }
+.Polaris-TextField--toneMagic.Polaris-TextField--focus svg{
+      fill:var(--p-color-icon-secondary);
+    }
+.Polaris-TextField--disabled{
+  color:var(--p-color-text-disabled);
+  cursor:initial;
+}
+.Polaris-TextField--disabled > .Polaris-TextField__Backdrop{
+    border:none;
+    background-color:var(--p-color-bg-surface-disabled);
+  }
+.Polaris-TextField--disabled svg{
+    fill:var(--p-color-icon-disabled);
+  }
+.Polaris-TextField__InputAndSuffixWrapper{
+  display:flex;
+  align-items:center;
+  flex:1 1;
+  width:100%;
+}
+.Polaris-TextField__AutoSizeWrapper{
+  position:relative;
+  display:inline-grid;
+  align-items:center;
+}
+.Polaris-TextField__AutoSizeWrapper::after{
+    content:attr(data-auto-size-value);
+    visibility:hidden;
+    white-space:pre-wrap;
+    max-height:var(--pg-control-height);
+  }
+.Polaris-TextField__AutoSizeWrapper::after,
+  .Polaris-TextField__AutoSizeWrapper input,
+  .Polaris-TextField__AutoSizeWrapper textarea{
+    width:auto;
+    min-width:1em;
+    grid-area:1 / 2;
+    padding:0 var(--p-space-300);
+    font-size:var(--p-font-size-400);
+    font-weight:var(--p-font-weight-regular);
+    line-height:var(--p-font-line-height-600);
+  }
+@media (min-width: 48em){
+
+.Polaris-TextField__AutoSizeWrapper::after,
+  .Polaris-TextField__AutoSizeWrapper input,
+  .Polaris-TextField__AutoSizeWrapper textarea{
+      font-size:var(--p-font-size-325);
+      line-height:var(--p-font-line-height-500);
+  }
+    }
+.Polaris-TextField__Prefix + .Polaris-TextField__InputAndSuffixWrapper .Polaris-TextField__AutoSizeWrapper::after,
+  .Polaris-TextField__Prefix + .Polaris-TextField__InputAndSuffixWrapper input,
+  .Polaris-TextField__Prefix + .Polaris-TextField__InputAndSuffixWrapper textarea{
+    padding-left:0;
+  }
+.Polaris-TextField__AutoSizeWrapperWithSuffix::after,
+  .Polaris-TextField__AutoSizeWrapperWithSuffix input,
+  .Polaris-TextField__AutoSizeWrapperWithSuffix textarea{
+    padding-right:0;
+  }
+.Polaris-TextField__Input{
+  font-size:var(--p-font-size-400);
+  font-weight:var(--p-font-weight-regular);
+  line-height:var(--p-font-line-height-600);
+  letter-spacing:initial;
+  position:relative;
+  z-index:var(--pc-text-field-contents);
+  display:flex;
+  flex:1 1;
+  width:100%;
+  min-width:0;
+  min-height:var(--pg-control-height);
+  padding:var(--p-space-150) var(--p-space-300);
+  background:none;
+  border:none;
+  font-family:var(--p-font-family-sans);
+  -webkit-appearance:none;
+          appearance:none;
+  caret-color:var(--p-color-text);
+  color:var(--p-color-text);
+  align-items:center;
+}
+@media (min-width: 48em){
+
+.Polaris-TextField__Input{
+    font-size:var(--p-font-size-325);
+    line-height:var(--p-font-line-height-500);
+}
+  }
+.Polaris-TextField__Prefix + .Polaris-TextField__Input{
+    padding-left:0;
+  }
+.Polaris-TextField__Input:disabled{
+    opacity:1;
+    background:none;
+    color:var(--p-color-text-disabled);
+    -webkit-text-fill-color:var(--p-color-text-disabled);
+  }
+.Polaris-TextField__Input:invalid{
+    box-shadow:none;
+  }
+.Polaris-TextField__Input::placeholder{
+    color:var(--p-color-text-secondary);
+  }
+.Polaris-TextField__Input[type='number']{
+    -webkit-appearance:textfield;
+            appearance:textfield;
+  }
+.Polaris-TextField__Input[type='number']::-webkit-outer-spin-button,
+    .Polaris-TextField__Input[type='number']::-webkit-inner-spin-button{
+      -webkit-appearance:none;
+              appearance:none;
+      margin:0;
+    }
+.Polaris-TextField__Input:-webkit-autofill{
+    border-radius:var(--p-border-radius-100);
+  }
+.Polaris-TextField__Input.Polaris-TextField--suggestion::selection{
+      color:var(--p-color-text-disabled);
+      background:transparent;
+    }
+.Polaris-TextField--borderless .Polaris-TextField__Input,
+  .Polaris-TextField--borderless .Polaris-TextField__Backdrop{
+    border:none;
+    min-height:var(--p-space-800);
+  }
+.Polaris-TextField--slim .Polaris-TextField__Input,
+  .Polaris-TextField--slim .Polaris-TextField__Backdrop{
+    min-height:1.75rem;
+    padding-block:var(--p-space-050);
+  }
+.Polaris-TextField--slim.Polaris-TextField--borderless.Polaris-TextField--slim.Polaris-TextField--borderless .Polaris-TextField__Input,
+  .Polaris-TextField--slim.Polaris-TextField--borderless.Polaris-TextField--slim.Polaris-TextField--borderless .Polaris-TextField__Backdrop{
+    outline-offset:0;
+  }
+.Polaris-TextField__Input--hasClearButton[type='search']::-webkit-search-cancel-button{
+      -webkit-appearance:none;
+              appearance:none;
+    }
+.Polaris-TextField__Input--suffixed{
+  padding-right:0;
+}
+.Polaris-TextField__Input--alignRight{
+  text-align:right;
+}
+.Polaris-TextField__Input--alignLeft{
+  text-align:left;
+}
+.Polaris-TextField__Input--alignCenter{
+  text-align:center;
+}
+.Polaris-TextField__Input--autoSize{
+  flex:initial;
+  width:auto;
+}
+.Polaris-TextField__Backdrop{
+  position: relative;
+  position:absolute;
+  z-index:var(--pc-text-field-backdrop);
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color:var(--p-color-input-bg-surface);
+  border:var(--p-border-width-0165) solid var(--p-color-input-border);
+  border-top-color:#898f94;
+  border-radius:var(--p-border-radius-200);
+  pointer-events:none;
+}
+.Polaris-TextField__Backdrop::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.125rem;
+  right: -0.125rem;
+  bottom: -0.125rem;
+  left: -0.125rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.125rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-TextField__Prefix,
+.Polaris-TextField__Suffix{
+  position:relative;
+  z-index:var(--pc-text-field-contents);
+  flex:0 0 auto;
+  color:var(--p-color-text-secondary);
+  -webkit-user-select:none;
+          user-select:none;
+}
+.Polaris-TextField__Prefix{
+  margin-left:var(--p-space-300);
+  margin-right:var(--p-space-150);
+}
+.Polaris-TextField__PrefixIcon{
+  margin-left:var(--p-space-200);
+  margin-right:var(--p-space-100);
+}
+.Polaris-TextField__Suffix{
+  margin-left:var(--p-space-100);
+  margin-right:var(--p-space-300);
+}
+.Polaris-TextField__VerticalContent{
+  position:relative;
+  z-index:var(--pc-text-field-contents);
+  color:var(--p-color-text-secondary);
+  padding:var(--p-space-200) var(--p-space-200) 0 var(--p-space-200);
+  max-height:8.75rem;
+  overflow:auto;
+  border:var(--p-border-width-025) solid transparent;
+  width:100%;
+}
+.Polaris-TextField__VerticalContent > .Polaris-TextField__Input{
+    padding-left:0;
+    padding-right:0;
+  }
+@media (min-width: 30.625em){
+
+.Polaris-TextField__VerticalContent{
+    max-height:20.5rem;
+}
+  }
+.Polaris-TextField__Loading{
+  z-index:var(--pc-text-field-contents);
+  margin-right:var(--p-space-300);
+}
+.Polaris-TextField__Loading svg{
+    display:block;
+  }
+.Polaris-TextField__CharacterCount{
+  color:var(--p-color-text-secondary);
+  z-index:var(--pc-text-field-contents);
+  margin:0 var(--p-space-300) 0 var(--p-space-100);
+  pointer-events:none;
+  text-align:right;
+}
+.Polaris-TextField__AlignFieldBottom{
+  align-self:flex-end;
+  width:100%;
+  padding-bottom:var(--p-space-200);
+}
+.Polaris-TextField__ClearButton{
+  position: relative;
+  -webkit-appearance:none;
+          appearance:none;
+  margin:0;
+  padding:0;
+  background:none;
+  border:none;
+  font-size:inherit;
+  line-height:inherit;
+  color:inherit;
+  cursor:pointer;
+  z-index:var(--pc-text-field-contents);
+  margin:0 var(--p-space-300) 0 var(--p-space-100);
+  transition:visibility var(--p-motion-duration-100) var(--p-motion-ease-out), opacity var(--p-motion-duration-100) var(--p-motion-ease-out);
+}
+.Polaris-TextField__ClearButton::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  bottom: -0.0625rem;
+  left: -0.0625rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-TextField__ClearButton:focus{
+    outline:none;
+  }
+.Polaris-TextField__ClearButton:focus-visible:enabled::after {
+  box-shadow: 0 0 0 0.125rem var(--p-color-border-focus);
+  outline: var(--p-border-width-025) solid transparent;
+}
+.Polaris-TextField__ClearButton:disabled{
+    cursor:default;
+  }
+.Polaris-TextField__Spinner{
+  z-index:var(--pc-text-field-contents);
+  margin:var(--p-space-100);
+  color:var(--p-color-icon);
+  display:flex;
+  visibility:hidden;
+  align-self:stretch;
+  flex-direction:column;
+  width:1.375rem;
+  cursor:pointer;
+
+  justify-content:center;
+}
+.Polaris-TextField--focus .Polaris-TextField__Spinner,
+  .Polaris-TextField:hover .Polaris-TextField__Spinner{
+    visibility:visible;
+  }
+.Polaris-TextField__SpinnerIcon{
+  position:absolute;
+  -webkit-user-select:none;
+          user-select:none;
+}
+.Polaris-TextField__SpinnerIcon svg{
+    fill:var(--p-color-icon);
+  }
+.Polaris-TextField__Resizer{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:0;
+  visibility:hidden;
+  overflow:hidden;
+}
+.Polaris-TextField__DummyInput{
+  font-size:var(--p-font-size-325);
+  font-weight:var(--p-font-weight-regular);
+  line-height:var(--p-font-line-height-500);
+  border:none;
+  letter-spacing:initial;
+  padding:var(--pg-control-vertical-padding) var(--p-space-300);
+  word-wrap:break-word;
+  word-break:break-word;
+  overflow-wrap:break-word;
+  white-space:pre-wrap;
+}
+.Polaris-TextField__Segment{
+  background:var(--p-color-bg-fill-tertiary);
+  border-radius:var(--p-border-radius-100);
+  display:flex;
+  flex:1 1;
+  justify-content:center;
+  align-items:center;
+  -webkit-appearance:none;
+          appearance:none;
+  border:none;
+}
+.Polaris-TextField__Segment:hover{
+    background:var(--p-color-bg-fill-tertiary-hover);
+  }
+.Polaris-TextField__Segment:focus{
+    outline:none;
+  }
+.Polaris-TextField__Segment:active{
+    background:var(--p-color-bg-fill-tertiary-active);
+  }
+.Polaris-TextField__Segment:first-child{
+    margin-bottom:0;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+  }
+.Polaris-TextField__Segment:last-child{
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+  }
+.Polaris-TextField__Segment:not(:first-child){
+    margin-top:0;
+  }
+.Polaris-TextField--monospaced{
+  font-family:var(--p-font-family-mono);
+}

@@ -1,0 +1,25 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Connected — 5 rules. */
+.Polaris-Connected{
+  --pc-connected-item:10;
+  --pc-connected-primary:20;
+  --pc-connected-focused:30;
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.Polaris-Connected__Item{
+  position:relative;
+  z-index:var(--pc-connected-item);
+  flex:0 0 auto;
+}
+.Polaris-Connected__Item:not(:first-child){
+    margin-left:var(--p-space-100);
+  }
+.Polaris-Connected__Item--primary{
+  z-index:var(--pc-connected-primary);
+  flex:1 1 auto;
+}
+.Polaris-Connected__Item--focused{
+  z-index:var(--pc-connected-focused);
+}

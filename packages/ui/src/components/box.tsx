@@ -10,13 +10,18 @@ export interface BoxProps {
   background?: string;
   padding?: SpaceScale;
   paddingBlock?: SpaceScale;
+  paddingBlockStart?: SpaceScale;
+  paddingBlockEnd?: SpaceScale;
   paddingInline?: SpaceScale;
+  paddingInlineStart?: SpaceScale;
+  paddingInlineEnd?: SpaceScale;
   borderRadius?: BorderRadiusScale;
   borderWidth?: '0' | '025' | '050' | '100';
   borderColor?: string;
   shadow?: ShadowScale;
   minHeight?: string;
   width?: string;
+  maxWidth?: string;
   id?: string;
 }
 
@@ -34,13 +39,18 @@ export function Box({
   background,
   padding,
   paddingBlock,
+  paddingBlockStart,
+  paddingBlockEnd,
   paddingInline,
+  paddingInlineStart,
+  paddingInlineEnd,
   borderRadius,
   borderWidth,
   borderColor,
   shadow,
   minHeight,
   width,
+  maxWidth,
   id,
 }: BoxProps) {
   return (
@@ -52,6 +62,12 @@ export function Box({
         padding: padding ? `var(--p-space-${padding})` : undefined,
         paddingBlock: paddingBlock ? `var(--p-space-${paddingBlock})` : undefined,
         paddingInline: paddingInline ? `var(--p-space-${paddingInline})` : undefined,
+        // Directional padding is listed after the shorthands so a specific
+        // value always wins over a broader one, whatever order props arrive in.
+        paddingBlockStart: paddingBlockStart ? `var(--p-space-${paddingBlockStart})` : undefined,
+        paddingBlockEnd: paddingBlockEnd ? `var(--p-space-${paddingBlockEnd})` : undefined,
+        paddingInlineStart: paddingInlineStart ? `var(--p-space-${paddingInlineStart})` : undefined,
+        paddingInlineEnd: paddingInlineEnd ? `var(--p-space-${paddingInlineEnd})` : undefined,
         borderRadius: borderRadius ? `var(--p-border-radius-${borderRadius})` : undefined,
         borderWidth: borderWidth ? `var(--p-border-width-${borderWidth})` : undefined,
         borderStyle: borderWidth ? 'solid' : undefined,
@@ -59,6 +75,7 @@ export function Box({
         boxShadow: shadow ? `var(--p-shadow-${shadow})` : undefined,
         minHeight,
         width,
+        maxWidth,
       }}
     >
       {children}

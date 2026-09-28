@@ -1,46 +1,60 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import { BlockStack } from './block-stack.js';
+import { Text } from './text.js';
+
+/** Polaris's own empty-search illustration, inlined so there is no asset to host. */
+const EMPTY_SEARCH_SVG =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <circle cx="26" cy="26" r="20" stroke="#8A8A8A" stroke-width="4"/>
+      <path d="M41 41l14 14" stroke="#8A8A8A" stroke-width="4" stroke-linecap="round"/>
+    </svg>`,
+  );
 
 export interface EmptySearchResultProps {
-  children?: ReactNode;
-  className?: string;
-  title?: string;
-  /** Rendered after the body. Keep to one primary action. */
-  actions?: ReactNode;
+  /** States what matched nothing. Not "no results" on its own. */
+  title: string;
+  /** What to try next. This is the part that makes the state recoverable. */
+  description?: string;
+  withIllustration?: boolean;
 }
 
 /**
- * EmptySearchResult — Filtered-empty state. Different words from first-run.
+ * EmptySearchResult — the filtered-empty state.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * Deliberately a different component from EmptyState, and the distinction is
+ * the point: showing "create your first product" to someone whose search
+ * returned nothing reads as though their data has been lost. This one says
+ * what was searched and what to try instead.
+ *
+ * Structure mirrors Polaris: a centred vertical stack, a headingLg title as a
+ * `p`, and a subdued description.
  */
-export function EmptySearchResult({ children, className, title, actions }: EmptySearchResultProps) {
+export function EmptySearchResult({
+  title,
+  description,
+  withIllustration = false,
+}: EmptySearchResultProps) {
   return (
-    <section
-      className={cn('flex flex-col gap-[var(--p-space-400)] overflow-hidden', className)}
-      style={{
-        background: 'var(--p-color-bg-surface)',
-        padding: 'var(--p-space-400)',
-        borderRadius: 'var(--p-border-radius-300)',
-        boxShadow: 'var(--p-shadow-100)',
-        outline: 'var(--p-border-width-025) solid var(--p-color-border)',
-        outlineOffset: 'calc(var(--p-border-width-025) * -1)',
-      }}
-    >
-      {title ? (
-        <h2
-          style={{
-            fontSize: 'var(--p-font-size-350)',
-            fontWeight: 'var(--p-font-weight-semibold)',
-            lineHeight: 'var(--p-font-line-height-500)',
-          }}
-        >
-          {title}
-        </h2>
+    <BlockStack gap="400" inlineAlign="center">
+      {withIllustration ? (
+        <img
+          // Decorative: the title carries the meaning.
+          alt=""
+          role="presentation"
+          src={EMPTY_SEARCH_SVG}
+          draggable={false}
+          width={60}
+          height={60}
+        />
       ) : null}
-      {children}
-      {actions ? <div className="flex gap-[var(--p-space-200)]">{actions}</div> : null}
-    </section>
+      <Text variant="headingLg" as="p">
+        {title}
+      </Text>
+      <Text tone="subdued" as="span">
+        {description ? <p>{description}</p> : null}
+      </Text>
+    </BlockStack>
   );
 }

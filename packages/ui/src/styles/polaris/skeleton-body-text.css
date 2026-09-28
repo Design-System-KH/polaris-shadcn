@@ -1,0 +1,23 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   SkeletonBodyText — 5 rules. */
+.Polaris-SkeletonBodyText__SkeletonBodyTextContainer{
+  width:100%;
+}
+.Polaris-SkeletonBodyText{
+  height:var(--p-space-200);
+  display:flex;
+  background-color:var(--p-color-bg-fill-tertiary);
+  border-radius:var(--p-border-radius-100);
+}
+@media screen and (-ms-high-contrast: active){
+
+.Polaris-SkeletonBodyText{
+    background-color:grayText;
+}
+  }
+.Polaris-SkeletonBodyText:last-child:not(:first-child){
+    width:80%;
+  }
+.Polaris-SkeletonBodyText + .Polaris-SkeletonBodyText{
+    margin-top:var(--p-space-300);
+  }

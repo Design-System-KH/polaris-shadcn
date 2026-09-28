@@ -614,7 +614,7 @@ for (const c of COMPONENTS) {
     created++;
     emitted.push(c);
   }
-  if (!existsSync(storyFile)) writeFileSync(storyFile, story(c));
+  if (!existsSync(storyFile) && c.depth !== 'full') writeFileSync(storyFile, story(c));
 }
 
 // The barrel is regenerated wholesale so it can never drift from the directory.

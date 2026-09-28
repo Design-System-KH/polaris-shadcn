@@ -1,0 +1,144 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Modal — 23 rules. */
+.Polaris-Modal-Dialog__Container{
+  position:fixed;
+  z-index:var(--p-z-index-11);
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  pointer-events:none;
+}
+@media (min-width: 48em){
+
+.Polaris-Modal-Dialog__Container{
+    justify-content:center;
+}
+  }
+.Polaris-Modal-Dialog:focus{
+  outline:0;
+}
+.Polaris-Modal-Dialog__Modal{
+  --pc-modal-dialog-vertical-spacing:3.75rem;
+  pointer-events:initial;
+  position:fixed;
+  right:0;
+  bottom:0;
+  left:0;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  max-height:calc(100vh - var(--pc-modal-dialog-vertical-spacing));
+  background:var(--p-color-bg-surface);
+  box-shadow:var(--p-shadow-600);
+  overflow:hidden;
+}
+@media (forced-colors: active){
+
+.Polaris-Modal-Dialog__Modal{
+    border:var(--p-border-width-025) solid transparent;
+}
+  }
+@media (max-width: 47.9975em){
+
+.Polaris-Modal-Dialog__Modal{
+    bottom:0;
+    max-height:100%;
+}
+  }
+@media (min-width: 48em){
+
+.Polaris-Modal-Dialog__Modal{
+    position:relative;
+    max-width:38.75rem;
+    margin:0 auto;
+    border-radius:var(--p-border-radius-400);
+}
+  }
+@media (min-width: 48em) and (min-height: 41.25em){
+
+.Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--limitHeight{
+        max-height:37.5rem;
+  }
+      }
+@media (min-width: 48em){
+
+.Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeSmall{
+      max-width:23.75rem;
+  }
+    }
+@media (min-width: 48em){
+
+.Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeLarge{
+      max-width:calc(100% - var(--p-space-1600));
+  }
+    }
+@media (min-width: 65em){
+
+.Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeLarge{
+      max-width:61.25rem;
+  }
+    }
+.Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeFullScreen{
+    height:100%;
+  }
+@media (min-width: 48em){
+
+.Polaris-Modal-Dialog__Modal.Polaris-Modal-Dialog--sizeFullScreen{
+      height:unset;
+  }
+    }
+.Polaris-Modal-Dialog--animateFadeUp{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  will-change:transform, opacity;
+  opacity:1;
+  transform:translateY(0);
+  transition:transform var(--p-motion-ease) var(--p-motion-duration-200), opacity var(--p-motion-ease) var(--p-motion-duration-200);
+}
+.Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--entering,
+  .Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--exiting,
+  .Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--exited{
+    opacity:0;
+    transform:translateY(12.5rem);
+  }
+.Polaris-Modal-Dialog--animateFadeUp.Polaris-Modal-Dialog--entered{
+    opacity:1;
+    transform:translateY(0);
+  }
+.Polaris-Modal-Section{
+  flex:0 0 auto;
+}
+.Polaris-Modal-Section:not(:last-of-type){
+    border-bottom:var(--p-border-width-025) solid var(--p-color-border-secondary);
+  }
+.Polaris-Modal-Section--titleHidden{
+  padding-right:calc(var(--p-space-1200) + var(--p-space-100) + var(--p-space-100));
+}
+.Polaris-Modal__Body,
+.Polaris-Modal__NoScrollBody{
+  flex-grow:1;
+}
+@media (min-width: 48em){
+
+.Polaris-Modal__Body,
+.Polaris-Modal__NoScrollBody{
+    flex-grow:unset;
+}
+  }
+.Polaris-Modal__IFrame{
+  --pc-modal-frame-small-width:38.75rem;
+  display:block;
+  width:var(--pc-modal-frame-small-width);
+  max-width:100vw;
+  border:none;
+}
+@media (min-width: 48em){
+
+.Polaris-Modal__IFrame{
+    max-width:var(--pc-modal-frame-small-width);
+}
+  }

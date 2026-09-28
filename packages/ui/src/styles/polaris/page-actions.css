@@ -1,0 +1,13 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   PageActions — 2 rules. */
+.Polaris-PageActions{
+  margin:0 auto;
+
+  border-top:0;
+  padding:var(--p-space-400);
+}
+@media (min-width: 30.625em){
+  .Polaris-PageActions{
+    padding:var(--p-space-400) 0;
+}
+  }

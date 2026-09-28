@@ -1,0 +1,15 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   PositionedOverlay — 4 rules. */
+.Polaris-PositionedOverlay{
+  position:absolute;
+  z-index:var(--p-z-index-2);
+}
+.Polaris-PositionedOverlay--fixed{
+  position:fixed;
+}
+.Polaris-PositionedOverlay--calculating{
+  visibility:hidden;
+}
+.Polaris-PositionedOverlay--preventInteraction{
+  pointer-events:none;
+}

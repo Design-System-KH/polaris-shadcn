@@ -1,0 +1,82 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Layout — 15 rules. */
+.Polaris-Layout{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  margin-top:calc(var(--p-space-400)*-1);
+  margin-left:calc(var(--p-space-400)*-1);
+}
+@media print{
+    body .Polaris-Layout{
+      font-size:var(--p-font-size-300);
+      line-height:var(--p-font-line-height-400);
+    }
+
+    .Polaris-Layout a,
+    .Polaris-Layout button{
+      color:var(--p-color-text);
+    }
+  }
+.Polaris-Layout__Section{
+  flex:var(--pg-layout-relative-size) var(--pg-layout-relative-size) var(--pg-layout-width-primary-min);
+  min-width:51%;
+}
+@media print{
+
+.Polaris-Layout__Section{
+    flex:2 2 22.5rem;
+}
+  }
+.Polaris-Layout__Section--fullWidth{
+  flex:1 1 100%;
+}
+.Polaris-Layout__Section--oneHalf{
+  flex:1 1 var(--pg-layout-width-one-half-width-base);
+  min-width:0;
+}
+.Polaris-Layout__Section--oneThird{
+  flex:1 1 var(--pg-layout-width-one-third-width-base);
+  min-width:0;
+}
+.Polaris-Layout__AnnotatedSection{
+  min-width:0;
+  flex:1 1 100%;
+}
+.Polaris-Layout__Section,
+.Polaris-Layout__AnnotatedSection{
+  max-width:calc(100% - var(--p-space-400));
+  margin-top:var(--p-space-400);
+  margin-left:var(--p-space-400);
+}
+.Polaris-Layout__Section + .Polaris-Layout__AnnotatedSection, .Polaris-Layout__AnnotatedSection + .Polaris-Layout__AnnotatedSection{
+    border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+    padding-top:var(--p-space-400);
+  }
+.Polaris-Layout__AnnotationWrapper{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:calc(var(--p-space-400)*-1);
+  margin-left:calc(var(--p-space-400)*-1);
+}
+.Polaris-Layout__AnnotationContent{
+  flex:var(--pg-layout-relative-size) var(--pg-layout-relative-size) var(--pg-layout-width-primary-min);
+}
+.Polaris-Layout__Annotation{
+  flex:1 1 var(--pg-layout-width-secondary-min);
+  padding:var(--p-space-400) var(--p-space-400) 0 0;
+}
+@media (min-width: 48em){
+
+.Polaris-Layout__Annotation{
+    padding-bottom:var(--p-space-400);
+}
+  }
+.Polaris-Layout__Annotation,
+.Polaris-Layout__AnnotationContent{
+  min-width:0;
+  max-width:calc(100% - var(--p-space-400));
+  margin-top:var(--p-space-400);
+  margin-left:var(--p-space-400);
+}

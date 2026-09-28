@@ -1,0 +1,6 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   Combobox — 1 rules. */
+.Polaris-Combobox__Listbox{
+  padding:var(--p-space-200) 0;
+  overflow:visible;
+}

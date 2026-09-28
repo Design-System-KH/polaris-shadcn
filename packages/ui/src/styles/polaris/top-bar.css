@@ -1,0 +1,487 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   TopBar — 81 rules. */
+.Polaris-TopBar-SearchDismissOverlay{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:var(--p-z-index-7);
+  height:100%;
+}
+.Polaris-TopBar-SearchDismissOverlay--visible{
+  background-color:transparent;
+  animation:none;
+}
+.Polaris-TopBar-Search{
+  position:fixed;
+  visibility:hidden;
+  z-index:var(--p-z-index-8);
+  pointer-events:none;
+  top:var(--pg-top-bar-height);
+  left:0;
+  right:0;
+  box-shadow:var(--p-shadow-600);
+  overflow:hidden;
+}
+@media (min-width: 30.625em){
+
+.Polaris-TopBar-Search{
+    position:absolute;
+    top:100%;
+    max-width:36.25rem;
+    margin:var(--p-space-100) var(--p-space-500) 0;
+    border-radius:var(--p-border-radius-200);
+}
+  }
+@media (min-width: 48em){
+
+.Polaris-TopBar-Search{
+    margin:var(--p-space-100) var(--p-space-800) 0;
+}
+  }
+.Polaris-TopBar-Search__SearchContent{
+  background-color:var(--p-color-bg-surface);
+}
+.Polaris-TopBar-Search--visible{
+  visibility:initial;
+  pointer-events:all;
+}
+.Polaris-TopBar-Search__Results{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  max-height:calc(100vh - var(--pg-top-bar-height));
+  margin:0;
+}
+@media (min-width: 30.625em){
+
+.Polaris-TopBar-Search__Results{
+    max-height:60vh;
+}
+  }
+.Polaris-TopBar-SearchField{
+  --pc-search-field-backdrop:1;
+  --pc-search-field-input:2;
+  --pc-search-field-icon:3;
+  --pc-search-field-action:3;
+  --pc-search-field-icon-size:1.125rem;
+  z-index:var(--p-z-index-11);
+  position:relative;
+  display:flex;
+  flex:1 1 auto;
+  align-items:center;
+  border:var(--p-border-width-025) solid transparent;
+  width:100%;
+}
+.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Input,
+.Polaris-TopBar-SearchField__Input:focus{
+  color:var(--p-color-text-inverse);
+}
+.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Input::placeholder, .Polaris-TopBar-SearchField__Input:focus::placeholder{
+    color:var(--p-color-text-inverse-secondary);
+  }
+.Polaris-TopBar-SearchField__Input:focus-visible ~ .Polaris-TopBar-SearchField__Backdrop::after {
+  box-shadow: 0 0 0 0.125rem var(--p-color-border-focus);
+  outline: var(--p-border-width-025) solid transparent;
+}
+.Polaris-TopBar-SearchField__Input:focus-visible ~ .Polaris-TopBar-SearchField__BackdropShowFocusBorder{
+    border:var(--p-border-width-025) solid var(--pc-top-bar-border);
+  }
+.Polaris-TopBar-SearchField__Input:focus-visible ~ .Polaris-TopBar-SearchField__Icon svg{
+    fill:var(--p-color-icon-secondary);
+  }
+.Polaris-TopBar-SearchField__Input:focus-visible:not(:active) ~ .Polaris-TopBar-SearchField__Backdrop{
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-050);
+  }
+.Polaris-TopBar-SearchField__Input:focus-visible:not(:active) ~ .Polaris-TopBar-SearchField__Icon svg{
+    fill:var(--p-color-icon-secondary);
+  }
+.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__BackdropShowFocusBorder{
+    border:var(--p-border-width-025) solid var(--pc-top-bar-border);
+  }
+.Polaris-TopBar-SearchField--focused .Polaris-TopBar-SearchField__Icon svg{
+    fill:var(--p-color-icon-inverse);
+  }
+.Polaris-TopBar-SearchField__Input{
+  font-size:var(--p-font-size-325);
+  font-weight:var(--p-font-weight-regular);
+  line-height:var(--p-font-line-height-500);
+  border:none;
+  letter-spacing:initial;
+  z-index:var(--pc-search-field-input);
+  height:2rem;
+  width:100%;
+  padding:0 calc(var(--pc-search-field-icon-size) + var(--p-space-300));
+  border:var(--p-border-width-0165) solid var(--p-color-border-inverse);
+  border-radius:var(--p-border-radius-200);
+  background-color:transparent;
+  outline:none;
+  color:var(--p-color-text-inverse-secondary);
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  will-change:fill, color;
+  transition:fill var(--p-motion-duration-200) var(--p-motion-ease), color var(--p-motion-duration-200) var(--p-motion-ease);
+}
+.Polaris-TopBar-SearchField__Input:hover{
+    border-color:var(--p-color-border-inverse-hover);
+  }
+.Polaris-TopBar-SearchField__Input:active,
+  .Polaris-TopBar-SearchField__Input:focus{
+    box-shadow:inset 0 0 0 var(--p-border-width-025) var(--p-color-border-inverse-active);
+  }
+.Polaris-TopBar-SearchField__Input::placeholder{
+    color:var(--p-color-text-inverse-secondary);
+  }
+.Polaris-TopBar-SearchField__Input::-webkit-search-decoration,
+  .Polaris-TopBar-SearchField__Input::-webkit-search-cancel-button{
+    -webkit-appearance:none;
+            appearance:none;
+  }
+.Polaris-TopBar-SearchField__Icon{
+  position:absolute;
+  z-index:var(--pc-search-field-icon);
+  top:50%;
+  left:var(--p-space-200);
+  display:flex;
+  height:var(--pc-search-field-icon-size);
+  width:var(--pc-search-field-icon-size);
+  pointer-events:none;
+  transform:translateY(-50%);
+}
+.Polaris-TopBar-SearchField__Icon svg{
+    fill:var(--p-color-icon-secondary);
+  }
+.Polaris-TopBar-SearchField__Clear{
+  position: relative;
+  position:absolute;
+  right:var(--p-space-100);
+  z-index:var(--pc-search-field-action);
+  border:none;
+  -webkit-appearance:none;
+          appearance:none;
+  background:transparent;
+  padding:var(--p-space-100);
+}
+.Polaris-TopBar-SearchField__Clear::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  bottom: -0.0625rem;
+  left: -0.0625rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-200);
+}
+.Polaris-TopBar-SearchField__Clear svg{
+    fill:var(--p-color-icon-secondary);
+  }
+.Polaris-TopBar-SearchField__Clear:focus,
+  .Polaris-TopBar-SearchField__Clear:hover{
+    outline:none;
+  }
+.Polaris-TopBar-SearchField__Clear:hover svg,
+  .Polaris-TopBar-SearchField__Clear:focus svg{
+    fill:var(--p-color-icon-inverse);
+  }
+.Polaris-TopBar-SearchField__Clear:focus-visible::after {
+  box-shadow: 0 0 0 0.125rem var(--p-color-border-focus);
+  outline: var(--p-border-width-025) solid transparent;
+}
+.Polaris-TopBar-SearchField__Clear:active svg{
+      fill:var(--p-color-icon-active);
+    }
+.Polaris-TopBar-SearchField__Clear:active::after{
+      border:none;
+    }
+.Polaris-TopBar-SearchField__Backdrop{
+  position:absolute;
+  z-index:var(--pc-search-field-backdrop);
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color:var(--p-color-bg-surface-inverse);
+  border-radius:var(--p-border-radius-200);
+}
+.Polaris-TopBar-SearchField__Backdrop::after{
+    content:none;
+  }
+.Polaris-TopBar-Menu__ActivatorWrapper{
+  height:var(--pg-top-bar-height);
+  display:flex;
+  align-items:center;
+}
+.Polaris-TopBar-Menu__Activator{
+  -webkit-appearance:none;
+          appearance:none;
+  margin:0;
+  padding:0;
+  background:none;
+  border:none;
+  font-size:inherit;
+  line-height:inherit;
+  color:inherit;
+  cursor:pointer;
+  position: relative;
+  color:var(--p-color-text-inverse);
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-width:auto;
+  min-height:2rem;
+  padding:var(--p-space-150);
+  border:0;
+  cursor:pointer;
+  transition:background-color var(--p-motion-duration-100);
+  margin-right:var(--p-space-200);
+  border-radius:var(--p-border-radius-200);
+  background-color:var(--p-color-bg-fill-inverse);
+}
+.Polaris-TopBar-Menu__Activator:focus{
+    outline:none;
+  }
+.Polaris-TopBar-Menu__Activator::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.0625rem;
+  right: -0.0625rem;
+  bottom: -0.0625rem;
+  left: -0.0625rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-TopBar-Menu__Activator:focus{
+    background-color:var(--p-color-bg-fill-inverse-hover);
+    outline:none;
+  }
+.Polaris-TopBar-Menu__Activator:focus-visible{
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-050);
+  }
+.Polaris-TopBar-Menu__Activator:focus-visible::after{
+    content:none;
+  }
+.Polaris-TopBar-Menu__Activator:hover{
+    background-color:var(--p-color-bg-fill-inverse-hover);
+  }
+.Polaris-TopBar-Menu__Activator:active,
+  .Polaris-TopBar-Menu__Activator[aria-expanded='true']{
+    background-color:var(--p-color-bg-fill-inverse-active);
+    outline:none;
+    transition:none;
+  }
+.Polaris-TopBar-Menu__Activator:active::after, .Polaris-TopBar-Menu__Activator[aria-expanded='true']::after{
+      border:none;
+    }
+.Polaris-TopBar-Menu__Activator:active p, .Polaris-TopBar-Menu__Activator[aria-expanded='true'] p{
+      color:var(--p-color-text-inverse);
+    }
+@media (max-width: 47.9975em){
+
+.Polaris-TopBar-Menu__Activator{
+    margin-right:var(--p-space-200);
+    background-color:var(--p-color-bg-inverse);
+}
+
+    .Polaris-TopBar-Menu__Activator:focus,
+    .Polaris-TopBar-Menu__Activator:hover,
+    .Polaris-TopBar-Menu__Activator:active,
+    .Polaris-TopBar-Menu__Activator[aria-expanded='true']{
+      opacity:0.85;
+    }
+  }
+.Polaris-TopBar-Menu__Activator--userMenu{
+  padding:var(--p-space-050);
+}
+.Polaris-TopBar-Menu__Section{
+  margin-top:var(--p-space-200);
+  padding-top:var(--p-space-200);
+  border-top:var(--p-border-width-025) solid var(--p-color-border-secondary);
+}
+.Polaris-TopBar-UserMenu__Details{
+  max-width:10rem;
+  margin-right:0;
+  padding:0 var(--p-space-200) 0 0.625rem;
+}
+@media (max-width: 47.9975em){
+  .Polaris-TopBar-UserMenu__Details{
+    display:none;
+}
+  }
+.Polaris-TopBar{
+  position:relative;
+  height:var(--pg-top-bar-height);
+  box-shadow:var(--p-shadow-100);
+  background-color:var(--p-color-bg-inverse);
+  gap:var(--p-space-100);
+}
+@media (min-width: 48em){
+
+.Polaris-TopBar{
+    gap:var(--p-space-600);
+    grid-template-columns:minmax(15rem, 1fr) minmax(auto, 30rem) 1fr;
+}
+  }
+.Polaris-TopBar::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    width:100%;
+    border-bottom:var(--p-border-width-025) solid transparent;
+  }
+.Polaris-TopBar__Container{
+  display:grid;
+  grid-template-columns:1fr minmax(auto, 30rem) 1fr;
+  align-items:center;
+  width:calc(100vw - var(--pc-app-provider-scrollbar-width));
+}
+.Polaris-TopBar__LogoDisplayControl{
+  display:none;
+}
+@media (min-width: 48em){
+
+.Polaris-TopBar__LogoDisplayControl{
+    display:flex;
+}
+  }
+.Polaris-TopBar__LogoDisplayContainer{
+  display:flex;
+}
+.Polaris-TopBar__LogoContainer{
+  flex:0 0 var(--pg-layout-width-nav-base);
+  align-items:center;
+  height:100%;
+  padding:0 var(--p-space-200) 0 var(--p-space-400);
+  flex-basis: var(--pg-layout-width-nav-base);
+  flex-basis: calc(var(--pg-layout-width-nav-base) + constant(safe-area-inset-left));
+  flex-basis: calc(var(--pg-layout-width-nav-base) + env(safe-area-inset-left));
+  padding-left: var(--p-space-400);
+  padding-left: calc(var(--p-space-400) + constant(safe-area-inset-left));
+  padding-left: calc(var(--p-space-400) + env(safe-area-inset-left));
+}
+.Polaris-TopBar__LogoContainer.Polaris-TopBar--hasLogoSuffix{
+    gap:var(--p-space-200);
+  }
+.Polaris-TopBar__Logo,
+.Polaris-TopBar__LogoLink{
+  display:block;
+}
+.Polaris-TopBar__Logo:focus-visible, .Polaris-TopBar__LogoLink:focus-visible{
+    outline:var(--p-border-width-050) solid var(--p-color-border-focus);
+    outline-offset:var(--p-space-150);
+    border-radius:var(--p-border-radius-200);
+  }
+.Polaris-TopBar__ContextControl{
+  display:none;
+}
+@media (min-width: 48em){
+
+.Polaris-TopBar__ContextControl{
+    width:var(--pg-layout-width-nav-base);
+    display:block;
+}
+  }
+@media (min-width: 90em){
+
+.Polaris-TopBar__ContextControl{
+    width:var(--pg-layout-width-nav-base);
+}
+  }
+.Polaris-TopBar__NavigationIcon{
+  -webkit-appearance:none;
+          appearance:none;
+  margin:0;
+  padding:0;
+  background:none;
+  border:none;
+  font-size:inherit;
+  line-height:inherit;
+  color:inherit;
+  cursor:pointer;
+  position:relative;
+  align-self:center;
+  margin-left:calc(var(--p-space-200) + var(--p-space-050));
+  margin-right:var(--p-space-200);
+  padding:var(--p-space-200);
+  border-radius:var(--p-border-radius-100);
+  color:var(--p-color-icon-inverse);
+  transition:var(--p-motion-duration-150) color var(--p-motion-ease) var(--p-motion-duration-50);
+}
+.Polaris-TopBar__NavigationIcon:focus{
+    outline:none;
+  }
+.Polaris-TopBar__NavigationIcon.Polaris-TopBar--focused:active{
+    background-color:var(--p-color-bg-fill-inverse-hover);
+  }
+.Polaris-TopBar__NavigationIcon:hover{
+    background-color:var(--p-color-bg-fill-inverse-hover);
+  }
+.Polaris-TopBar__NavigationIcon::after{
+    content:'';
+    position:absolute;
+    top:calc(var(--p-space-200)*-1);
+    left:calc(var(--p-space-200)*-1);
+    width:calc(100% + var(--p-space-500));
+    height:calc(100% + var(--p-space-500));
+  }
+@media (min-width: 48em){
+
+.Polaris-TopBar__NavigationIcon{
+    display:none;
+}
+  }
+.Polaris-TopBar__NavigationIcon .Polaris-TopBar__IconWrapper{
+    position: relative;
+  }
+.Polaris-TopBar__NavigationIcon .Polaris-TopBar__IconWrapper::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.4375rem;
+  right: -0.4375rem;
+  bottom: -0.4375rem;
+  left: -0.4375rem;
+  display: block;
+  pointer-events: none;
+  box-shadow: 0 0 0 -0.4375rem var(--p-color-border-focus);
+  border-radius: var(--p-border-radius-100);
+}
+.Polaris-TopBar__NavigationIcon:focus-visible:not(:active) .Polaris-TopBar__IconWrapper::after {
+  box-shadow: 0 0 0 0.125rem var(--p-color-border-focus);
+  outline: var(--p-border-width-025) solid transparent;
+}
+.Polaris-TopBar__LeftContent{
+  display:flex;
+}
+.Polaris-TopBar__Search{
+  z-index:var(--p-z-index-1);
+  display:flex;
+  flex:1 1 auto;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+}
+@media (min-width: 48em){
+
+.Polaris-TopBar__Search{
+    position:relative;
+}
+  }
+.Polaris-TopBar__RightContent{
+  display:flex;
+  justify-content:flex-end;
+}
+.Polaris-TopBar__SecondaryMenu{
+  margin-left:var(--p-space-200);
+}
+.Polaris-TopBar__SecondaryMenu svg{
+  fill:var(--p-color-icon-inverse);
+}

@@ -1,0 +1,92 @@
+/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.
+   LegacyStack — 25 rules. */
+.Polaris-LegacyStack{
+  --pc-stack-spacing:var(--p-space-400);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:stretch;
+  margin-top:calc(var(--pc-stack-spacing)*-1);
+  margin-left:calc(var(--pc-stack-spacing)*-1);
+}
+.Polaris-LegacyStack > .Polaris-LegacyStack__Item{
+    margin-top:var(--pc-stack-spacing);
+    margin-left:var(--pc-stack-spacing);
+    max-width:100%;
+  }
+.Polaris-LegacyStack--noWrap{
+  flex-wrap:nowrap;
+}
+.Polaris-LegacyStack--spacingNone{
+  --pc-stack-spacing:0;
+}
+.Polaris-LegacyStack--spacingExtraTight{
+  --pc-stack-spacing:var(--p-space-100);
+}
+.Polaris-LegacyStack--spacingTight{
+  --pc-stack-spacing:var(--p-space-200);
+}
+.Polaris-LegacyStack--spacingBaseTight{
+  --pc-stack-spacing:var(--p-space-300);
+}
+.Polaris-LegacyStack--spacingLoose{
+  --pc-stack-spacing:var(--p-space-500);
+}
+.Polaris-LegacyStack--spacingExtraLoose{
+  --pc-stack-spacing:var(--p-space-800);
+}
+.Polaris-LegacyStack--distributionLeading{
+  justify-content:flex-start;
+}
+.Polaris-LegacyStack--distributionTrailing{
+  justify-content:flex-end;
+}
+.Polaris-LegacyStack--distributionCenter{
+  justify-content:center;
+}
+.Polaris-LegacyStack--distributionEqualSpacing{
+  justify-content:space-between;
+}
+.Polaris-LegacyStack--distributionFill > .Polaris-LegacyStack__Item{
+  flex:1 1 auto;
+}
+.Polaris-LegacyStack--distributionFillEvenly > .Polaris-LegacyStack__Item{
+  flex:1 1 auto;
+}
+@supports ((min-width: -webkit-fit-content) or (min-width: -moz-fit-content) or (min-width: fit-content)){
+
+.Polaris-LegacyStack--distributionFillEvenly > .Polaris-LegacyStack__Item{
+    flex:1 0;
+    min-width:-webkit-fit-content;
+    min-width:-moz-fit-content;
+    min-width:fit-content;
+}
+  }
+.Polaris-LegacyStack--alignmentLeading{
+  align-items:flex-start;
+}
+.Polaris-LegacyStack--alignmentTrailing{
+  align-items:flex-end;
+}
+.Polaris-LegacyStack--alignmentCenter{
+  align-items:center;
+}
+.Polaris-LegacyStack--alignmentFill{
+  align-items:stretch;
+}
+.Polaris-LegacyStack--alignmentBaseline{
+  align-items:baseline;
+}
+.Polaris-LegacyStack--vertical{
+  flex-direction:column;
+  margin-left:0;
+}
+.Polaris-LegacyStack--vertical > .Polaris-LegacyStack__Item{
+    margin-left:0;
+  }
+.Polaris-LegacyStack__Item{
+  flex:0 0 auto;
+  min-width:0;
+}
+.Polaris-LegacyStack__Item--fill{
+  flex:1 1 auto;
+}
