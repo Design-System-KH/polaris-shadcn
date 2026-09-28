@@ -36,16 +36,22 @@ stylesheet. They do not re-derive its rules in Tailwind.
 
 That distinction is the whole difference between close and exact:
 
--  writes  custom properties for  to consume,
-  because the class carries the responsive fallback chain that inline styles
-  cannot reproduce.
--  is a ShadowBevel wrapping a Box, as Polaris composes it. The edge is
-  a bevel pseudo-element, not a border, which is why a re-derived border never
+- `Box` writes `--pc-box-*` custom properties for `.Polaris-Box` to consume,
+  because the class carries the `xs`–`lg` responsive fallback chain that inline
+  styles cannot reproduce.
+- `Card` is a ShadowBevel wrapping a Box, as Polaris composes it. The edge is a
+  bevel pseudo-element, not a border — which is why a re-derived border never
   matched at that radius.
--  uses the real type-ramp and tone classes.
--  — Polaris's resets, font stack and keyframes — is loaded in
-  . Omitting it was what made an earlier build sit on the wrong
+- `Text` uses the real type-ramp, tone and visually-hidden classes.
+- `Button` and `Avatar` use the real variant, size and style ramps.
+- `_shared.css` — Polaris's resets, font stack and keyframes — is imported by
+  `globals.css`. Omitting it was what made an earlier build sit on the wrong
   typography while each component looked individually correct.
+
+**If something does not match Polaris, check this first:** does the component
+import its stylesheet from `src/styles/polaris/`, and does it apply the real
+class names? A component still carrying Tailwind utilities has not been ported
+yet — that is the single cause of every mismatch so far.
 
 ## Components — 110 present, two depths
 
