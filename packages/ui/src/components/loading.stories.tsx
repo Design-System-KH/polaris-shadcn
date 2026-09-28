@@ -7,17 +7,15 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Page-level loading indicator. FIRST PASS — see STATUS.md.',
+        component:
+          'The page-level progress bar. Indeterminate on purpose: it eases toward the end without reaching it, because a fake percentage stalling at 90% is worse than none.',
       },
     },
   },
-  args: { title: 'Loading', children: 'Something happened worth reporting.' },
+  args: {},
 } satisfies Meta<typeof Loading>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Critical: Story = { args: { tone: 'critical' } };
-export const Success: Story = { args: { tone: 'success' } };
-export const Warning: Story = { args: { tone: 'warning' } };

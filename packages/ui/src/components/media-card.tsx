@@ -1,46 +1,81 @@
 import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
+import { Card } from './card.js';
+import { Text } from './text.js';
+import { Button } from './button.js';
+import { BlockStack } from './block-stack.js';
+import '../styles/polaris/media-card.css';
+
+export interface MediaCardAction {
+  content: string;
+  onAction?: () => void;
+}
 
 export interface MediaCardProps {
+  title: ReactNode;
   children?: ReactNode;
-  className?: string;
-  title?: string;
-  /** Rendered after the body. Keep to one primary action. */
-  actions?: ReactNode;
+  /** A VideoThumbnail, an Image, or any media element. */
+  media?: ReactNode;
+  /** Stacks the media above the text instead of beside it. */
+  portrait?: boolean;
+  size?: 'small' | 'medium';
+  description?: string;
+  primaryAction?: MediaCardAction;
+  secondaryAction?: MediaCardAction;
 }
 
 /**
- * MediaCard — Card pairing media with text and actions.
+ * MediaCard — a card pairing media with text and actions.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * Use `portrait` when the media is tall: a tall image beside short text leaves
+ * a large dead area on the right, which reads as a layout mistake.
  */
-export function MediaCard({ children, className, title, actions }: MediaCardProps) {
+export function MediaCard({
+  title,
+  children,
+  media,
+  portrait = false,
+  size = 'medium',
+  description,
+  primaryAction,
+  secondaryAction,
+}: MediaCardProps) {
   return (
-    <section
-      className={cn('flex flex-col gap-[var(--p-space-400)] overflow-hidden', className)}
-      style={{
-        background: 'var(--p-color-bg-surface)',
-        padding: 'var(--p-space-400)',
-        borderRadius: 'var(--p-border-radius-300)',
-        boxShadow: 'var(--p-shadow-100)',
-        outline: 'var(--p-border-width-025) solid var(--p-color-border)',
-        outlineOffset: 'calc(var(--p-border-width-025) * -1)',
-      }}
-    >
-      {title ? (
-        <h2
-          style={{
-            fontSize: 'var(--p-font-size-350)',
-            fontWeight: 'var(--p-font-weight-semibold)',
-            lineHeight: 'var(--p-font-line-height-500)',
-          }}
-        >
-          {title}
-        </h2>
-      ) : null}
-      {children}
-      {actions ? <div className="flex gap-[var(--p-space-200)]">{actions}</div> : null}
-    </section>
+    <Card padding="0">
+      <div
+        className={cn(
+          'Polaris-MediaCard',
+          portrait && 'Polaris-MediaCard--portrait',
+          size === 'small' && 'Polaris-MediaCard--sizeSmall',
+        )}
+      >
+        <div className="Polaris-MediaCard__MediaContainer">{media}</div>
+        <div className="Polaris-MediaCard__InfoContainer">
+          <BlockStack gap="200">
+            <Text variant="headingSm" as="h2">
+              {title}
+            </Text>
+            {description ? (
+              <Text as="p" variant="bodySm" tone="subdued">
+                {description}
+              </Text>
+            ) : null}
+            {children}
+            {primaryAction || secondaryAction ? (
+              <div className="Polaris-MediaCard__ActionContainer">
+                {primaryAction ? (
+                  <Button onClick={primaryAction.onAction}>{primaryAction.content}</Button>
+                ) : null}
+                {secondaryAction ? (
+                  <Button variant="plain" onClick={secondaryAction.onAction}>
+                    {secondaryAction.content}
+                  </Button>
+                ) : null}
+              </div>
+            ) : null}
+          </BlockStack>
+        </div>
+      </div>
+    </Card>
   );
 }

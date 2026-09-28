@@ -1,45 +1,118 @@
 import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
+import { Box } from './box.js';
+import { Text } from './text.js';
+import { Button } from './button.js';
+import { BlockStack } from './block-stack.js';
+import { InlineStack } from './inline-stack.js';
+import '../styles/polaris/banner.css';
 
-export type BannerTone = 'info' | 'success' | 'warning' | 'critical';
+export type BannerTone = 'success' | 'info' | 'warning' | 'critical';
 
-export interface BannerProps {
-  children?: ReactNode;
-  className?: string;
-  tone?: BannerTone;
-  title?: string;
+export interface BannerAction {
+  content: string;
+  onAction?: () => void;
+  url?: string;
 }
 
-const TONES: Record<BannerTone, { bg: string; text: string }> = {
-  info: { bg: 'bg-surface-info', text: 'text-info' },
-  success: { bg: 'bg-surface-success', text: 'text-success' },
-  warning: { bg: 'bg-surface-warning', text: 'text-caution' },
-  critical: { bg: 'bg-surface-critical', text: 'text-critical' },
+export interface BannerProps {
+  title?: string;
+  children?: ReactNode;
+  tone?: BannerTone;
+  icon?: ReactNode;
+  hideIcon?: boolean;
+  action?: BannerAction;
+  secondaryAction?: BannerAction;
+  onDismiss?: () => void;
+  /** Reduces padding for a banner sitting inside a Card. */
+  withinContentContainer?: boolean;
+}
+
+const BACKGROUND: Record<BannerTone, string> = {
+  success: 'bg-surface-success',
+  info: 'bg-surface-info',
+  warning: 'bg-surface-warning',
+  critical: 'bg-surface-critical',
+};
+
+const GLYPH: Record<BannerTone, string> = {
+  success: '✓',
+  info: 'i',
+  warning: '!',
+  critical: '!',
 };
 
 /**
- * Banner — Page-level message with a tone and optional actions.
+ * Banner — a page-level message with a tone and optional actions.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * Critical banners are announced assertively because they interrupt what the
+ * user was doing; everything else is announced politely and waits for a pause.
+ * Getting that backwards either talks over people or lets a failure go unheard.
  */
-export function Banner({ children, className, tone = 'info', title }: BannerProps) {
-  const t = TONES[tone];
+export function Banner({
+  title,
+  children,
+  tone = 'info',
+  icon,
+  hideIcon = false,
+  action,
+  secondaryAction,
+  onDismiss,
+  withinContentContainer = false,
+}: BannerProps) {
   return (
     <div
-      // Announced politely rather than assertively: this reports state, it does
-      // not interrupt. Errors that must interrupt use role="alert".
       role={tone === 'critical' ? 'alert' : 'status'}
-      className={cn('flex flex-col gap-[var(--p-space-100)]', className)}
-      style={{
-        background: `var(--p-color-${t.bg})`,
-        color: `var(--p-color-${t.text})`,
-        padding: 'var(--p-space-300)',
-        borderRadius: 'var(--p-border-radius-200)',
-      }}
+      aria-live={tone === 'critical' ? 'assertive' : 'polite'}
+      className={cn(
+        'Polaris-Banner',
+        withinContentContainer
+          ? 'Polaris-Banner--withinContentContainer'
+          : 'Polaris-Banner--withinPage',
+      )}
     >
-      {title ? <strong style={{ fontWeight: 'var(--p-font-weight-semibold)' }}>{title}</strong> : null}
-      {children}
+      <Box
+        background={BACKGROUND[tone]}
+        padding={withinContentContainer ? '300' : '400'}
+        borderRadius={withinContentContainer ? '200' : '300'}
+      >
+        <InlineStack gap="200" wrap={false}>
+          {hideIcon ? null : (
+            <span aria-hidden className={`Polaris-Banner__text--${tone}`}>
+              {icon ?? GLYPH[tone]}
+            </span>
+          )}
+          <BlockStack gap="200">
+            {title ? (
+              <Text as="h2" variant="headingSm">
+                {title}
+              </Text>
+            ) : null}
+            {children ? (
+              <Text as="span" variant="bodyMd">
+                {children}
+              </Text>
+            ) : null}
+            {action || secondaryAction ? (
+              <InlineStack gap="200">
+                {action ? <Button onClick={action.onAction}>{action.content}</Button> : null}
+                {secondaryAction ? (
+                  <Button variant="plain" onClick={secondaryAction.onAction}>
+                    {secondaryAction.content}
+                  </Button>
+                ) : null}
+              </InlineStack>
+            ) : null}
+          </BlockStack>
+          {onDismiss ? (
+            <span className="Polaris-Banner__DismissIcon">
+              <Button variant="tertiary" onClick={onDismiss} aria-label="Dismiss notification">
+                <span aria-hidden>&#215;</span>
+              </Button>
+            </span>
+          ) : null}
+        </InlineStack>
+      </Box>
     </div>
   );
 }

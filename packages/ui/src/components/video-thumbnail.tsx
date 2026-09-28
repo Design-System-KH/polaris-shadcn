@@ -1,54 +1,97 @@
-import { cn } from '../lib/cn.js';
+import '../styles/polaris/video-thumbnail.css';
 
 export interface VideoThumbnailProps {
-  source?: string;
-  /** Empty string marks it decorative; omit it and the image is unlabelled. */
-  alt: string;
-  size?: 'extraSmall' | 'small' | 'medium' | 'large';
-  className?: string;
+  thumbnailUrl: string;
+  onClick?: () => void;
+  /** Seconds. Rendered as m:ss for the eye, spoken in words for the ear. */
+  videoLength?: number;
+  /** 0–100. Shows a resume bar across the foot of the poster. */
+  videoProgress?: number;
+  showVideoProgress?: boolean;
+  accessibilityLabel?: string;
 }
 
-const SIZES: Record<NonNullable<VideoThumbnailProps['size']>, string> = {
-  extraSmall: '1.5rem',
-  small: '2rem',
-  medium: '2.5rem',
-  large: '5rem',
+const clock = (seconds: number) => {
+  const minutes = Math.floor(seconds / 60);
+  const rest = Math.floor(seconds % 60);
+  return `${minutes}:${String(rest).padStart(2, '0')}`;
+};
+
+const spoken = (seconds: number) => {
+  const minutes = Math.floor(seconds / 60);
+  const rest = Math.floor(seconds % 60);
+  const parts: string[] = [];
+  if (minutes) parts.push(`${minutes} minute${minutes === 1 ? '' : 's'}`);
+  if (rest) parts.push(`${rest} second${rest === 1 ? '' : 's'}`);
+  return parts.join(' ') || '0 seconds';
 };
 
 /**
- * VideoThumbnail — Video poster with a play affordance and duration.
+ * VideoThumbnail — a video poster with a play affordance and duration.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * The duration is shown as `2:31` but announced as "2 minutes 31 seconds":
+ * a screen reader reads the colon form as a time of day, which is not what it
+ * means here.
  */
-export function VideoThumbnail({ source, alt, size = 'medium', className }: VideoThumbnailProps) {
-  const dimension = SIZES[size];
-  return source ? (
-    // width and height are set so the box is reserved before the image loads.
-    <img
-      src={source}
-      alt={alt}
-      width={dimension}
-      height={dimension}
-      className={cn('object-cover', className)}
-      style={{ width: dimension, height: dimension, borderRadius: 'var(--p-border-radius-200)' }}
-    />
-  ) : (
-    <span
-      role="img"
-      aria-label={alt || undefined}
-      aria-hidden={alt ? undefined : true}
-      className={cn('inline-flex items-center justify-center', className)}
-      style={{
-        width: dimension,
-        height: dimension,
-        background: 'var(--p-color-bg-fill-secondary)',
-        borderRadius: 'var(--p-border-radius-200)',
-        color: 'var(--p-color-text-secondary)',
-        fontSize: 'var(--p-font-size-300)',
-      }}
+export function VideoThumbnail({
+  thumbnailUrl,
+  onClick,
+  videoLength,
+  videoProgress,
+  showVideoProgress = false,
+  accessibilityLabel,
+}: VideoThumbnailProps) {
+  const label =
+    accessibilityLabel ??
+    (videoLength === undefined ? 'Play video' : `Play video of length ${spoken(videoLength)}`);
+
+  return (
+    <div
+      className="Polaris-VideoThumbnail__Thumbnail"
+      style={{ backgroundImage: `url(${thumbnailUrl})` }}
     >
-      {alt ? alt.slice(0, 2).toUpperCase() : null}
-    </span>
+      <div className="Polaris-VideoThumbnail__ThumbnailContainer">
+        <button
+          type="button"
+          className="Polaris-VideoThumbnail__PlayButton"
+          onClick={onClick}
+          aria-label={label}
+        >
+          <span className="Polaris-VideoThumbnail__PlayIcon" aria-hidden>
+            &#9654;
+          </span>
+        </button>
+
+        {videoLength === undefined ? null : (
+          <p className="Polaris-VideoThumbnail__Timestamp">
+            <span aria-hidden>{clock(videoLength)}</span>
+            <span className="Polaris-Text--visuallyHidden">{spoken(videoLength)}</span>
+          </p>
+        )}
+
+        {showVideoProgress && videoProgress !== undefined ? (
+          <div
+            className="Polaris-VideoThumbnail__Progress"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={videoProgress}
+            aria-label="Video progress"
+          >
+            <progress
+              className="Polaris-VideoThumbnail__ProgressBar"
+              value={videoProgress}
+              max={100}
+            />
+            <div
+              className="Polaris-VideoThumbnail__Indicator"
+              style={{ width: `${videoProgress}%` }}
+            >
+              <span className="Polaris-VideoThumbnail__Label">{videoProgress}%</span>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 }

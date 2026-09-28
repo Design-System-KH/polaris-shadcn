@@ -1,45 +1,33 @@
-import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-
-export type LoadingTone = 'info' | 'success' | 'warning' | 'critical';
+import { useEffect, useState } from 'react';
+// Loading lives under Frame in Polaris's stylesheet.
+import '../styles/polaris/frame.css';
 
 export interface LoadingProps {
-  children?: ReactNode;
-  className?: string;
-  tone?: LoadingTone;
-  title?: string;
+  /** Announced to assistive technology while the page works. */
+  accessibilityLabel?: string;
 }
 
-const TONES: Record<LoadingTone, { bg: string; text: string }> = {
-  info: { bg: 'bg-surface-info', text: 'text-info' },
-  success: { bg: 'bg-surface-success', text: 'text-success' },
-  warning: { bg: 'bg-surface-warning', text: 'text-caution' },
-  critical: { bg: 'bg-surface-critical', text: 'text-critical' },
-};
-
 /**
- * Loading — Page-level loading indicator.
+ * Loading — the page-level progress bar.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * Indeterminate on purpose: it says work is happening without implying a
+ * completion estimate the app cannot actually make. A fake percentage that
+ * stalls at 90% is worse than no percentage.
  */
-export function Loading({ children, className, tone = 'info', title }: LoadingProps) {
-  const t = TONES[tone];
+export function Loading({ accessibilityLabel = 'Page loading' }: LoadingProps) {
+  const [progress, setProgress] = useState(0);
+
+  // Eases toward, but never reaches, the end — arrival is the page's job.
+  useEffect(() => {
+    const id = setInterval(() => setProgress((p) => p + (90 - p) * 0.12), 200);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div
-      // Announced politely rather than assertively: this reports state, it does
-      // not interrupt. Errors that must interrupt use role="alert".
-      role={tone === 'critical' ? 'alert' : 'status'}
-      className={cn('flex flex-col gap-[var(--p-space-100)]', className)}
-      style={{
-        background: `var(--p-color-${t.bg})`,
-        color: `var(--p-color-${t.text})`,
-        padding: 'var(--p-space-300)',
-        borderRadius: 'var(--p-border-radius-200)',
-      }}
-    >
-      {title ? <strong style={{ fontWeight: 'var(--p-font-weight-semibold)' }}>{title}</strong> : null}
-      {children}
+    <div role="progressbar" aria-label={accessibilityLabel} aria-valuemin={0} aria-valuemax={100}>
+      <div className="Polaris-Frame-Loading">
+        <div className="Polaris-Frame-Loading__Level" style={{ width: `${progress}%` }} />
+      </div>
     </div>
   );
 }

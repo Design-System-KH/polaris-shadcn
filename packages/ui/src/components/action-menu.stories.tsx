@@ -7,14 +7,22 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Page-level action menu with rollup behaviour. FIRST PASS — see STATUS.md.',
+        component:
+          'Page-level actions. Polaris rolls overflowing actions into a menu once they stop fitting, which needs width measurement; until that lands here they render inline, so keep the list short.',
       },
     },
   },
-  args: { items: [{ id: 'a', label: 'First', selected: true }, { id: 'b', label: 'Second' }] },
+  args: {
+    actions: [{ content: 'Duplicate' }, { content: 'Export' }],
+    primaryAction: { content: 'Save' },
+  },
 } satisfies Meta<typeof ActionMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+export const WithDestructive: Story = {
+  args: { actions: [{ content: 'Duplicate' }, { content: 'Delete', destructive: true }] },
+};
+export const WithoutPrimary: Story = { args: { primaryAction: undefined } };

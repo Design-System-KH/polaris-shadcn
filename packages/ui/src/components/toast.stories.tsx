@@ -7,17 +7,17 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Brief confirmation. Never the only path to an action. FIRST PASS — see STATUS.md.',
+        component:
+          'A brief confirmation. Never put the only path to an action in one: it disappears. The dismiss timer pauses on hover and focus, so an Undo button cannot vanish as the user reaches for it.',
       },
     },
   },
-  args: { title: 'Toast', children: 'Something happened worth reporting.' },
+  args: { content: 'Order archived', onDismiss: () => {}, duration: 1000000 },
 } satisfies Meta<typeof Toast>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const Critical: Story = { args: { tone: 'critical' } };
-export const Success: Story = { args: { tone: 'success' } };
-export const Warning: Story = { args: { tone: 'warning' } };
+export const WithAction: Story = { args: { action: { content: 'Undo' } } };
+export const Error: Story = { args: { error: true, content: 'Could not archive order' } };

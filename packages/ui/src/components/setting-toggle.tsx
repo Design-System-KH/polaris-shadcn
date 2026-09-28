@@ -1,46 +1,51 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import { LegacyCard } from './legacy-card.js';
+import { Button } from './button.js';
+import '../styles/polaris/setting-action.css';
+
+export interface SettingToggleAction {
+  content: string;
+  onAction?: () => void;
+  disabled?: boolean;
+  loading?: boolean;
+}
 
 export interface SettingToggleProps {
   children?: ReactNode;
-  className?: string;
-  title?: string;
-  /** Rendered after the body. Keep to one primary action. */
-  actions?: ReactNode;
+  action?: SettingToggleAction;
+  enabled?: boolean;
 }
 
 /**
- * SettingToggle — A setting with an enable or disable action.
+ * SettingToggle — a setting with an enable or disable action.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * The action is a button, not a switch, because the change is not immediate:
+ * it submits. A switch implies the state flipped the moment you touched it,
+ * and using one here is how a user walks away believing something saved.
+ *
+ * `aria-pressed` carries the current state, so the control announces "Disable,
+ * pressed" rather than leaving the state visible only in the surrounding text.
  */
-export function SettingToggle({ children, className, title, actions }: SettingToggleProps) {
+export function SettingToggle({ children, action, enabled = false }: SettingToggleProps) {
   return (
-    <section
-      className={cn('flex flex-col gap-[var(--p-space-400)] overflow-hidden', className)}
-      style={{
-        background: 'var(--p-color-bg-surface)',
-        padding: 'var(--p-space-400)',
-        borderRadius: 'var(--p-border-radius-300)',
-        boxShadow: 'var(--p-shadow-100)',
-        outline: 'var(--p-border-width-025) solid var(--p-color-border)',
-        outlineOffset: 'calc(var(--p-border-width-025) * -1)',
-      }}
-    >
-      {title ? (
-        <h2
-          style={{
-            fontSize: 'var(--p-font-size-350)',
-            fontWeight: 'var(--p-font-weight-semibold)',
-            lineHeight: 'var(--p-font-line-height-500)',
-          }}
-        >
-          {title}
-        </h2>
-      ) : null}
-      {children}
-      {actions ? <div className="flex gap-[var(--p-space-200)]">{actions}</div> : null}
-    </section>
+    <LegacyCard sectioned>
+      <div className="Polaris-SettingAction">
+        <div className="Polaris-SettingAction__Setting">{children}</div>
+        <div className="Polaris-SettingAction__Action">
+          {action ? (
+            <Button
+              variant={enabled ? undefined : 'primary'}
+              tone={enabled ? 'critical' : undefined}
+              disabled={action.disabled}
+              loading={action.loading}
+              pressed={enabled}
+              onClick={action.onAction}
+            >
+              {action.content}
+            </Button>
+          ) : null}
+        </div>
+      </div>
+    </LegacyCard>
   );
 }

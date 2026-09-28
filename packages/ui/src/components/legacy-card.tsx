@@ -1,46 +1,106 @@
 import type { ReactNode } from 'react';
 import { cn } from '../lib/cn.js';
+import { Text } from './text.js';
+import '../styles/polaris/legacy-card.css';
 
 export interface LegacyCardProps {
   children?: ReactNode;
-  className?: string;
-  title?: string;
-  /** Rendered after the body. Keep to one primary action. */
-  actions?: ReactNode;
+  title?: ReactNode;
+  subdued?: boolean;
+  sectioned?: boolean;
+  footerActions?: ReactNode;
+  hideOnPrint?: boolean;
+}
+
+export interface LegacyCardSectionProps {
+  children?: ReactNode;
+  title?: ReactNode;
+  subdued?: boolean;
+  /** Removes padding, for a section holding a full-width table or image. */
+  flush?: boolean;
+  fullWidth?: boolean;
+  hideOnPrint?: boolean;
+}
+
+function LegacyCardSection({
+  children,
+  title,
+  subdued = false,
+  flush = false,
+  fullWidth = false,
+  hideOnPrint = false,
+}: LegacyCardSectionProps) {
+  return (
+    <div
+      className={cn(
+        'Polaris-LegacyCard__Section',
+        flush && 'Polaris-LegacyCard__Section--flush',
+        fullWidth && 'Polaris-LegacyCard__Section--fullWidth',
+        subdued && 'Polaris-LegacyCard__Section--subdued',
+        hideOnPrint && 'Polaris-LegacyCard__Section--hideOnPrint',
+      )}
+    >
+      {title ? (
+        <div className="Polaris-LegacyCard__SectionHeader">
+          {typeof title === 'string' ? (
+            <Text variant="headingSm" as="h3">
+              {title}
+            </Text>
+          ) : (
+            title
+          )}
+        </div>
+      ) : null}
+      {children}
+    </div>
+  );
+}
+
+function LegacyCardSubsection({ children }: { children?: ReactNode }) {
+  return <div className="Polaris-LegacyCard__Subsection">{children}</div>;
 }
 
 /**
- * LegacyCard — Previous-generation card with sections.
+ * LegacyCard — the previous-generation card, with sections.
  *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
+ * Kept because a real admin has screens still built on it, and migrating them
+ * all at once is a bigger change than it looks. New work should use `Card`,
+ * which composes Box and ShadowBevel instead.
  */
-export function LegacyCard({ children, className, title, actions }: LegacyCardProps) {
+export function LegacyCard({
+  children,
+  title,
+  subdued = false,
+  sectioned = false,
+  footerActions,
+  hideOnPrint = false,
+}: LegacyCardProps) {
   return (
-    <section
-      className={cn('flex flex-col gap-[var(--p-space-400)] overflow-hidden', className)}
-      style={{
-        background: 'var(--p-color-bg-surface)',
-        padding: 'var(--p-space-400)',
-        borderRadius: 'var(--p-border-radius-300)',
-        boxShadow: 'var(--p-shadow-100)',
-        outline: 'var(--p-border-width-025) solid var(--p-color-border)',
-        outlineOffset: 'calc(var(--p-border-width-025) * -1)',
-      }}
+    <div
+      className={cn(
+        'Polaris-LegacyCard',
+        subdued && 'Polaris-LegacyCard--subdued',
+        hideOnPrint && 'Polaris-LegacyCard--hideOnPrint',
+      )}
     >
       {title ? (
-        <h2
-          style={{
-            fontSize: 'var(--p-font-size-350)',
-            fontWeight: 'var(--p-font-weight-semibold)',
-            lineHeight: 'var(--p-font-line-height-500)',
-          }}
-        >
-          {title}
-        </h2>
+        <div className="Polaris-LegacyCard__Header">
+          {typeof title === 'string' ? (
+            <Text variant="headingSm" as="h2">
+              {title}
+            </Text>
+          ) : (
+            title
+          )}
+        </div>
       ) : null}
-      {children}
-      {actions ? <div className="flex gap-[var(--p-space-200)]">{actions}</div> : null}
-    </section>
+      {sectioned ? <LegacyCardSection>{children}</LegacyCardSection> : children}
+      {footerActions ? (
+        <div className="Polaris-LegacyCard__Footer">{footerActions}</div>
+      ) : null}
+    </div>
   );
 }
+
+LegacyCard.Section = LegacyCardSection;
+LegacyCard.Subsection = LegacyCardSubsection;
