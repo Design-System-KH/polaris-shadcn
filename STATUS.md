@@ -29,6 +29,24 @@ transcribed, so they cannot drift from Polaris.
 **452 tokens parsed, 342 theme entries.** Re-run the script after bumping the
 token package.
 
+## How the appearance works
+
+Components apply Polaris's own class names and import the matching split
+stylesheet. They do not re-derive its rules in Tailwind.
+
+That distinction is the whole difference between close and exact:
+
+-  writes  custom properties for  to consume,
+  because the class carries the responsive fallback chain that inline styles
+  cannot reproduce.
+-  is a ShadowBevel wrapping a Box, as Polaris composes it. The edge is
+  a bevel pseudo-element, not a border, which is why a re-derived border never
+  matched at that radius.
+-  uses the real type-ramp and tone classes.
+-  — Polaris's resets, font stack and keyframes — is loaded in
+  . Omitting it was what made an earlier build sit on the wrong
+  typography while each component looked individually correct.
+
 ## Components — 110 present, two depths
 
 Every component Polaris 13 exports has a file, a typed prop surface and at

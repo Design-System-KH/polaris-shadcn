@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { cn } from '../lib/cn.js';
+import '../styles/polaris/avatar.css';
 
 export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -10,7 +11,6 @@ export interface AvatarProps {
    */
   accessibilityLabel?: string;
   name?: string;
-  /** Falls back to initials derived from `name` when no image is available. */
   initials?: string;
   source?: string;
   size?: AvatarSize;
@@ -18,28 +18,36 @@ export interface AvatarProps {
   onError?: () => void;
 }
 
-const SIZES: Record<AvatarSize, string> = {
-  xs: '1.5rem',
-  sm: '2rem',
-  md: '2.5rem',
-  lg: '3rem',
-  xl: '5rem',
-};
+const cap = (value: string) => value.charAt(0).toUpperCase() + value.slice(1);
 
-const FONT: Record<AvatarSize, string> = {
-  xs: 'var(--p-font-size-275)',
-  sm: 'var(--p-font-size-300)',
-  md: 'var(--p-font-size-325)',
-  lg: 'var(--p-font-size-350)',
-  xl: 'var(--p-font-size-500)',
-};
+/** Polaris's seven background styles, chosen deterministically from the name. */
+const STYLE_CLASSES = [
+  'styleOne',
+  'styleTwo',
+  'styleThree',
+  'styleFour',
+  'styleFive',
+  'styleSix',
+  'styleSeven',
+] as const;
+
+/**
+ * The same name always gets the same colour, across sessions and machines.
+ * A random pick would reshuffle every render and destroy the recognisability
+ * that makes a coloured avatar useful at all.
+ */
+function styleClassFor(seed: string) {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) hash = (hash + seed.charCodeAt(i)) % STYLE_CLASSES.length;
+  return STYLE_CLASSES[hash];
+}
 
 /**
  * Avatar — a person or entity, with an initials fallback.
  *
- * The fallback is not decoration. An image that 404s leaves a broken icon and
- * a collapsed row unless something takes its place, so a load error swaps to
- * initials rather than leaving a hole in the layout.
+ * Classes are Polaris's own, so the size ramp, the circular clip and the seven
+ * background styles are exact. The fallback is behaviour, not decoration: an
+ * image that 404s would otherwise leave a broken icon and a collapsed row.
  */
 export function Avatar({
   accessibilityLabel,
@@ -51,7 +59,7 @@ export function Avatar({
   onError,
 }: AvatarProps) {
   const [failed, setFailed] = useState(false);
-  const dimension = SIZES[size];
+  const [loaded, setLoaded] = useState(false);
 
   const derived =
     initials ??
@@ -65,6 +73,7 @@ export function Avatar({
 
   const label = accessibilityLabel ?? name;
   const showImage = Boolean(source) && !failed;
+  const text = (derived ?? '').toUpperCase();
 
   return (
     <span
@@ -73,31 +82,28 @@ export function Avatar({
       role={label ? 'img' : undefined}
       aria-label={label || undefined}
       aria-hidden={label ? undefined : true}
-      className={cn('inline-flex shrink-0 items-center justify-center overflow-hidden', className)}
-      style={{
-        width: dimension,
-        height: dimension,
-        borderRadius: 'var(--p-border-radius-full)',
-        background: showImage ? undefined : 'var(--p-color-bg-fill-tertiary)',
-        color: 'var(--p-color-text)',
-        fontSize: FONT[size],
-        fontWeight: 'var(--p-font-weight-medium)',
-      }}
+      className={cn(
+        'Polaris-Avatar',
+        `Polaris-Avatar--size${cap(size)}`,
+        `Polaris-Avatar--${styleClassFor(name ?? text ?? '')}`,
+        loaded && 'Polaris-Avatar--imageHasLoaded',
+        text.length > 2 && 'Polaris-Avatar--long',
+        className,
+      )}
     >
       {showImage ? (
         <img
           src={source}
           alt=""
-          width={dimension}
-          height={dimension}
-          className="size-full object-cover"
+          className="Polaris-Avatar__Image"
+          onLoad={() => setLoaded(true)}
           onError={() => {
             setFailed(true);
             onError?.();
           }}
         />
       ) : (
-        (derived ?? '').toUpperCase()
+        <span className="Polaris-Avatar__Initials">{text}</span>
       )}
     </span>
   );
