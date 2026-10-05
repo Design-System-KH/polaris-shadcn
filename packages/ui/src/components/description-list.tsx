@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/description-list.css';
 
 export interface DescriptionListItem {

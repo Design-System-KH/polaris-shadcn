@@ -1,4 +1,4 @@
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/skeleton-display-text.css';
 
 export type SkeletonDisplayTextSize = 'small' | 'medium' | 'large' | 'extraLarge';

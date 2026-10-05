@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import type { TextVariant, Tone } from '../lib/tokens.js';
+import { cn } from '../lib/cn';
+import type { TextVariant, Tone } from '../lib/tokens';
 import '../styles/polaris/text.css';
 
 export interface TextProps {

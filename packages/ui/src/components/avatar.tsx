@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/avatar.css';
 
 export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

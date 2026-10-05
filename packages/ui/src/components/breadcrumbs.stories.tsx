@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Breadcrumbs } from './breadcrumbs.js';
+import { Breadcrumbs } from './breadcrumbs';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'navigation/Breadcrumbs',
   component: Breadcrumbs,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Path to here. Earns its space at three levels or more. FIRST PASS — see STATUS.md.',
+        component: 'Path to here. Earns its space at three levels or more.',
       },
     },
   },
-  args: { items: [{ id: 'a', label: 'First', selected: true }, { id: 'b', label: 'Second' }] },
 } satisfies Meta<typeof Breadcrumbs>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Breadcrumbs" />,
+};

@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Label } from './label.js';
+import { Label } from './label';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/Label',
   component: Label,
   parameters: {
-    docs: {
-      description: {
-        component: 'A field label, associated by id. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'A field label, associated by id.' } },
   },
-  args: { children: 'Label' },
 } satisfies Meta<typeof Label>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Label" />,
+};

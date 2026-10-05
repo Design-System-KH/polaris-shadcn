@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
-import { Card } from './card.js';
-import { InlineStack } from './inline-stack.js';
-import { BlockStack } from './block-stack.js';
-import { Box } from './box.js';
-import { Text } from './text.js';
-import { Button } from './button.js';
-import { Avatar } from './avatar.js';
+import { Card } from './card';
+import { InlineStack } from './inline-stack';
+import { BlockStack } from './block-stack';
+import { Box } from './box';
+import { Text } from './text';
+import { Button } from './button';
+import { Avatar } from './avatar';
 import '../styles/polaris/setting-action.css';
 
 export interface AccountConnectionAction {

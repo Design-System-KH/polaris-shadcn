@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/progress-bar.css';
 
 export interface ProgressBarProps {

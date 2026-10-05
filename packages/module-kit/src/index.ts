@@ -1,8 +1,8 @@
-export type { ModuleManifest, NavigationEntry } from './manifest.js';
+export type { ModuleManifest, NavigationEntry } from './manifest';
 export {
   resolveOrder,
   collectPermissions,
   collectNavigation,
   CircularDependencyError,
   MissingDependencyError,
-} from './registry.js';
+} from './registry';

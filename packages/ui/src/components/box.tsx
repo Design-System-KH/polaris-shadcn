@@ -1,6 +1,6 @@
 import type { CSSProperties, ElementType, ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import type { BorderRadiusScale, ShadowScale, SpaceScale } from '../lib/tokens.js';
+import { cn } from '../lib/cn';
+import type { BorderRadiusScale, ShadowScale, SpaceScale } from '../lib/tokens';
 import '../styles/polaris/box.css';
 
 export interface BoxProps {

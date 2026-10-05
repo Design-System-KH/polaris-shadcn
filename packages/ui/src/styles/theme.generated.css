@@ -369,10 +369,10 @@
   --z-12: var(--p-z-index-12, 520);
 
   /* breakpoints — 5 tokens */
-  --breakpoint-xs: var(--p-breakpoints-xs, 0rem);
-  --breakpoint-sm: var(--p-breakpoints-sm, 30.625rem);
-  --breakpoint-md: var(--p-breakpoints-md, 48rem);
-  --breakpoint-lg: var(--p-breakpoints-lg, 65rem);
-  --breakpoint-xl: var(--p-breakpoints-xl, 90rem);
+  --breakpoint-xs: 0rem;
+  --breakpoint-sm: 30.625rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 65rem;
+  --breakpoint-xl: 90rem;
 
 }

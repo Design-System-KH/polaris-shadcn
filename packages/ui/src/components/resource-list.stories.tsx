@@ -1,23 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ResourceList } from './resource-list.js';
+import { ResourceList } from './resource-list';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'components/ResourceList',
   component: ResourceList,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Rich object list, as distinct from a column table. FIRST PASS — see STATUS.md.',
+        component: 'Rich object list, as distinct from a column table.',
       },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
 } satisfies Meta<typeof ResourceList>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="ResourceList" />,
+};
+export const Empty: Story = {
+  render: () => <ComponentExample name="ResourceList" state="empty" />,
+};
+export const Loading: Story = {
+  render: () => <ComponentExample name="ResourceList" state="loading" />,
+};
+export const FilteredEmpty: Story = {
+  render: () => <ComponentExample name="ResourceList" state="filtered" />,
+};

@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Portal } from './portal.js';
+import { Portal } from './portal';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/Portal',
   component: Portal,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'Renders children outside the DOM hierarchy. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'Renders children outside the DOM hierarchy.' },
     },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof Portal>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Portal" />,
+};

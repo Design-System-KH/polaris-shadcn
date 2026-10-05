@@ -1,23 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { OptionList } from './option-list.js';
+import { OptionList } from './option-list';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/OptionList',
   component: OptionList,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'Selectable option list with sections. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'Selectable option list with sections.' },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
 } satisfies Meta<typeof OptionList>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="OptionList" />,
+};
+export const Empty: Story = {
+  render: () => <ComponentExample name="OptionList" state="empty" />,
+};
+export const Loading: Story = {
+  render: () => <ComponentExample name="OptionList" state="loading" />,
+};
+export const FilteredEmpty: Story = {
+  render: () => <ComponentExample name="OptionList" state="filtered" />,
+};

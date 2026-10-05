@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Form } from './form.js';
+import { Form } from './form';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/Form',
   component: Form,
   parameters: {
-    docs: {
-      description: {
-        component: 'Form element with submit handling. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Form element with submit handling.' } },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof Form>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Form" />,
+};

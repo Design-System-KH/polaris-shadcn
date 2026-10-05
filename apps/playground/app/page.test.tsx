@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { render, screen } from '@repo/testing/render';
-import Page from './page.js';
+import Page from './page';
 
 describe('home page', () => {
   it('renders the app heading', () => {

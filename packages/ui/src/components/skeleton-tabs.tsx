@@ -1,5 +1,5 @@
-import { cn } from '../lib/cn.js';
-import { SkeletonDisplayText } from './skeleton-display-text.js';
+import { cn } from '../lib/cn';
+import { SkeletonDisplayText } from './skeleton-display-text';
 import '../styles/polaris/skeleton-tabs.css';
 
 export interface SkeletonTabsProps {

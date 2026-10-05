@@ -1,22 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Combobox } from './combobox.js';
+import { Combobox } from './combobox';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/Combobox',
   component: Combobox,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Input plus listbox; the primitive under Autocomplete. FIRST PASS — see STATUS.md.',
+        component: 'Input plus listbox; the primitive under Autocomplete.',
       },
     },
   },
-  args: { label: 'Combobox', helpText: 'Persistent guidance for this field.' },
 } satisfies Meta<typeof Combobox>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const WithError: Story = { args: { error: 'Enter a value to continue.' } };
-export const Disabled: Story = { args: { disabled: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Combobox" />,
+};
+export const Disabled: Story = {
+  render: () => <ComponentExample name="Combobox" state="disabled" />,
+};
+export const WithError: Story = {
+  render: () => <ComponentExample name="Combobox" state="error" />,
+};

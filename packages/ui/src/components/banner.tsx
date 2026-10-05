@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import { Box } from './box.js';
-import { Text } from './text.js';
-import { Button } from './button.js';
-import { BlockStack } from './block-stack.js';
-import { InlineStack } from './inline-stack.js';
+import { cn } from '../lib/cn';
+import { Box } from './box';
+import { Text } from './text';
+import { Button } from './button';
+import { BlockStack } from './block-stack';
+import { InlineStack } from './inline-stack';
 import '../styles/polaris/banner.css';
 
 export type BannerTone = 'success' | 'info' | 'warning' | 'critical';

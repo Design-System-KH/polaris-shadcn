@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { PortalsManager } from './portals-manager.js';
+import { PortalsManager } from './portals-manager';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/PortalsManager',
   component: PortalsManager,
   parameters: {
-    docs: {
-      description: {
-        component: 'Coordinates portal containers. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Coordinates portal containers.' } },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof PortalsManager>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="PortalsManager" />,
+};

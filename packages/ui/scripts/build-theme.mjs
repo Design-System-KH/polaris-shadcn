@@ -67,7 +67,11 @@ for (const [namespace, prefix] of NAMESPACES) {
   for (const [name, value] of entries) {
     // Reference the custom property rather than inlining the value, so the
     // published token remains the single source of truth at runtime too.
-    lines.push(`  ${namespace}-${name}: var(--p-${prefix}-${name}, ${value});`);
+    // Breakpoints are the exception: Tailwind puts them in @media queries,
+    // where var() is invalid and Turbopack's CSS parser rejects the file.
+    const resolved =
+      namespace === '--breakpoint' ? value : `var(--p-${prefix}-${name}, ${value})`;
+    lines.push(`  ${namespace}-${name}: ${resolved};`);
     count++;
   }
   lines.push('');

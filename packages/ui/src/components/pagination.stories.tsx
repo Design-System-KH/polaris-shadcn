@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Pagination } from './pagination.js';
+import { Pagination } from './pagination';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'navigation/Pagination',
   component: Pagination,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'Previous and next across a result set. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'Previous and next across a result set.' },
     },
   },
-  args: { items: [{ id: 'a', label: 'First', selected: true }, { id: 'b', label: 'Second' }] },
 } satisfies Meta<typeof Pagination>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Pagination" />,
+};

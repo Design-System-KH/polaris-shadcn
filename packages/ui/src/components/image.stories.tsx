@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Image } from './image.js';
+import { Image } from './image';
 
 const meta = {
   title: 'components/Image',

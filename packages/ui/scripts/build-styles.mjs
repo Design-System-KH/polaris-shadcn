@@ -22,7 +22,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, '..', 'src', 'styles', 'polaris');
 
 const cssPath = require.resolve('@shopify/polaris/build/esm/styles.css');
-const css = readFileSync(cssPath, 'utf8');
+const css = readFileSync(cssPath, 'utf8').replace(/@charset[^;]+;/g, '');
 
 /**
  * Split into top-level blocks, tracking brace depth so that @media and
@@ -48,7 +48,9 @@ function topLevelBlocks(source) {
 
 /** Component name from a selector, e.g. `.Polaris-ActionList__Item` -> ActionList. */
 const componentOf = (block) => {
-  const names = [...block.matchAll(/\.Polaris-([A-Za-z0-9]+)/g)].map((m) => m[1]);
+  const names = [...block.matchAll(/\.Polaris-([A-Za-z0-9]+)/g)].map(
+    (m) => m[1],
+  );
   return names.length ? names[0] : null;
 };
 
@@ -71,16 +73,25 @@ for (const block of topLevelBlocks(css)) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 
-const kebab = (name) => name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+const kebab = (name) =>
+  name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 const banner = (what) =>
   `/* GENERATED from @shopify/polaris by scripts/build-styles.mjs — do not edit.\n   ${what} */\n`;
 
-writeFileSync(join(OUT, '_shared.css'), banner('Shared rules: resets, keyframes, root.') + shared.join('\n'));
+writeFileSync(
+  join(OUT, '_shared.css'),
+  banner('Shared rules: resets, keyframes, root.') + shared.join('\n'),
+);
 
 const index = [`@import './_shared.css';`];
-for (const [name, blocks] of [...byComponent].sort(([a], [b]) => a.localeCompare(b))) {
+for (const [name, blocks] of [...byComponent].sort(([a], [b]) =>
+  a.localeCompare(b),
+)) {
   const file = `${kebab(name)}.css`;
-  writeFileSync(join(OUT, file), banner(`${name} — ${blocks.length} rules.`) + blocks.join('\n'));
+  writeFileSync(
+    join(OUT, file),
+    banner(`${name} — ${blocks.length} rules.`) + blocks.join('\n'),
+  );
   index.push(`@import './${file}';`);
 }
 
@@ -90,6 +101,8 @@ writeFileSync(
 );
 
 const total = [...byComponent.values()].reduce((n, b) => n + b.length, 0);
-console.log(`split ${total} component rules across ${byComponent.size} components`);
+console.log(
+  `split ${total} component rules across ${byComponent.size} components`,
+);
 console.log(`plus ${shared.length} shared rules`);
 console.log(`wrote ${byComponent.size + 2} files to src/styles/polaris/`);

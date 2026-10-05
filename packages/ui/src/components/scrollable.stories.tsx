@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Scrollable } from './scrollable.js';
+import { Scrollable } from './scrollable';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/Scrollable',
   component: Scrollable,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Scroll container with shadow affordances at the edges. FIRST PASS — see STATUS.md.',
+        component: 'Scroll container with shadow affordances at the edges.',
       },
     },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof Scrollable>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Scrollable" />,
+};

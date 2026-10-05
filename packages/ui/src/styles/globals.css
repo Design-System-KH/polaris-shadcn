@@ -3,8 +3,12 @@
 /* Polaris's own base layer: resets, font stack, keyframes, :root.
  * Without this, components carry their own rules but sit on the wrong
  * typography and background — which is what made the earlier build look
- * approximately right rather than right. */
-@import './polaris/_shared.css';
+ * approximately right rather than right.
+ *
+ * Imported into the base layer: unlayered, its h1–h6/p reset (font-size 1em,
+ * regular weight) outranks every Tailwind utility, so text-3xl on a heading
+ * silently did nothing. */
+@import './polaris/_shared.css' layer(base);
 
 /* Polaris sets these on the app root; mirrored here so components render the
  * same in Storybook as they do in an application. */

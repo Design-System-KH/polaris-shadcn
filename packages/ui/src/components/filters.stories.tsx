@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Filters } from './filters.js';
+import { Filters } from './filters';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/Filters',
   component: Filters,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'Filter bar with applied-filter chips. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'Filter bar with applied-filter chips.' },
     },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof Filters>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Filters" />,
+};

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { List } from './list.js';
+import { List } from './list';
 
 const meta = {
   title: 'components/List',

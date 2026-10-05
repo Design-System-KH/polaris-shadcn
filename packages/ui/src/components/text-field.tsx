@@ -1,30 +1,59 @@
-import { useId, type ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import {
+  useId,
+  type ReactNode,
+  type HTMLInputTypeAttribute,
+  type ChangeEvent,
+} from 'react';
+import { cn } from '../lib/cn';
+import '../styles/polaris/text-field.css';
+import '../styles/polaris/labelled.css';
+import '../styles/polaris/label.css';
 
 export interface TextFieldProps {
-  /** Always visible. A placeholder is not a label. */
   label: string;
-  /** Persistent guidance, shown below the control. */
+  labelHidden?: boolean;
+  value?: string;
+  defaultValue?: string;
+  onChange?: (value: string) => void;
+  placeholder?: string;
   helpText?: ReactNode;
-  /** Associated with the control, so it is announced on focus. */
   error?: string;
   disabled?: boolean;
+  readOnly?: boolean;
+  required?: boolean;
+  multiline?: boolean | number;
+  type?: HTMLInputTypeAttribute;
+  autoComplete?: string;
+  name?: string;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+  clearButton?: boolean;
+  onClearButtonClick?: () => void;
   className?: string;
   id?: string;
   children?: ReactNode;
 }
 
-/**
- * TextField — Single-line or multiline text input.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
 export function TextField({
   label,
+  labelHidden,
+  value,
+  defaultValue,
+  onChange,
+  placeholder,
   helpText,
   error,
-  disabled = false,
+  disabled,
+  readOnly,
+  required,
+  multiline,
+  type = 'text',
+  autoComplete,
+  name,
+  prefix,
+  suffix,
+  clearButton,
+  onClearButtonClick,
   className,
   id,
   children,
@@ -33,36 +62,79 @@ export function TextField({
   const controlId = id ?? generated;
   const helpId = helpText ? `${controlId}-help` : undefined;
   const errorId = error ? `${controlId}-error` : undefined;
-
+  const inputProps = {
+    id: controlId,
+    name,
+    value,
+    defaultValue,
+    placeholder,
+    disabled,
+    readOnly,
+    required,
+    autoComplete,
+    onChange: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      onChange?.(event.target.value),
+    className: 'Polaris-TextField__Input',
+    'aria-describedby':
+      [helpId, errorId].filter(Boolean).join(' ') || undefined,
+    'aria-invalid': error ? true : undefined,
+  };
   return (
-    <div className={cn('flex flex-col gap-[var(--p-space-100)]', className)}>
-      <label
-        htmlFor={controlId}
-        style={{
-          fontSize: 'var(--p-font-size-325)',
-          color: disabled ? 'var(--p-color-text-disabled)' : 'var(--p-color-text)',
-        }}
-      >
-        {label}
-      </label>
-      <div
-        id={controlId}
-        aria-describedby={[helpId, errorId].filter(Boolean).join(' ') || undefined}
-        aria-invalid={error ? true : undefined}
-        aria-disabled={disabled || undefined}
-      >
-        {children}
+    <div className={cn(labelHidden && 'Polaris-Labelled--hidden', className)}>
+      <div className="Polaris-Labelled__LabelWrapper">
+        <div className="Polaris-Label">
+          <label className="Polaris-Label__Text" htmlFor={controlId}>
+            {label}
+          </label>
+        </div>
       </div>
-      {helpText ? (
-        <p id={helpId} style={{ fontSize: 'var(--p-font-size-300)', color: 'var(--p-color-text-secondary)' }}>
+      <div
+        className={cn(
+          'Polaris-TextField',
+          error && 'Polaris-TextField--error',
+          disabled && 'Polaris-TextField--disabled',
+          multiline && 'Polaris-TextField--multiline',
+        )}
+      >
+        {prefix && <span className="Polaris-TextField__Prefix">{prefix}</span>}
+        {multiline ? (
+          <textarea
+            {...inputProps}
+            rows={typeof multiline === 'number' ? multiline : 4}
+          />
+        ) : (
+          <input {...inputProps} type={type} />
+        )}
+        {suffix && <span className="Polaris-TextField__Suffix">{suffix}</span>}
+        {clearButton && value && (
+          <button
+            type="button"
+            className="Polaris-TextField__ClearButton"
+            aria-label={`Clear ${label}`}
+            onClick={() => {
+              onChange?.('');
+              onClearButtonClick?.();
+            }}
+          >
+            �
+          </button>
+        )}
+        <div className="Polaris-TextField__Backdrop" />
+      </div>
+      {helpText && (
+        <div id={helpId} className="Polaris-Labelled__HelpText">
           {helpText}
-        </p>
-      ) : null}
-      {error ? (
-        <p id={errorId} style={{ fontSize: 'var(--p-font-size-300)', color: 'var(--p-color-text-critical)' }}>
+        </div>
+      )}
+      {error && (
+        <div
+          id={errorId}
+          style={{ color: 'var(--p-color-text-critical)', marginTop: 4 }}
+        >
           {error}
-        </p>
-      ) : null}
+        </div>
+      )}
+      {children}
     </div>
   );
 }

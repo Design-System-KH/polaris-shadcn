@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import { Card } from './card.js';
-import { Text } from './text.js';
-import { Button } from './button.js';
+import { cn } from '../lib/cn';
+import { Card } from './card';
+import { Text } from './text';
+import { Button } from './button';
 import '../styles/polaris/callout-card.css';
 
 export interface CalloutCardAction {

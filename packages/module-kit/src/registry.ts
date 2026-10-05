@@ -1,4 +1,4 @@
-import type { ModuleManifest, NavigationEntry } from './manifest.js';
+import type { ModuleManifest, NavigationEntry } from './manifest';
 
 export class MissingDependencyError extends Error {
   constructor(

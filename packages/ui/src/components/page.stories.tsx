@@ -1,20 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Page } from './page.js';
+import { Page } from './page';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'layout/Page',
   component: Page,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Page shell: title, breadcrumbs, primary action, secondary actions. FIRST PASS — see STATUS.md.',
+        component:
+          'Page shell: title, breadcrumbs, primary action, secondary actions.',
       },
     },
   },
-  args: { title: 'Page', children: 'Page content.' },
 } satisfies Meta<typeof Page>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Page" />,
+};

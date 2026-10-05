@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { LegacyFilters } from './legacy-filters.js';
+import { LegacyFilters } from './legacy-filters';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/LegacyFilters',
   component: LegacyFilters,
   parameters: {
-    docs: {
-      description: {
-        component: 'Previous-generation filter bar. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Previous-generation filter bar.' } },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof LegacyFilters>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="LegacyFilters" />,
+};

@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Modal } from './modal.js';
+import { Modal } from './modal';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'overlays/Modal',
   component: Modal,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Interrupting dialog. Traps focus; returns it on close. FIRST PASS — see STATUS.md.',
+        component: 'Interrupting dialog. Traps focus; returns it on close.',
       },
     },
   },
-  args: { open: true, title: 'Modal', children: 'Overlay content.' },
 } satisfies Meta<typeof Modal>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Modal" />,
+};

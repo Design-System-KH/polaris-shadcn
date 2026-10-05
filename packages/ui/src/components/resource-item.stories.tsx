@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ResourceItem } from './resource-item.js';
-import { Avatar } from './avatar.js';
-import { Text } from './text.js';
+import { ResourceItem } from './resource-item';
+import { Avatar } from './avatar';
+import { Text } from './text';
 
 const meta = {
   title: 'components/ResourceItem',
@@ -38,4 +38,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const Selectable: Story = { args: { selectable: true } };
 export const Selected: Story = { args: { selectable: true, selected: true } };
-export const DisabledRow: Story = { args: { selectable: true, disabled: true } };
+export const DisabledRow: Story = {
+  args: { selectable: true, disabled: true },
+};

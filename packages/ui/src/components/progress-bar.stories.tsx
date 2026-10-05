@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ProgressBar } from './progress-bar.js';
+import { ProgressBar } from './progress-bar';
 
 const meta = {
   title: 'components/ProgressBar',
@@ -15,7 +15,10 @@ const meta = {
   argTypes: {
     progress: { control: { type: 'range', min: 0, max: 100 } },
     size: { control: 'select', options: ['small', 'medium', 'large'] },
-    tone: { control: 'select', options: ['highlight', 'primary', 'success', 'critical'] },
+    tone: {
+      control: 'select',
+      options: ['highlight', 'primary', 'success', 'critical'],
+    },
   },
   args: { progress: 40 },
 } satisfies Meta<typeof ProgressBar>;

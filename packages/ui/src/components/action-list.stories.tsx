@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ActionList } from './action-list.js';
+import { ActionList } from './action-list';
 
 /** Mirrors Polaris's own ActionList stories so the two can be compared directly. */
 const meta = {
@@ -44,14 +44,22 @@ export const WithIcons: Story = {
 };
 
 export const WithAnActiveItem: Story = {
-  args: { items: [{ content: 'Import file', active: true }, { content: 'Export file' }] },
+  args: {
+    items: [
+      { content: 'Import file', active: true },
+      { content: 'Export file' },
+    ],
+  },
 };
 
 export const WithSections: Story = {
   args: {
     items: undefined,
     sections: [
-      { title: 'File options', items: [{ content: 'Import file' }, { content: 'Export file' }] },
+      {
+        title: 'File options',
+        items: [{ content: 'Import file' }, { content: 'Export file' }],
+      },
       {
         title: 'Bulk actions',
         items: [{ content: 'Edit' }, { content: 'Delete', destructive: true }],
@@ -61,12 +69,19 @@ export const WithSections: Story = {
 };
 
 export const WithDestructiveItem: Story = {
-  args: { items: [{ content: 'Edit' }, { content: 'Delete', destructive: true }] },
+  args: {
+    items: [{ content: 'Edit' }, { content: 'Delete', destructive: true }],
+  },
 };
 
 /** Disabled items stay visible and stay out of the focus cycle. */
 export const WithDisabledItem: Story = {
-  args: { items: [{ content: 'Import file' }, { content: 'Export file', disabled: true }] },
+  args: {
+    items: [
+      { content: 'Import file' },
+      { content: 'Export file', disabled: true },
+    ],
+  },
 };
 
 export const WithHelpText: Story = {
@@ -92,7 +107,11 @@ export const WithLinks: Story = {
   args: {
     items: [
       { content: 'Documentation', url: 'https://example.com' },
-      { content: 'Open in a new tab', url: 'https://example.com', external: true },
+      {
+        content: 'Open in a new tab',
+        url: 'https://example.com',
+        external: true,
+      },
     ],
   },
 };

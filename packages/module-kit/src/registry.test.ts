@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import type { ModuleManifest } from './manifest.js';
+import type { ModuleManifest } from './manifest';
 import {
   CircularDependencyError,
   MissingDependencyError,
   collectNavigation,
   collectPermissions,
   resolveOrder,
-} from './registry.js';
+} from './registry';
 
 const mod = (
   name: string,

@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { KeyboardKey } from './keyboard-key.js';
+import { KeyboardKey } from './keyboard-key';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/KeyboardKey',
   component: KeyboardKey,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'A keyboard key, rendered as a key cap. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'A keyboard key, rendered as a key cap.' },
     },
   },
-  args: { children: 'KeyboardKey' },
 } satisfies Meta<typeof KeyboardKey>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="KeyboardKey" />,
+};

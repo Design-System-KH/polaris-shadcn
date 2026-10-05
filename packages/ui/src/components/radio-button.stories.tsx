@@ -1,22 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { RadioButton } from './radio-button.js';
+import { RadioButton } from './radio-button';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/RadioButton',
   component: RadioButton,
   parameters: {
-    docs: {
-      description: {
-        component: 'One choice from a set. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'One choice from a set.' } },
   },
-  args: { label: 'RadioButton', helpText: 'Persistent guidance for this field.' },
 } satisfies Meta<typeof RadioButton>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const WithError: Story = { args: { error: 'Enter a value to continue.' } };
-export const Disabled: Story = { args: { disabled: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="RadioButton" />,
+};
+export const Disabled: Story = {
+  render: () => <ComponentExample name="RadioButton" state="disabled" />,
+};
+export const WithError: Story = {
+  render: () => <ComponentExample name="RadioButton" state="error" />,
+};

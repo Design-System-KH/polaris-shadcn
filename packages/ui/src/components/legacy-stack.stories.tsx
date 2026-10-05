@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { LegacyStack } from './legacy-stack.js';
+import { LegacyStack } from './legacy-stack';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/LegacyStack',
   component: LegacyStack,
   parameters: {
-    docs: {
-      description: {
-        component: 'Previous-generation flex stack. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Previous-generation flex stack.' } },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof LegacyStack>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="LegacyStack" />,
+};

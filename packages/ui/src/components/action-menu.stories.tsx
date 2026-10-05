@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ActionMenu } from './action-menu.js';
+import { ActionMenu } from './action-menu';
 
 const meta = {
   title: 'components/ActionMenu',
@@ -8,7 +8,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'Page-level actions. Polaris rolls overflowing actions into a menu once they stop fitting, which needs width measurement; until that lands here they render inline, so keep the list short.',
+          'Page-level actions with primary emphasis and an accessible overflow menu.',
       },
     },
   },
@@ -23,6 +23,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const WithDestructive: Story = {
-  args: { actions: [{ content: 'Duplicate' }, { content: 'Delete', destructive: true }] },
+  args: {
+    actions: [
+      { content: 'Duplicate' },
+      { content: 'Delete', destructive: true },
+    ],
+  },
 };
 export const WithoutPrimary: Story = { args: { primaryAction: undefined } };

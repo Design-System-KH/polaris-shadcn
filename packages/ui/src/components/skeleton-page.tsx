@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
-import { Box } from './box.js';
-import { BlockStack } from './block-stack.js';
-import { InlineStack } from './inline-stack.js';
-import { SkeletonDisplayText } from './skeleton-display-text.js';
+import { Box } from './box';
+import { BlockStack } from './block-stack';
+import { InlineStack } from './inline-stack';
+import { SkeletonDisplayText } from './skeleton-display-text';
 import '../styles/polaris/skeleton-page.css';
 
 export interface SkeletonPageProps {

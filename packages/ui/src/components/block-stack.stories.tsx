@@ -1,20 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { BlockStack } from './block-stack.js';
-
+import { BlockStack } from './block-stack';
+import { Badge } from './badge';
+import { Button } from './button';
 const meta = {
   title: 'primitives/BlockStack',
   component: BlockStack,
-  parameters: {
-    docs: {
-      description: {
-        component: 'Vertical stack with token-scale spacing. FIRST PASS — see STATUS.md.',
-      },
-    },
+  args: {
+    gap: '400',
+    children: (
+      <>
+        <strong>Trail Hoodie</strong>
+        <Badge tone="success">Active</Badge>
+        <Button>View product</Button>
+      </>
+    ),
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof BlockStack>;
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 export const Default: Story = {};
+export const Centered: Story = { args: { inlineAlign: 'center' } };
+export const ReverseOrder: Story = { args: { reverseOrder: true } };

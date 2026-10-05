@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import { Box } from './box.js';
-import type { BorderRadiusScale, ShadowScale, SpaceScale } from '../lib/tokens.js';
+import { cn } from '../lib/cn';
+import { Box } from './box';
+import type { BorderRadiusScale, ShadowScale, SpaceScale } from '../lib/tokens';
 import '../styles/polaris/shadow-bevel.css';
 
 export interface CardProps {
@@ -19,6 +19,7 @@ interface ShadowBevelProps {
   boxShadow: ShadowScale;
   borderRadius: BorderRadiusScale;
   zIndex?: string;
+  roundedAbove?: CardProps['roundedAbove'];
 }
 
 /**
@@ -28,7 +29,13 @@ interface ShadowBevelProps {
  * the clip and renders an inset highlight above the shadow, which a plain
  * border cannot reproduce at this radius.
  */
-function ShadowBevel({ children, boxShadow, borderRadius, zIndex = '0' }: ShadowBevelProps) {
+function ShadowBevel({
+  children,
+  boxShadow,
+  borderRadius,
+  zIndex = '0',
+  roundedAbove = 'xs',
+}: ShadowBevelProps) {
   return (
     <div
       className="Polaris-ShadowBevel"
@@ -37,7 +44,11 @@ function ShadowBevel({ children, boxShadow, borderRadius, zIndex = '0' }: Shadow
           '--pc-shadow-bevel-z-index': zIndex,
           '--pc-shadow-bevel-content-xs': '""',
           '--pc-shadow-bevel-box-shadow-xs': `var(--p-shadow-${boxShadow})`,
-          '--pc-shadow-bevel-border-radius-xs': `var(--p-border-radius-${borderRadius})`,
+          '--pc-shadow-bevel-border-radius-xs':
+            roundedAbove === 'xs'
+              ? `var(--p-border-radius-${borderRadius})`
+              : '0',
+          [`--pc-shadow-bevel-border-radius-${roundedAbove}`]: `var(--p-border-radius-${borderRadius})`,
         } as CSSProperties
       }
     >
@@ -60,14 +71,14 @@ export function Card({
   padding = '400',
   roundedAbove = 'sm',
 }: CardProps) {
-  // Polaris drops the radius below `roundedAbove` so the card meets the
-  // viewport edge on small screens. Resolving that needs a breakpoint
-  // observer; until this component has one, the radius is always applied.
-  void roundedAbove;
-
   return (
     <div className={cn(className)}>
-      <ShadowBevel boxShadow="100" borderRadius="300" zIndex="32">
+      <ShadowBevel
+        boxShadow="100"
+        borderRadius="300"
+        zIndex="32"
+        roundedAbove={roundedAbove}
+      >
         <Box
           background={background}
           padding={padding}

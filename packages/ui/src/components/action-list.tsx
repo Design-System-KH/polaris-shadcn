@@ -1,5 +1,5 @@
 import { forwardRef, useCallback, useRef, type KeyboardEvent, type ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/action-list.css';
 
 export interface ActionListItemDescriptor {

@@ -1,10 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SkeletonBodyText } from './skeleton-body-text.js';
+import { SkeletonBodyText } from './skeleton-body-text';
 
 const meta = {
   title: 'components/SkeletonBodyText',
   component: SkeletonBodyText,
-  parameters: { docs: { description: { component: 'Placeholder lines while body text loads. aria-hidden: a placeholder has nothing to announce.' } } },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Placeholder lines while body text loads. aria-hidden: a placeholder has nothing to announce.',
+      },
+    },
+  },
   args: {},
 } satisfies Meta<typeof SkeletonBodyText>;
 export default meta;

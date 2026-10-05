@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Thumbnail } from './thumbnail.js';
+import { Thumbnail } from './thumbnail';
 
 const meta = {
   title: 'components/Thumbnail',
@@ -12,7 +12,12 @@ const meta = {
       },
     },
   },
-  argTypes: { size: { control: 'select', options: ['extraSmall', 'small', 'medium', 'large'] } },
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['extraSmall', 'small', 'medium', 'large'],
+    },
+  },
   args: { source: 'https://placehold.co/120', alt: 'Black leather belt' },
 } satisfies Meta<typeof Thumbnail>;
 

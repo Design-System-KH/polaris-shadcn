@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { EventListener } from './event-listener.js';
+import { EventListener } from './event-listener';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/EventListener',
   component: EventListener,
   parameters: {
-    docs: {
-      description: {
-        component: 'Declarative window event listener. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Declarative window event listener.' } },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof EventListener>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="EventListener" />,
+};

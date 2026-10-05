@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { CalloutCard } from './callout-card.js';
+import { CalloutCard } from './callout-card';
 
 const meta = {
   title: 'components/CalloutCard',
@@ -24,5 +24,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const WithSecondaryAction: Story = { args: { secondaryAction: { content: 'Learn more' } } };
+export const WithSecondaryAction: Story = {
+  args: { secondaryAction: { content: 'Learn more' } },
+};
 export const Dismissible: Story = { args: { onDismiss: () => {} } };

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SettingToggle } from './setting-toggle.js';
+import { SettingToggle } from './setting-toggle';
 
 const meta = {
   title: 'components/SettingToggle',
@@ -22,8 +22,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Disabled: Story = {};
+export const Default: Story = {};
 export const Enabled: Story = {
-  args: { enabled: true, action: { content: 'Disable' }, children: 'This setting is turned on.' },
+  args: {
+    enabled: true,
+    action: { content: 'Disable' },
+    children: 'This setting is turned on.',
+  },
 };
-export const Loading: Story = { args: { action: { content: 'Enable', loading: true } } };
+export const Loading: Story = {
+  args: { action: { content: 'Enable', loading: true } },
+};

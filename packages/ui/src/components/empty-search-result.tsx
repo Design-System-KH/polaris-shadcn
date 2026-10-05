@@ -1,6 +1,5 @@
-import type { ReactNode } from 'react';
-import { BlockStack } from './block-stack.js';
-import { Text } from './text.js';
+import { BlockStack } from './block-stack';
+import { Text } from './text';
 
 /** Polaris's own empty-search illustration, inlined so there is no asset to host. */
 const EMPTY_SEARCH_SVG =

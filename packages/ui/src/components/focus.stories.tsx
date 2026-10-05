@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Focus } from './focus.js';
+import { Focus } from './focus';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/Focus',
   component: Focus,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Moves focus to its child when it becomes active. FIRST PASS — see STATUS.md.',
+        component: 'Moves focus to its child when it becomes active.',
       },
     },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof Focus>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Focus" />,
+};

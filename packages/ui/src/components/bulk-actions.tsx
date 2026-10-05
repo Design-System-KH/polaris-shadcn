@@ -1,6 +1,6 @@
-import { cn } from '../lib/cn.js';
-import { Button } from './button.js';
-import { Text } from './text.js';
+import { cn } from '../lib/cn';
+import { Button } from './button';
+import { Text } from './text';
 import '../styles/polaris/bulk-actions.css';
 
 export interface BulkAction {

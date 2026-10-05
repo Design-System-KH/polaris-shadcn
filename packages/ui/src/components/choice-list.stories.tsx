@@ -1,22 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ChoiceList } from './choice-list.js';
+import { ChoiceList } from './choice-list';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/ChoiceList',
   component: ChoiceList,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'A titled group of radios or checkboxes. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'A titled group of radios or checkboxes.' },
     },
   },
-  args: { label: 'ChoiceList', helpText: 'Persistent guidance for this field.' },
 } satisfies Meta<typeof ChoiceList>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const WithError: Story = { args: { error: 'Enter a value to continue.' } };
-export const Disabled: Story = { args: { disabled: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="ChoiceList" />,
+};
+export const Disabled: Story = {
+  render: () => <ComponentExample name="ChoiceList" state="disabled" />,
+};
+export const WithError: Story = {
+  render: () => <ComponentExample name="ChoiceList" state="error" />,
+};

@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Collapsible } from './collapsible.js';
+import { Collapsible } from './collapsible';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'overlays/Collapsible',
   component: Collapsible,
   parameters: {
-    docs: {
-      description: {
-        component: 'Animated show and hide of a region. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Animated show and hide of a region.' } },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof Collapsible>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Collapsible" />,
+};

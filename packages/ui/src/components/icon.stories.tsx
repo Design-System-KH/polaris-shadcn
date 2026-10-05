@@ -1,22 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Icon } from './icon.js';
+import { Icon } from './icon';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/Icon',
   component: Icon,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'An icon with a tone, decorative unless labelled. FIRST PASS — see STATUS.md.',
+        component: 'An icon with a tone, decorative unless labelled.',
       },
     },
   },
-  args: { alt: 'Example' },
 } satisfies Meta<typeof Icon>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const WithImage: Story = { args: { source: 'https://placehold.co/80', alt: 'Example product' } };
-export const Large: Story = { args: { size: 'large' } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Icon" />,
+};

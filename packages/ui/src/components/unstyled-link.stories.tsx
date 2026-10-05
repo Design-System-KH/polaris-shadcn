@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { UnstyledLink } from './unstyled-link.js';
+import { UnstyledLink } from './unstyled-link';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/UnstyledLink',
   component: UnstyledLink,
   parameters: {
-    docs: {
-      description: {
-        component: 'A link with no visual styling. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'A link with no visual styling.' } },
   },
-  args: { children: 'UnstyledLink' },
 } satisfies Meta<typeof UnstyledLink>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="UnstyledLink" />,
+};

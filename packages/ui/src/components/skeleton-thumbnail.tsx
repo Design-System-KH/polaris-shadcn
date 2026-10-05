@@ -1,4 +1,4 @@
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/skeleton-thumbnail.css';
 
 export type SkeletonThumbnailSize = 'extraSmall' | 'small' | 'medium' | 'large';

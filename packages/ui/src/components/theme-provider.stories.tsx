@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ThemeProvider } from './theme-provider.js';
+import { ThemeProvider } from './theme-provider';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/ThemeProvider',
   component: ThemeProvider,
   parameters: {
-    docs: {
-      description: {
-        component: 'Applies a theme to its subtree. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Applies a theme to its subtree.' } },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof ThemeProvider>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="ThemeProvider" />,
+};

@@ -1,22 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ColorPicker } from './color-picker.js';
+import { ColorPicker } from './color-picker';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/ColorPicker',
   component: ColorPicker,
   parameters: {
-    docs: {
-      description: {
-        component: 'Saturation, hue and alpha picker. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Saturation, hue and alpha picker.' } },
   },
-  args: { label: 'ColorPicker', helpText: 'Persistent guidance for this field.' },
 } satisfies Meta<typeof ColorPicker>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const WithError: Story = { args: { error: 'Enter a value to continue.' } };
-export const Disabled: Story = { args: { disabled: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="ColorPicker" />,
+};
+export const WithAlpha: Story = {
+  render: () => <ColorPicker label="Brand color" allowAlpha />,
+};
+export const Disabled: Story = {
+  render: () => <ComponentExample name="ColorPicker" state="disabled" />,
+};
+export const WithError: Story = {
+  render: () => <ComponentExample name="ColorPicker" state="error" />,
+};

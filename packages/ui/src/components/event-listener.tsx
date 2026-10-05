@@ -1,15 +1,3 @@
-import type { ReactNode } from 'react';
+'use client';
 
-export interface EventListenerProps {
-  children?: ReactNode;
-}
-
-/**
- * EventListener — Declarative window event listener.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function EventListener({ children }: EventListenerProps) {
-  return <>{children}</>;
-}
+export { EventListener, type EventListenerProps } from './internal/utilities';

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { VideoThumbnail } from './video-thumbnail.js';
+import { VideoThumbnail } from './video-thumbnail';
 
 const meta = {
   title: 'components/VideoThumbnail',
@@ -19,5 +19,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const WithProgress: Story = { args: { showVideoProgress: true, videoProgress: 45 } };
+export const WithProgress: Story = {
+  args: { showVideoProgress: true, videoProgress: 45 },
+};
 export const WithoutDuration: Story = { args: { videoLength: undefined } };

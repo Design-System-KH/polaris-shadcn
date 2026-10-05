@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Box } from './box.js';
-
+import { Box } from './box';
 const meta = {
   title: 'primitives/Box',
   component: Box,
-  parameters: {
-    docs: {
-      description: {
-        component: 'The layout primitive every other component is built from. FIRST PASS — see STATUS.md.',
-      },
-    },
+  args: {
+    padding: '400',
+    background: 'bg-surface',
+    borderRadius: '300',
+    children: '12 products ready to publish',
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof Box>;
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 export const Default: Story = {};
+export const WithBorder: Story = {
+  args: { borderColor: 'border', borderWidth: '025' },
+};
+export const Subdued: Story = { args: { background: 'bg-surface-secondary' } };

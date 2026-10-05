@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { BulkActions } from './bulk-actions.js';
+import { BulkActions } from './bulk-actions';
 
 const meta = {
   title: 'components/BulkActions',
@@ -14,7 +14,10 @@ const meta = {
   },
   args: {
     selectedItemsCount: 3,
-    promotedActions: [{ content: 'Fulfil orders' }, { content: 'Print labels' }],
+    promotedActions: [
+      { content: 'Fulfil orders' },
+      { content: 'Print labels' },
+    ],
     actions: [{ content: 'Delete', destructive: true }],
     onSelectModeToggle: () => {},
   },

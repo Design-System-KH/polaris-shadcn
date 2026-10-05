@@ -1,20 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Divider } from './divider.js';
-
+import { Divider } from './divider';
 const meta = {
   title: 'primitives/Divider',
   component: Divider,
-  parameters: {
-    docs: {
-      description: {
-        component: 'Decorative horizontal rule. FIRST PASS — see STATUS.md.',
-      },
-    },
-  },
-  args: {},
+  render: (args) => (
+    <div style={{ display: 'grid', gap: 16 }}>
+      <p>Product details</p>
+      <Divider {...args} />
+      <p>Shipping information</p>
+    </div>
+  ),
 } satisfies Meta<typeof Divider>;
-
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 export const Default: Story = {};

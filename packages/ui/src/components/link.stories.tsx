@@ -1,20 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Link } from './link.js';
+import { Link } from './link';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/Link',
   component: Link,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Navigation. A link goes somewhere; a button does something. FIRST PASS — see STATUS.md.',
+        component:
+          'Navigation. A link goes somewhere; a button does something.',
       },
     },
   },
-  args: { children: 'Link' },
 } satisfies Meta<typeof Link>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Link" />,
+};

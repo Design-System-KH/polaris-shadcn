@@ -1,6 +1,6 @@
 import { afterAll, afterEach, beforeAll } from 'vitest';
 import '@testing-library/jest-dom/vitest';
-import { server } from '../msw/server.js';
+import { server } from '../msw/server';
 
 /**
  * Intercept at the network boundary rather than mocking the HTTP client.

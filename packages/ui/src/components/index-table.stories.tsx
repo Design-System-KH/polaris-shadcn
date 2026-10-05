@@ -1,23 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { IndexTable } from './index-table.js';
+import { IndexTable } from './index-table';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'components/IndexTable',
   component: IndexTable,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Resource index with selection and bulk actions. FIRST PASS — see STATUS.md.',
+        component: 'Resource index with selection and bulk actions.',
       },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
 } satisfies Meta<typeof IndexTable>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="IndexTable" />,
+};
+export const Empty: Story = {
+  render: () => <ComponentExample name="IndexTable" state="empty" />,
+};
+export const Loading: Story = {
+  render: () => <ComponentExample name="IndexTable" state="loading" />,
+};
+export const FilteredEmpty: Story = {
+  render: () => <ComponentExample name="IndexTable" state="filtered" />,
+};

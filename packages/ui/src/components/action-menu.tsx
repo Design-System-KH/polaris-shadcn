@@ -1,7 +1,10 @@
-import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import { Button } from './button.js';
+import { useState, useRef, type ReactNode } from 'react';
+import { cn } from '../lib/cn';
+import { Button } from './button';
+import { Popover } from './popover';
+import { ActionList } from './action-list';
 import '../styles/polaris/action-menu.css';
+import './internal/components.css';
 
 export interface ActionMenuAction {
   content: string;
@@ -10,41 +13,69 @@ export interface ActionMenuAction {
   disabled?: boolean;
   destructive?: boolean;
 }
-
 export interface ActionMenuProps {
   actions?: ActionMenuAction[];
-  /** Rendered last and with primary emphasis. At most one. */
   primaryAction?: ActionMenuAction;
   className?: string;
   children?: ReactNode;
+  visibleActions?: number;
 }
-
-/**
- * ActionMenu — page-level actions.
- *
- * Polaris rolls overflowing actions into a menu once they stop fitting, which
- * needs width measurement. Until that lands here, actions all render inline;
- * keep the list short enough that they fit, which is good practice anyway.
- */
-export function ActionMenu({ actions = [], primaryAction, className, children }: ActionMenuProps) {
+export function ActionMenu({
+  actions = [],
+  primaryAction,
+  className,
+  children,
+  visibleActions = 2,
+}: ActionMenuProps) {
+  const [open, setOpen] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
+  const inline = actions.slice(0, visibleActions),
+    overflow = actions.slice(visibleActions);
+  const actionButton = (action: ActionMenuAction, primary = false) =>
+    action.url && !action.disabled ? (
+      <Button
+        key={action.content}
+        asChild
+        variant={primary ? 'primary' : 'secondary'}
+      >
+        <a href={action.url}>{action.content}</a>
+      </Button>
+    ) : (
+      <Button
+        key={action.content}
+        variant={primary ? 'primary' : 'secondary'}
+        tone={action.destructive ? 'critical' : undefined}
+        disabled={action.disabled}
+        onClick={action.onAction}
+      >
+        {action.content}
+      </Button>
+    );
   return (
-    <div className={cn('Polaris-ActionMenu', className)}>
-      {actions.map((action) => (
-        <Button
-          key={action.content}
-          tone={action.destructive ? 'critical' : undefined}
-          disabled={action.disabled}
-          onClick={action.onAction}
+    <div
+      ref={container}
+      className={cn('Polaris-ActionMenu ps-row ps-wrap', className)}
+    >
+      {inline.map((action) => actionButton(action))}
+      {overflow.length > 0 && (
+        <Popover
+          open={open}
+          onOpenChange={setOpen}
+          activator={<Button disclosure>More actions</Button>}
         >
-          {action.content}
-        </Button>
-      ))}
+          <ActionList
+            items={overflow.map((action) => ({
+              ...action,
+              onAction: () => {
+                action.onAction?.();
+                setOpen(false);
+              },
+            }))}
+          />
+        </Popover>
+      )}
       {children}
-      {primaryAction ? (
-        <Button variant="primary" disabled={primaryAction.disabled} onClick={primaryAction.onAction}>
-          {primaryAction.content}
-        </Button>
-      ) : null}
+      {primaryAction && actionButton(primaryAction, true)}
     </div>
   );
 }

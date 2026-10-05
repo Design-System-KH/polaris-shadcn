@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ScrollLock } from './scroll-lock.js';
+import { ScrollLock } from './scroll-lock';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/ScrollLock',
   component: ScrollLock,
   parameters: {
-    docs: {
-      description: {
-        component: 'Locks body scroll while mounted. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Locks body scroll while mounted.' } },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof ScrollLock>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="ScrollLock" />,
+};

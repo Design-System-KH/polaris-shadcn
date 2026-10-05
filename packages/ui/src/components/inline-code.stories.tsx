@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { InlineCode } from './inline-code.js';
+import { InlineCode } from './inline-code';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/InlineCode',
   component: InlineCode,
   parameters: {
-    docs: {
-      description: {
-        component: 'Monospace inline code. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Monospace inline code.' } },
   },
-  args: { children: 'InlineCode' },
 } satisfies Meta<typeof InlineCode>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="InlineCode" />,
+};

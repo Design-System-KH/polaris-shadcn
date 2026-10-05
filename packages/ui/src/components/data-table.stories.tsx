@@ -1,23 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DataTable } from './data-table.js';
+import { DataTable } from './data-table';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'components/DataTable',
   component: DataTable,
   parameters: {
+    controls: { disable: true },
     docs: {
-      description: {
-        component: 'Tabular data with sorting and totals. FIRST PASS — see STATUS.md.',
-      },
+      description: { component: 'Tabular data with sorting and totals.' },
     },
   },
-  args: { items: [{ id: '1', content: 'First item' }, { id: '2', content: 'Second item' }] },
 } satisfies Meta<typeof DataTable>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const Loading: Story = { args: { loading: true, items: [] } };
-export const EmptyFirstRun: Story = { args: { items: [] } };
-export const EmptyFiltered: Story = { args: { items: [], isFiltered: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="DataTable" />,
+};
+export const Empty: Story = {
+  render: () => <ComponentExample name="DataTable" state="empty" />,
+};
+export const Loading: Story = {
+  render: () => <ComponentExample name="DataTable" state="loading" />,
+};
+export const FilteredEmpty: Story = {
+  render: () => <ComponentExample name="DataTable" state="filtered" />,
+};

@@ -1,22 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Checkbox } from './checkbox.js';
+import { Checkbox } from './checkbox';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'forms/Checkbox',
   component: Checkbox,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Binary choice, independent of its neighbours. FIRST PASS — see STATUS.md.',
+        component: 'Binary choice, independent of its neighbours.',
       },
     },
   },
-  args: { label: 'Checkbox', helpText: 'Persistent guidance for this field.' },
 } satisfies Meta<typeof Checkbox>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
-export const WithError: Story = { args: { error: 'Enter a value to continue.' } };
-export const Disabled: Story = { args: { disabled: true } };
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="Checkbox" />,
+};
+export const Disabled: Story = {
+  render: () => <ComponentExample name="Checkbox" state="disabled" />,
+};
+export const WithError: Story = {
+  render: () => <ComponentExample name="Checkbox" state="error" />,
+};

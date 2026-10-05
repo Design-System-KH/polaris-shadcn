@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import { Box } from './box.js';
-import { BlockStack } from './block-stack.js';
-import { InlineStack } from './inline-stack.js';
-import { Text } from './text.js';
-import { Button } from './button.js';
+import { cn } from '../lib/cn';
+import { Box } from './box';
+import { BlockStack } from './block-stack';
+import { InlineStack } from './inline-stack';
+import { Text } from './text';
+import { Button } from './button';
 import '../styles/polaris/empty-state.css';
 
 export interface EmptyStateAction {

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 // Toast lives under Frame in Polaris's stylesheet, as Polaris-Frame-Toast.
 import '../styles/polaris/frame.css';
 

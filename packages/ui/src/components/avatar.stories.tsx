@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Avatar } from './avatar.js';
+import { Avatar } from './avatar';
 
 const meta = {
   title: 'components/Avatar',
@@ -18,7 +18,8 @@ const meta = {
     size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     accessibilityLabel: {
       control: 'text',
-      description: 'Pass an empty string when the name is already visible beside it.',
+      description:
+        'Pass an empty string when the name is already visible beside it.',
     },
   },
   args: { name: 'Dana Whitfield' },
@@ -30,12 +31,20 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const WithImage: Story = { args: { source: 'https://placehold.co/80' } };
 export const WithExplicitInitials: Story = { args: { initials: 'DW' } };
-export const Large: Story = { args: { size: 'xl', source: 'https://placehold.co/160' } };
+export const Large: Story = {
+  args: { size: 'xl', source: 'https://placehold.co/160' },
+};
 
 /** Every size, for checking the initials stay centred as the box changes. */
 export const Sizes: Story = {
   render: (args) => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--p-space-300)' }}>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 'var(--p-space-300)',
+      }}
+    >
       {(['xs', 'sm', 'md', 'lg', 'xl'] as const).map((size) => (
         <Avatar key={size} {...args} size={size} />
       ))}

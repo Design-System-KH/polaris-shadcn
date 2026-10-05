@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MediaCard } from './media-card.js';
-import { VideoThumbnail } from './video-thumbnail.js';
+import { MediaCard } from './media-card';
+import { VideoThumbnail } from './video-thumbnail';
 
 const meta = {
   title: 'components/MediaCard',
@@ -17,7 +17,12 @@ const meta = {
     title: 'Getting started with online sales',
     description: 'Learn how to set up your store and take your first order.',
     primaryAction: { content: 'Watch video' },
-    media: <VideoThumbnail thumbnailUrl="https://placehold.co/600x340" videoLength={80} />,
+    media: (
+      <VideoThumbnail
+        thumbnailUrl="https://placehold.co/600x340"
+        videoLength={80}
+      />
+    ),
   },
 } satisfies Meta<typeof MediaCard>;
 
@@ -27,4 +32,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 export const Portrait: Story = { args: { portrait: true } };
 export const Small: Story = { args: { size: 'small' } };
-export const WithSecondaryAction: Story = { args: { secondaryAction: { content: 'Dismiss' } } };
+export const WithSecondaryAction: Story = {
+  args: { secondaryAction: { content: 'Dismiss' } },
+};

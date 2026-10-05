@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextContainer } from './text-container.js';
+import { TextContainer } from './text-container';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'primitives/TextContainer',
   component: TextContainer,
   parameters: {
-    docs: {
-      description: {
-        component: 'Vertical rhythm for prose. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Vertical rhythm for prose.' } },
   },
-  args: { children: 'Content' },
 } satisfies Meta<typeof TextContainer>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="TextContainer" />,
+};

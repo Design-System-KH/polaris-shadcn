@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextField } from './text-field.js';
+import { TextField } from './text-field';
 
 const meta = {
   title: 'forms/TextField',
@@ -7,7 +7,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Single-line or multiline text input. FIRST PASS — see STATUS.md.',
+        component:
+          'Accessible single-line and multiline inputs with controlled values, validation, and disabled states.',
       },
     },
   },
@@ -18,5 +19,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
-export const WithError: Story = { args: { error: 'Enter a value to continue.' } };
+export const WithError: Story = {
+  args: { error: 'Enter a value to continue.' },
+};
 export const Disabled: Story = { args: { disabled: true } };
+export const Multiline: Story = {
+  args: {
+    label: 'Description',
+    multiline: 5,
+    defaultValue: 'A lightweight hoodie for everyday adventures.',
+  },
+};
+export const WithPrefix: Story = {
+  args: { label: 'Price', prefix: '$', type: 'number', defaultValue: '49.00' },
+};

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { DescriptionList } from './description-list.js';
+import { DescriptionList } from './description-list';
 
 const meta = {
   title: 'components/DescriptionList',
@@ -15,8 +15,14 @@ const meta = {
   argTypes: { spacing: { control: 'select', options: ['loose', 'tight'] } },
   args: {
     items: [
-      { term: 'Logistics', description: 'The management of products from supplier to customer.' },
-      { term: 'Fulfillment', description: 'Picking, packing and shipping an order.' },
+      {
+        term: 'Logistics',
+        description: 'The management of products from supplier to customer.',
+      },
+      {
+        term: 'Fulfillment',
+        description: 'Picking, packing and shipping an order.',
+      },
     ],
   },
 } satisfies Meta<typeof DescriptionList>;

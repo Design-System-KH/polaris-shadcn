@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { LegacyCard } from './legacy-card.js';
-import { Button } from './button.js';
+import { LegacyCard } from './legacy-card';
+import { Button } from './button';
 import '../styles/polaris/setting-action.css';
 
 export interface SettingToggleAction {

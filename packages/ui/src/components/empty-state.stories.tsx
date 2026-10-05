@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { EmptyState } from './empty-state.js';
+import { EmptyState } from './empty-state';
 
-const IMAGE = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
+const IMAGE =
+  'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
 /** Mirrors Polaris's own EmptyState stories so the two can be compared directly. */
 const meta = {
@@ -43,7 +44,8 @@ export const WithSecondaryAction: Story = {
 
 export const WithSubduedFooterContent: Story = {
   args: {
-    footerContent: 'If you do not want to add a transfer, you can import inventory from settings.',
+    footerContent:
+      'If you do not want to add a transfer, you can import inventory from settings.',
   },
 };
 

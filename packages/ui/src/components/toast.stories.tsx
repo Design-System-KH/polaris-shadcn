@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Toast } from './toast.js';
+import { Toast } from './toast';
 
 const meta = {
   title: 'components/Toast',
@@ -20,4 +20,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const WithAction: Story = { args: { action: { content: 'Undo' } } };
-export const Error: Story = { args: { error: true, content: 'Could not archive order' } };
+export const Error: Story = {
+  args: { error: true, content: 'Could not archive order' },
+};

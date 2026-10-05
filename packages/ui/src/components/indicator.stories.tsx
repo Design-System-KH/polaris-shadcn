@@ -1,10 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Indicator } from './indicator.js';
+import { Indicator } from './indicator';
 
 const meta = {
   title: 'components/Indicator',
   component: Indicator,
-  parameters: { docs: { description: { component: 'A small unread or attention dot. Decorative — label the thing it marks, not the dot.' } } },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'A small unread or attention dot. Decorative — label the thing it marks, not the dot.',
+      },
+    },
+  },
   args: {},
 } satisfies Meta<typeof Indicator>;
 export default meta;

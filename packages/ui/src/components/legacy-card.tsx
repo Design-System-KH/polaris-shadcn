@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import { Text } from './text.js';
+import { cn } from '../lib/cn';
+import { Text } from './text';
 import '../styles/polaris/legacy-card.css';
 
 export interface LegacyCardProps {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Button } from './button.js';
+import { Button } from './button';
 
 const meta = {
   title: 'primitives/Button',
@@ -33,9 +33,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const Primary: Story = { args: { variant: 'primary' } };
-export const Critical: Story = { args: { variant: 'primary', tone: 'critical', children: 'Delete' } };
+export const Critical: Story = {
+  args: { variant: 'primary', tone: 'critical', children: 'Delete' },
+};
 export const Tertiary: Story = { args: { variant: 'tertiary' } };
 export const Plain: Story = { args: { variant: 'plain' } };
 export const Loading: Story = { args: { variant: 'primary', loading: true } };
 export const Disabled: Story = { args: { disabled: true } };
-export const FullWidth: Story = { args: { variant: 'primary', fullWidth: true } };
+export const FullWidth: Story = {
+  args: { variant: 'primary', fullWidth: true },
+};

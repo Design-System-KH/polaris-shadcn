@@ -1,5 +1,5 @@
 import { useId, useState, type ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
+import { cn } from '../lib/cn';
 import '../styles/polaris/resource-item.css';
 
 export interface ResourceItemProps {
@@ -48,7 +48,8 @@ export function ResourceItem({
   const [focusedInner, setFocusedInner] = useState(false);
   const checkboxId = useId();
 
-  const label = accessibilityLabel ?? (name ? `View details for ${name}` : `View details`);
+  const label =
+    accessibilityLabel ?? (name ? `View details for ${name}` : `View details`);
 
   const handleActivate = () => {
     if (disabled) return;
@@ -56,10 +57,14 @@ export function ResourceItem({
   };
 
   const content = (
-    <div className="Polaris-ResourceItem__ItemWrapper">
+    <div
+      className="Polaris-ResourceItem__ItemWrapper"
+      style={{ display: 'flex', alignItems: 'center', gap: 16 }}
+    >
       {selectable ? (
         <div
           className="Polaris-ResourceItem__CheckboxWrapper"
+          style={{ position: 'relative' }}
           // Stops a checkbox click from also activating the row behind it.
           onClick={(event) => event.stopPropagation()}
         >
@@ -69,7 +74,9 @@ export function ResourceItem({
             checked={selected}
             disabled={disabled}
             aria-label={name ? `Select ${name}` : 'Select item'}
-            onChange={(event) => onSelectionChange?.(event.currentTarget.checked, id)}
+            onChange={(event) =>
+              onSelectionChange?.(event.currentTarget.checked, id)
+            }
           />
         </div>
       ) : null}
@@ -79,7 +86,11 @@ export function ResourceItem({
         <div
           className="Polaris-ResourceItem__Actions"
           onClick={(event) => event.stopPropagation()}
-          style={persistActions ? undefined : { visibility: focused ? 'visible' : undefined }}
+          style={{
+            position: 'relative',
+            zIndex: 2,
+            visibility: persistActions || focused ? 'visible' : undefined,
+          }}
         >
           {shortcutActions}
         </div>
@@ -100,7 +111,10 @@ export function ResourceItem({
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
     >
-      <div className="Polaris-ResourceItem">
+      <div
+        className="Polaris-ResourceItem"
+        style={{ position: 'relative', padding: 16, minHeight: 44 }}
+      >
         {url ? (
           <a
             className="Polaris-ResourceItem__Link"
@@ -108,9 +122,7 @@ export function ResourceItem({
             aria-label={label}
             onFocus={() => setFocusedInner(true)}
             onBlur={() => setFocusedInner(false)}
-          >
-            {content}
-          </a>
+          />
         ) : (
           <button
             type="button"
@@ -120,10 +132,9 @@ export function ResourceItem({
             onClick={handleActivate}
             onFocus={() => setFocusedInner(true)}
             onBlur={() => setFocusedInner(false)}
-          >
-            {content}
-          </button>
+          />
         )}
+        {content}
       </div>
     </li>
   );

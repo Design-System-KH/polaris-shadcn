@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TopBar } from './top-bar.js';
+import { TopBar } from './top-bar';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'navigation/TopBar',
   component: TopBar,
   parameters: {
+    controls: { disable: true },
     docs: {
       description: {
-        component: 'Application top bar: search, user menu, nav toggle. FIRST PASS — see STATUS.md.',
+        component: 'Application top bar: search, user menu, nav toggle.',
       },
     },
   },
-  args: { items: [{ id: 'a', label: 'First', selected: true }, { id: 'b', label: 'Second' }] },
 } satisfies Meta<typeof TopBar>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="TopBar" />,
+};

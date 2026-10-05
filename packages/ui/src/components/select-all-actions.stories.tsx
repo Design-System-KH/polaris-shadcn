@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SelectAllActions } from './select-all-actions.js';
+import { SelectAllActions } from './select-all-actions';
 
 const meta = {
   title: 'components/SelectAllActions',
@@ -23,6 +23,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 export const AllSelected: Story = {
-  args: { label: undefined, paginatedSelectAllText: 'All 1,284 orders are selected', selectAllAction: undefined },
+  args: {
+    label: undefined,
+    paginatedSelectAllText: 'All 1,284 orders are selected',
+    selectAllAction: undefined,
+  },
 };
 export const Sticky: Story = { args: { isSticky: true } };

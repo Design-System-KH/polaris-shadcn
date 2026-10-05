@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import type { SpaceScale } from '../lib/tokens.js';
+import { cn } from '../lib/cn';
+import type { SpaceScale } from '../lib/tokens';
 
 export interface InlineStackProps {
   as?: ElementType;

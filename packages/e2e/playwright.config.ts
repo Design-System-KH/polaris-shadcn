@@ -5,5 +5,5 @@ export default defineConfig({
   // Fail the run rather than pass silently when someone leaves .only in.
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  use: { baseURL: process.env.BASE_URL ?? 'http://localhost:3000', trace: 'on-first-retry' },
+  use: { baseURL: process.env.BASE_URL ?? 'http://localhost:3741', trace: 'on-first-retry' },
 });

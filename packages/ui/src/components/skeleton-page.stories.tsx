@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SkeletonPage } from './skeleton-page.js';
-import { SkeletonBodyText } from './skeleton-body-text.js';
-import { Card } from './card.js';
+import { SkeletonPage } from './skeleton-page';
+import { SkeletonBodyText } from './skeleton-body-text';
+import { Card } from './card';
 
 const meta = {
   title: 'components/SkeletonPage',

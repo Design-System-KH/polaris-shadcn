@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { KeypressListener } from './keypress-listener.js';
+import { KeypressListener } from './keypress-listener';
+import { ComponentExample } from '../playground/component-examples';
 
 const meta = {
   title: 'util/KeypressListener',
   component: KeypressListener,
   parameters: {
-    docs: {
-      description: {
-        component: 'Declarative key handler. FIRST PASS — see STATUS.md.',
-      },
-    },
+    controls: { disable: true },
+    docs: { description: { component: 'Declarative key handler.' } },
   },
-  args: { children: 'Wrapped content.' },
 } satisfies Meta<typeof KeypressListener>;
-
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {};
+type Story = StoryObj<typeof ComponentExample>;
+export const Default: Story = {
+  render: () => <ComponentExample name="KeypressListener" />,
+};

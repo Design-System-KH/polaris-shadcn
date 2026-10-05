@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { AccountConnection } from './account-connection.js';
+import { AccountConnection } from './account-connection';
 
 const meta = {
   title: 'patterns/AccountConnection',
@@ -17,7 +17,8 @@ const meta = {
   argTypes: {
     connected: {
       control: 'boolean',
-      description: 'Shows the avatar and drops the action to secondary emphasis.',
+      description:
+        'Shows the avatar and drops the action to secondary emphasis.',
     },
   },
   args: {

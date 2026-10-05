@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { EmptySearchResult } from './empty-search-result.js';
+import { EmptySearchResult } from './empty-search-result';
 
 const meta = {
   title: 'patterns/EmptySearchResult',
@@ -44,7 +44,8 @@ export const WithoutDescription: Story = {
 export const NamingTheFilter: Story = {
   args: {
     title: 'No orders match these filters',
-    description: 'No orders are both unfulfilled and placed in the last 7 days.',
+    description:
+      'No orders are both unfulfilled and placed in the last 7 days.',
     withIllustration: true,
   },
 };

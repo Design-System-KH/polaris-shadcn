@@ -1,30 +1,3 @@
-import type { ReactNode } from 'react';
-import { cn } from '../lib/cn.js';
-import type { SpaceScale } from '../lib/tokens.js';
+'use client';
 
-export interface FormProps {
-  children?: ReactNode;
-  className?: string;
-  gap?: SpaceScale;
-  padding?: SpaceScale;
-}
-
-/**
- * Form — Form element with submit handling.
- *
- * FIRST PASS. Tokens, prop surface and semantics are real; behaviour is
- * minimal. See STATUS.md for what that means before relying on it.
- */
-export function Form({ children, className, gap, padding }: FormProps) {
-  return (
-    <div
-      className={cn('flex flex-col', className)}
-      style={{
-        gap: gap ? `var(--p-space-${gap})` : undefined,
-        padding: padding ? `var(--p-space-${padding})` : undefined,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+export { Form, type FormProps } from './internal/layout';
