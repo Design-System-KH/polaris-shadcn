@@ -5,7 +5,7 @@ addons.setConfig({
   theme: create({
     base: 'light',
     brandTitle: 'Polaris shadcn',
-    brandUrl: '/?path=/story/playground--details-page',
+    brandUrl: './?path=/story/playground--details-page',
     colorPrimary: '#303030',
     colorSecondary: '#005bd3',
     appBg: '#f1f1f1',
